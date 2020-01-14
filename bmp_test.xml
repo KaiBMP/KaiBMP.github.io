@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="bmp_test" type="MySQL - 5.7.28-0ubuntu0.18.04.4">
+   <tables>
+      <table name="case" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="1" name="prescription" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="case_ibfk_2" implied="false" onDeleteCascade="false" table="prescription"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="customer" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="case_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="bill_number" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="bill_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="5" name="bill_type" nullable="true" remarks="" size="17" type="ENUM"/>
+         <column autoUpdated="false" digits="3" id="6" name="bill_amount" nullable="true" remarks="" size="10" type="DECIMAL"/>
+         <column autoUpdated="false" digits="0" id="7" name="currency" nullable="true" remarks="" size="3" type="CHAR"/>
+         <column autoUpdated="false" digits="0" id="8" name="payment_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="9" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="10" name="payment_type" nullable="true" remarks="" size="9" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="11" name="state" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="case_ibfk_3" implied="false" onDeleteCascade="false" table="case_state"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="12" name="countdown" nullable="true" remarks="" size="12" type="FLOAT"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="customer" unique="false">
+            <column ascending="true" name="customer"/>
+         </index>
+         <index name="prescription" unique="false">
+            <column ascending="true" name="prescription"/>
+         </index>
+         <index name="state" unique="false">
+            <column ascending="true" name="state"/>
+         </index>
+      </table>
+      <table name="case_state" numRows="9" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="state" foreignKey="case_ibfk_3" implied="false" onDeleteCascade="false" table="case"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="company" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="carer_company_id" foreignKey="customer_ibfk_5" implied="false" onDeleteCascade="false" table="customer"/>
+            <child column="other_company_id" foreignKey="customer_ibfk_7" implied="false" onDeleteCascade="false" table="customer"/>
+            <child column="patient_company_id" foreignKey="customer_ibfk_3" implied="false" onDeleteCascade="false" table="customer"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="contact_person" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="company_ibfk_1" implied="false" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="street" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="street_number" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="5" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="6" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="7" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="8" name="country_iso" nullable="false" remarks="" size="2" type="CHAR"/>
+         <column autoUpdated="false" digits="0" id="9" name="phone" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="10" name="fax" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="11" name="email" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="12" name="website" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="13" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="contact_person" unique="false">
+            <column ascending="true" name="contact_person"/>
+         </index>
+      </table>
+      <table name="customer" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="customer" foreignKey="case_ibfk_1" implied="false" onDeleteCascade="false" table="case"/>
+            <child column="customer" foreignKey="customer_therapist_ibfk_1" implied="false" onDeleteCascade="false" table="customer_therapist"/>
+            <child column="customer" foreignKey="matching_ibfk_1" implied="false" onDeleteCascade="false" table="matching"/>
+            <child column="customer" foreignKey="treatment_documentation_ibfk_1" implied="false" onDeleteCascade="false" table="treatment_documentation"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="other_company_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_ibfk_7" implied="false" onDeleteCascade="false" table="company"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="other_person_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_ibfk_6" implied="false" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="carer_company_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_ibfk_5" implied="false" onDeleteCascade="false" table="company"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="carer_person_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_ibfk_4" implied="false" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="patient_person_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_ibfk_2" implied="false" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="patient_company_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_ibfk_3" implied="false" onDeleteCascade="false" table="company"/>
+         </column>
+         <column autoUpdated="false" defaultValue="b'0'" digits="0" id="7" name="separate_location_of_therapy" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="8" name="therapy_street" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="9" name="therapy_street_number" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="10" name="therapy_additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="11" name="therapy_zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="12" name="therapy_city" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="13" name="therapy_country_iso" nullable="true" remarks="" size="2" type="CHAR"/>
+         <column autoUpdated="false" digits="0" id="14" name="entrance_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="15" name="request_date" nullable="false" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="16" name="source" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_ibfk_1" implied="false" onDeleteCascade="false" table="inquiry_source"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="17" name="documents" nullable="true" remarks="" size="11" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="18" name="treatment_contract_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="19" name="privacy_policy_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="20" name="consent_form_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="21" name="payment_in_advance" nullable="true" remarks="" size="19" type="ENUM"/>
+         <column autoUpdated="false" defaultValue="b'0'" digits="0" id="22" name="VIP" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="23" name="carer_relationship" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="24" name="other_relationship" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" defaultValue="patient" digits="0" id="25" name="invoice_recipient" nullable="false" remarks="" size="8" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="26" name="payment_type" nullable="true" remarks="" size="9" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="27" name="insurance_type" nullable="true" remarks="" size="12" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="28" name="notes" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="29" name="health_information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="30" name="prescription_information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="31" name="state" nullable="false" remarks="" size="13" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="32" name="preferred_therapist_gender" nullable="true" remarks="" size="2" type="ENUM"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="carer_company_id" unique="false">
+            <column ascending="true" name="carer_company_id"/>
+         </index>
+         <index name="carer_person_id" unique="false">
+            <column ascending="true" name="carer_person_id"/>
+         </index>
+         <index name="other_company_id" unique="false">
+            <column ascending="true" name="other_company_id"/>
+         </index>
+         <index name="other_person_id" unique="false">
+            <column ascending="true" name="other_person_id"/>
+         </index>
+         <index name="patient_company_id" unique="false">
+            <column ascending="true" name="patient_company_id"/>
+         </index>
+         <index name="patient_person_id" unique="false">
+            <column ascending="true" name="patient_person_id"/>
+         </index>
+         <index name="source" unique="false">
+            <column ascending="true" name="source"/>
+         </index>
+      </table>
+      <table name="customer_therapist" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="customer" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_therapist_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="therapist" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="customer_therapist_ibfk_2" implied="false" onDeleteCascade="false" table="therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="3" name="state" nullable="false" remarks="" size="7" type="ENUM"/>
+         <primaryKey column="customer" sequenceNumberInPK="1"/>
+         <primaryKey column="therapist" sequenceNumberInPK="2"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="customer"/>
+            <column ascending="true" name="therapist"/>
+         </index>
+         <index name="therapist" unique="false">
+            <column ascending="true" name="therapist"/>
+         </index>
+      </table>
+      <table name="employee" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="processor" foreignKey="matching_ibfk_2" implied="false" onDeleteCascade="false" table="matching"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="display_name" nullable="false" remarks="" size="5" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="display_name" unique="true">
+            <column ascending="true" name="display_name"/>
+         </index>
+      </table>
+      <table name="inquiry_source" numRows="5" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="source" foreignKey="customer_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="matching" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="matching" foreignKey="request_ibfk_2" implied="false" onDeleteCascade="false" table="request"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="processor" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="matching_ibfk_2" implied="false" onDeleteCascade="false" table="employee"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="customer" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="matching_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="customer_wish" nullable="false" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" defaultValue="offen" digits="0" id="4" name="state" nullable="false" remarks="" size="13" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="5" name="request_date" nullable="false" remarks="" size="10" type="DATE"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="customer" unique="false">
+            <column ascending="true" name="customer"/>
+         </index>
+         <index name="processor" unique="false">
+            <column ascending="true" name="processor"/>
+         </index>
+      </table>
+      <table name="person" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="contact_person" foreignKey="company_ibfk_1" implied="false" onDeleteCascade="false" table="company"/>
+            <child column="carer_person_id" foreignKey="customer_ibfk_4" implied="false" onDeleteCascade="false" table="customer"/>
+            <child column="other_person_id" foreignKey="customer_ibfk_6" implied="false" onDeleteCascade="false" table="customer"/>
+            <child column="patient_person_id" foreignKey="customer_ibfk_2" implied="false" onDeleteCascade="false" table="customer"/>
+            <child column="person" foreignKey="person_language_ibfk_1" implied="false" onDeleteCascade="false" table="person_language"/>
+            <child column="person" foreignKey="therapist_ibfk_1" implied="false" onDeleteCascade="false" table="therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="first_name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="last_name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="title" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="birth_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="5" name="street" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="6" name="streetnumber" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="7" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="8" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="9" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="10" name="country_iso" nullable="false" remarks="Using ISO 3166 country codes" size="2" type="CHAR"/>
+         <column autoUpdated="false" digits="0" id="11" name="phone_private" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="12" name="phone_business" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="13" name="phone_mobile" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="14" name="fax" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="15" name="email" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="16" name="website" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="17" name="gender" nullable="true" remarks="" size="2" type="ENUM"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="person_language" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="person" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="person_language_ibfk_1" implied="false" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="language_iso" nullable="false" remarks="Using ISO 639-1 for language codes" size="2" type="CHAR"/>
+         <primaryKey column="language_iso" sequenceNumberInPK="1"/>
+         <primaryKey column="person" sequenceNumberInPK="2"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="person"/>
+            <column ascending="true" name="language_iso"/>
+         </index>
+      </table>
+      <table name="prescription" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="prescription" foreignKey="case_ibfk_2" implied="false" onDeleteCascade="false" table="case"/>
+            <child column="prescription" foreignKey="prescription_benefit_assignment_ibfk_2" implied="false" onDeleteCascade="false" table="prescription_benefit_assignment"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="2" name="doctor" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="diagnosis" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="state" nullable="false" remarks="" size="22" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="5" name="prescription_counter" nullable="true" remarks="" size="12" type="FLOAT"/>
+         <column autoUpdated="false" digits="0" id="6" name="state_of_next_prescription" nullable="true" remarks="" size="9" type="ENUM"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="prescription_benefit" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="45" type="VARCHAR">
+            <child column="benefit" foreignKey="prescription_benefit_assignment_ibfk_1" implied="false" onDeleteCascade="false" table="prescription_benefit_assignment"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="3" id="2" name="price_excl_taxes" nullable="false" remarks="" size="10" type="DECIMAL"/>
+         <column autoUpdated="false" digits="3" id="3" name="price_incl_taxes" nullable="false" remarks="" size="10" type="DECIMAL"/>
+         <column autoUpdated="false" digits="3" id="4" name="tax_rate" nullable="false" remarks="" size="3" type="DECIMAL"/>
+         <column autoUpdated="false" digits="0" id="5" name="category" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" defaultValue="EUR" digits="0" id="6" name="currency" nullable="false" remarks="" size="3" type="CHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="prescription_benefit_assignment" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="benefit" nullable="false" remarks="" size="45" type="VARCHAR">
+            <parent column="id" foreignKey="prescription_benefit_assignment_ibfk_1" implied="false" onDeleteCascade="false" table="prescription_benefit"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="number" nullable="false" remarks="" size="10" type="INT"/>
+         <column autoUpdated="false" digits="0" id="2" name="prescription" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="prescription_benefit_assignment_ibfk_2" implied="false" onDeleteCascade="false" table="prescription"/>
+         </column>
+         <primaryKey column="benefit" sequenceNumberInPK="1"/>
+         <primaryKey column="prescription" sequenceNumberInPK="2"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="benefit"/>
+            <column ascending="true" name="prescription"/>
+         </index>
+         <index name="prescription" unique="false">
+            <column ascending="true" name="prescription"/>
+         </index>
+      </table>
+      <table name="region" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="region" foreignKey="therapist_ibfk_2" implied="false" onDeleteCascade="false" table="therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="request" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="therapist" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="request_ibfk_1" implied="false" onDeleteCascade="false" table="therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="matching" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="request_ibfk_2" implied="false" onDeleteCascade="false" table="matching"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="response_therapist" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="3" name="therapist_approved" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="4" name="patient_informed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="5" name="patient_approved" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="6" name="therapist_informed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="7" name="treatment_date" nullable="true" remarks="" size="19" type="DATETIME"/>
+         <column autoUpdated="false" digits="0" id="8" name="notes" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <primaryKey column="matching" sequenceNumberInPK="1"/>
+         <primaryKey column="therapist" sequenceNumberInPK="2"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="therapist"/>
+            <column ascending="true" name="matching"/>
+         </index>
+         <index name="matching" unique="false">
+            <column ascending="true" name="matching"/>
+         </index>
+      </table>
+      <table name="skill" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="skill" foreignKey="skill_therapist_ibfk_2" implied="false" onDeleteCascade="false" table="skill_therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="skill_therapist" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="therapist" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="skill_therapist_ibfk_1" implied="false" onDeleteCascade="false" table="therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="skill" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="skill_therapist_ibfk_2" implied="false" onDeleteCascade="false" table="skill"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <primaryKey column="skill" sequenceNumberInPK="1"/>
+         <primaryKey column="therapist" sequenceNumberInPK="2"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="skill"/>
+            <column ascending="true" name="therapist"/>
+         </index>
+         <index name="therapist" unique="false">
+            <column ascending="true" name="therapist"/>
+         </index>
+      </table>
+      <table name="therapist" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="therapist" foreignKey="customer_therapist_ibfk_2" implied="false" onDeleteCascade="false" table="customer_therapist"/>
+            <child column="therapist" foreignKey="request_ibfk_1" implied="false" onDeleteCascade="false" table="request"/>
+            <child column="therapist" foreignKey="skill_therapist_ibfk_1" implied="false" onDeleteCascade="false" table="skill_therapist"/>
+            <child column="therapist" foreignKey="therapist_vacation_ibfk_1" implied="false" onDeleteCascade="false" table="therapist_vacation"/>
+            <child column="therapist" foreignKey="treatment_documentation_ibfk_2" implied="false" onDeleteCascade="false" table="treatment_documentation"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="person" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="therapist_ibfk_1" implied="false" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="employment_type" nullable="false" remarks="" size="7" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="3" name="state" nullable="false" remarks="" size="9" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="4" name="contract_state" nullable="true" remarks="" size="10" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="5" name="start_date" nullable="false" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="6" name="leaving_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="7" name="region" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="therapist_ibfk_2" implied="false" onDeleteCascade="false" table="region"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="8" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="9" name="working_area_zip_codes" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="person" unique="false">
+            <column ascending="true" name="person"/>
+         </index>
+         <index name="region" unique="false">
+            <column ascending="true" name="region"/>
+         </index>
+      </table>
+      <table name="therapist_vacation" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED"/>
+         <column autoUpdated="false" digits="0" id="1" name="therapist" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="therapist_vacation_ibfk_1" implied="false" onDeleteCascade="false" table="therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="start" nullable="false" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="3" name="end" nullable="false" remarks="" size="10" type="DATE"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="therapist" unique="false">
+            <column ascending="true" name="therapist"/>
+         </index>
+      </table>
+      <table name="treatment_documentation" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="customer" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="treatment_documentation_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="therapist" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="treatment_documentation_ibfk_2" implied="false" onDeleteCascade="false" table="therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="date" nullable="false" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="3" name="length" nullable="false" remarks="" size="12" type="FLOAT"/>
+         <column autoUpdated="false" digits="0" id="4" name="documentation" nullable="false" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="5" name="comment" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="6" name="next_treatment_information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="7" name="continue_treatment_information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="8" name="prescription" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="9" name="treatment_contract_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="10" name="consent_form_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="11" name="payment_in_cash" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="12" name="premium" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="13" name="capacity_for_more_patients" nullable="false" remarks="" size="1" type="BIT"/>
+         <primaryKey column="customer" sequenceNumberInPK="1"/>
+         <primaryKey column="date" sequenceNumberInPK="2"/>
+         <primaryKey column="therapist" sequenceNumberInPK="3"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="customer"/>
+            <column ascending="true" name="therapist"/>
+            <column ascending="true" name="date"/>
+         </index>
+         <index name="therapist" unique="false">
+            <column ascending="true" name="therapist"/>
+         </index>
+      </table>
+   </tables>
+</database>
