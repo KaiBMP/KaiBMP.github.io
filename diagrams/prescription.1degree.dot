@@ -35,10 +35,10 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="currency" COLSPAN="3" ALIGN="LEFT">currency</TD></TR>
       <TR><TD PORT="payment_date" COLSPAN="3" ALIGN="LEFT">payment_date</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
-      <TR><TD PORT="payment_type" COLSPAN="3" ALIGN="LEFT">payment_type</TD></TR>
+      <TR><TD PORT="payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type</TD></TR>
       <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
       <TR><TD PORT="countdown" COLSPAN="3" ALIGN="LEFT">countdown</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="case.html"
     tooltip="case"

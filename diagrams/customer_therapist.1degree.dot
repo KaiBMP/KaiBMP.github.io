@@ -51,14 +51,14 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="carer_relationship" COLSPAN="3" ALIGN="LEFT">carer_relationship</TD></TR>
       <TR><TD PORT="other_relationship" COLSPAN="3" ALIGN="LEFT">other_relationship</TD></TR>
       <TR><TD PORT="invoice_recipient" COLSPAN="3" ALIGN="LEFT">invoice_recipient</TD></TR>
-      <TR><TD PORT="payment_type" COLSPAN="3" ALIGN="LEFT">payment_type</TD></TR>
+      <TR><TD PORT="preferred_payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">preferred_payment_type</TD></TR>
       <TR><TD PORT="insurance_type" COLSPAN="3" ALIGN="LEFT">insurance_type</TD></TR>
       <TR><TD PORT="notes" COLSPAN="3" ALIGN="LEFT">notes</TD></TR>
       <TR><TD PORT="health_information" COLSPAN="3" ALIGN="LEFT">health_information</TD></TR>
       <TR><TD PORT="prescription_information" COLSPAN="3" ALIGN="LEFT">prescription_information</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="3" ALIGN="LEFT">preferred_therapist_gender</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 7</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="customer.html"
     tooltip="customer"
@@ -83,14 +83,14 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="person" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person</TD></TR>
       <TR><TD PORT="employment_type" COLSPAN="3" ALIGN="LEFT">employment_type</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
       <TR><TD PORT="contract_state" COLSPAN="3" ALIGN="LEFT">contract_state</TD></TR>
       <TR><TD PORT="start_date" COLSPAN="3" ALIGN="LEFT">start_date</TD></TR>
       <TR><TD PORT="leaving_date" COLSPAN="3" ALIGN="LEFT">leaving_date</TD></TR>
       <TR><TD PORT="region" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
       <TR><TD PORT="working_area_zip_codes" COLSPAN="3" ALIGN="LEFT">working_area_zip_codes</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="therapist.html"
     tooltip="therapist"

@@ -10,11 +10,14 @@ matching
 therapist
 customer
 company
+therapist_state
 skill
 region
 prescription_benefit
 inquiry_source
 employee
+customer_state
 case_state
 prescription
+payment_type
 person

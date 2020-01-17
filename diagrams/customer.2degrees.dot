@@ -20,6 +20,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     arrowsize="0.8"
   ];
   "case":"customer":w -> "customer":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"payment_type":w -> "payment_type":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "case":"prescription":w -> "prescription":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "case":"state":w -> "case_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "company":"contact_person":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -29,7 +30,9 @@ digraph "twoDegreesRelationshipsDiagram" {
   "customer":"other_person_id":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"patient_company_id":w -> "company":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"patient_person_id":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"preferred_payment_type":w -> "payment_type":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"source":w -> "inquiry_source":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"state":w -> "customer_state":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer_therapist":"customer":w -> "customer":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer_therapist":"therapist":w -> "therapist":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"customer":w -> "customer":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -54,10 +57,10 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="currency" COLSPAN="3" ALIGN="LEFT">currency</TD></TR>
       <TR><TD PORT="payment_date" COLSPAN="3" ALIGN="LEFT">payment_date</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
-      <TR><TD PORT="payment_type" COLSPAN="3" ALIGN="LEFT">payment_type</TD></TR>
+      <TR><TD PORT="payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type</TD></TR>
       <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
       <TR><TD PORT="countdown" COLSPAN="3" ALIGN="LEFT">countdown</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="case.html"
     tooltip="case"
@@ -125,17 +128,28 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="carer_relationship" COLSPAN="2" ALIGN="LEFT">carer_relationship</TD><TD PORT="carer_relationship.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="other_relationship" COLSPAN="2" ALIGN="LEFT">other_relationship</TD><TD PORT="other_relationship.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="invoice_recipient" COLSPAN="2" ALIGN="LEFT">invoice_recipient</TD><TD PORT="invoice_recipient.type" ALIGN="LEFT">enum[8]</TD></TR>
-      <TR><TD PORT="payment_type" COLSPAN="2" ALIGN="LEFT">payment_type</TD><TD PORT="payment_type.type" ALIGN="LEFT">enum[9]</TD></TR>
+      <TR><TD PORT="preferred_payment_type" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">preferred_payment_type</TD><TD PORT="preferred_payment_type.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="insurance_type" COLSPAN="2" ALIGN="LEFT">insurance_type</TD><TD PORT="insurance_type.type" ALIGN="LEFT">enum[12]</TD></TR>
       <TR><TD PORT="notes" COLSPAN="2" ALIGN="LEFT">notes</TD><TD PORT="notes.type" ALIGN="LEFT">text[65535]</TD></TR>
       <TR><TD PORT="health_information" COLSPAN="2" ALIGN="LEFT">health_information</TD><TD PORT="health_information.type" ALIGN="LEFT">text[65535]</TD></TR>
       <TR><TD PORT="prescription_information" COLSPAN="2" ALIGN="LEFT">prescription_information</TD><TD PORT="prescription_information.type" ALIGN="LEFT">text[65535]</TD></TR>
-      <TR><TD PORT="state" COLSPAN="2" ALIGN="LEFT">state</TD><TD PORT="state.type" ALIGN="LEFT">enum[13]</TD></TR>
+      <TR><TD PORT="state" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD><TD PORT="state.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="2" ALIGN="LEFT">preferred_therapist_gender</TD><TD PORT="preferred_therapist_gender.type" ALIGN="LEFT">enum[2]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 7</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="customer.html"
     tooltip="customer"
+  ];
+  "customer_state" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer_state</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="customer_state.html"
+    tooltip="customer_state"
   ];
   "customer_therapist" [
     label=<
@@ -185,6 +199,17 @@ digraph "twoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="matching.html"
     tooltip="matching"
+  ];
+  "payment_type" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">payment_type</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="payment_type.html"
+    tooltip="payment_type"
   ];
   "person" [
     label=<
@@ -248,7 +273,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="therapist.html"
     tooltip="therapist"

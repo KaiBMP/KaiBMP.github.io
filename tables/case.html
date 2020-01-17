@@ -229,14 +229,23 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='detail'>payment_type</td>
- <td class='detail'>enum</td>
- <td class='detail' align='right'>9</td>
+ <td class='indexedColumn' title='Indexed'>payment_type</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
  <td class='detail'></td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="case.payment_type refs payment_type.id via case_ibfk_4"><a href='payment_type.html'>payment_type</a><span class='relatedKey'>.id</span>
+    </td>
+    <td class='constraint detail'>case_ibfk_4<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
@@ -271,7 +280,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='13 columns'>Table contained 0 rows at Do. Jan. 16 12:34 MEZ 2020<p/>
+<p title='13 columns'>Table contained 0 rows at Fr. Jan. 17 13:31 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -298,6 +307,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <td class='constraint' style='text-align:left;'>customer</td>
  </tr>
  <tr>
+  <td class='indexedColumn'>payment_type</td>
+  <td class='detail'>Performance</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>payment_type</td>
+ </tr>
+ <tr>
   <td class='indexedColumn'>prescription</td>
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
@@ -315,24 +330,27 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from case'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="285,199,521,575">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="5,249,241,1100">
-<area shape="rect" id="node3" href="prescription.html" title="prescription" alt="" coords="24,5,223,232">
-<area shape="rect" id="node4" href="case_state.html" title="case_state" alt="" coords="63,1117,183,1224">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="449,521,685,897">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="169,249,405,1100">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="5,980,125,1087">
+<area shape="rect" id="node4" href="prescription.html" title="prescription" alt="" coords="188,5,387,232">
+<area shape="rect" id="node5" href="case_state.html" title="case_state" alt="" coords="227,1153,347,1260">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/case.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="625,948,861,1324">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="625,947,861,1323">
 <area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="345,105,581,956">
-<area shape="rect" id="node3" href="prescription.html" title="prescription" alt="" coords="364,973,563,1200">
-<area shape="rect" id="node4" href="case_state.html" title="case_state" alt="" coords="403,1217,523,1324">
-<area shape="rect" id="node5" href="company.html" title="company" alt="" coords="169,156,301,239">
-<area shape="rect" id="node6" href="person.html" title="person" alt="" coords="5,191,125,273">
-<area shape="rect" id="node7" href="inquiry_source.html" title="inquiry_source" alt="" coords="174,489,297,572">
-<area shape="rect" id="node8" href="customer_therapist.html" title="customer_therapist" alt="" coords="667,5,819,88">
-<area shape="rect" id="node9" href="matching.html" title="matching" alt="" coords="677,105,809,188">
-<area shape="rect" id="node10" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="625,848,861,931">
-<area shape="rect" id="node11" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="647,205,840,288">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="175,1067,295,1173">
+<area shape="rect" id="node4" href="prescription.html" title="prescription" alt="" coords="364,973,563,1200">
+<area shape="rect" id="node5" href="case_state.html" title="case_state" alt="" coords="403,1253,523,1360">
+<area shape="rect" id="node6" href="company.html" title="company" alt="" coords="169,156,301,239">
+<area shape="rect" id="node7" href="person.html" title="person" alt="" coords="5,191,125,273">
+<area shape="rect" id="node8" href="inquiry_source.html" title="inquiry_source" alt="" coords="174,489,297,572">
+<area shape="rect" id="node9" href="customer_state.html" title="customer_state" alt="" coords="171,849,299,932">
+<area shape="rect" id="node10" href="customer_therapist.html" title="customer_therapist" alt="" coords="667,5,819,88">
+<area shape="rect" id="node11" href="matching.html" title="matching" alt="" coords="677,105,809,188">
+<area shape="rect" id="node12" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="625,847,861,929">
+<area shape="rect" id="node13" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="647,205,840,288">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/case.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

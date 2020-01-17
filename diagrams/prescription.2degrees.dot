@@ -20,8 +20,10 @@ digraph "twoDegreesRelationshipsDiagram" {
     arrowsize="0.8"
   ];
   "case":"customer":w -> "customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"payment_type":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "case":"prescription":w -> "prescription":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "case":"state":w -> "case_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"elipses":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "prescription_benefit_assignment":"benefit":w -> "prescription_benefit":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "prescription_benefit_assignment":"prescription":w -> "prescription":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "case" [
@@ -38,10 +40,10 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="currency" COLSPAN="3" ALIGN="LEFT">currency</TD></TR>
       <TR><TD PORT="payment_date" COLSPAN="3" ALIGN="LEFT">payment_date</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
-      <TR><TD PORT="payment_type" COLSPAN="3" ALIGN="LEFT">payment_type</TD></TR>
+      <TR><TD PORT="payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type</TD></TR>
       <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
       <TR><TD PORT="countdown" COLSPAN="3" ALIGN="LEFT">countdown</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="case.html"
     tooltip="case"
@@ -61,10 +63,20 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 7</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="customer.html"
     tooltip="customer"
+  ];
+  "payment_type" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">payment_type</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="payment_type.html"
+    tooltip="payment_type"
   ];
   "prescription" [
     label=<
