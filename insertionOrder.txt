@@ -1,10 +1,11 @@
 person
 payment_type
-prescription
+prescription_state
 case_state
 customer_state
 employee
 inquiry_source
+matching_state
 prescription_benefit
 region
 skill
@@ -12,6 +13,7 @@ therapist_state
 company
 customer
 therapist
+prescription
 matching
 person_language
 therapist_vacation

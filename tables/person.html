@@ -100,7 +100,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='even'>
+<tr class='odd'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -109,37 +109,37 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="company.contact_person refs person.id via company_ibfk_1"><a href='company.html'>company</a><span class='relatedKey'>.contact_person</span>
     </td>
     <td class='constraint detail'>company_ibfk_1<span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.carer_person_id refs person.id via customer_ibfk_4"><a href='customer.html'>customer</a><span class='relatedKey'>.carer_person_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_4<span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.other_person_id refs person.id via customer_ibfk_6"><a href='customer.html'>customer</a><span class='relatedKey'>.other_person_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_6<span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.patient_person_id refs person.id via customer_ibfk_2"><a href='customer.html'>customer</a><span class='relatedKey'>.patient_person_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_2<span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="person_language.person refs person.id via person_language_ibfk_1"><a href='person_language.html'>person_language</a><span class='relatedKey'>.person</span>
     </td>
     <td class='constraint detail'>person_language_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="therapist.person refs person.id via therapist_ibfk_1"><a href='therapist.html'>therapist</a><span class='relatedKey'>.person</span>
     </td>
     <td class='constraint detail'>therapist_ibfk_1<span title='Restrict delete:
@@ -150,7 +150,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>first_name</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -161,7 +161,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>last_name</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -172,7 +172,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>title</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -183,7 +183,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>birth_date</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>10</td>
@@ -194,7 +194,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>street</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>255</td>
@@ -205,7 +205,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>streetnumber</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -216,7 +216,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>additional_address_line</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>255</td>
@@ -227,7 +227,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>zip_code</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -238,7 +238,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>city</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -249,7 +249,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>country_iso</td>
  <td class='detail'>char</td>
  <td class='detail' align='right'>2</td>
@@ -260,7 +260,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'>Using ISO 3166 country codes</td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>phone_private</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -271,7 +271,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>phone_business</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -282,7 +282,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>phone_mobile</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -293,7 +293,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>fax</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -304,7 +304,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>email</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>255</td>
@@ -315,7 +315,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>website</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>255</td>
@@ -326,7 +326,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>gender</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>2</td>
@@ -338,7 +338,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='18 columns'>Table contained 0 rows at Fr. Jan. 17 13:31 MEZ 2020<p/>
+<p title='18 columns'>Table contained 0 rows at Mo. Jan. 20 18:19 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>

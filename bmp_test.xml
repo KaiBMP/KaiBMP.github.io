@@ -13,7 +13,7 @@
          <column autoUpdated="false" digits="0" id="4" name="bill_date" nullable="true" remarks="" size="10" type="DATE"/>
          <column autoUpdated="false" digits="0" id="5" name="bill_type" nullable="true" remarks="" size="17" type="ENUM"/>
          <column autoUpdated="false" digits="3" id="6" name="bill_amount" nullable="true" remarks="" size="10" type="DECIMAL"/>
-         <column autoUpdated="false" digits="0" id="7" name="currency" nullable="true" remarks="" size="3" type="CHAR"/>
+         <column autoUpdated="false" defaultValue="EUR" digits="0" id="7" name="currency" nullable="false" remarks="Using ISO 4217" size="3" type="CHAR"/>
          <column autoUpdated="false" digits="0" id="8" name="payment_date" nullable="true" remarks="" size="10" type="DATE"/>
          <column autoUpdated="false" digits="0" id="9" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
          <column autoUpdated="false" digits="0" id="10" name="payment_type" nullable="true" remarks="" size="10" type="INT UNSIGNED">
@@ -232,7 +232,9 @@
             <parent column="id" foreignKey="matching_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
          </column>
          <column autoUpdated="false" digits="0" id="3" name="customer_wish" nullable="false" remarks="" size="65535" type="TEXT"/>
-         <column autoUpdated="false" defaultValue="offen" digits="0" id="4" name="state" nullable="false" remarks="" size="13" type="ENUM"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="4" name="state" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="matching_ibfk_3" implied="false" onDeleteCascade="false" table="matching_state"/>
+         </column>
          <column autoUpdated="false" digits="0" id="5" name="request_date" nullable="false" remarks="" size="10" type="DATE"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
@@ -243,6 +245,19 @@
          </index>
          <index name="processor" unique="false">
             <column ascending="true" name="processor"/>
+         </index>
+         <index name="state" unique="false">
+            <column ascending="true" name="state"/>
+         </index>
+      </table>
+      <table name="matching_state" numRows="4" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="state" foreignKey="matching_ibfk_3" implied="false" onDeleteCascade="false" table="matching"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="The &quot;open&quot; state must have id 0" size="255" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
          </index>
       </table>
       <table name="payment_type" numRows="4" remarks="" type="TABLE">
@@ -307,12 +322,22 @@
          <column autoUpdated="false" digits="0" id="1" name="date" nullable="true" remarks="" size="10" type="DATE"/>
          <column autoUpdated="false" digits="0" id="2" name="doctor" nullable="true" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="3" name="diagnosis" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="4" name="state" nullable="false" remarks="" size="22" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="4" name="state" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="prescription_ibfk_1" implied="false" onDeleteCascade="false" table="prescription_state"/>
+         </column>
          <column autoUpdated="false" digits="0" id="5" name="prescription_counter" nullable="true" remarks="" size="12" type="FLOAT"/>
-         <column autoUpdated="false" digits="0" id="6" name="state_of_next_prescription" nullable="true" remarks="" size="9" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="6" name="state_of_next_prescription" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="prescription_ibfk_2" implied="false" onDeleteCascade="false" table="prescription_state"/>
+         </column>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
+         </index>
+         <index name="state" unique="false">
+            <column ascending="true" name="state"/>
+         </index>
+         <index name="state_of_next_prescription" unique="false">
+            <column ascending="true" name="state_of_next_prescription"/>
          </index>
       </table>
       <table name="prescription_benefit" numRows="0" remarks="" type="TABLE">
@@ -324,7 +349,7 @@
          <column autoUpdated="false" digits="3" id="3" name="price_incl_taxes" nullable="false" remarks="" size="10" type="DECIMAL"/>
          <column autoUpdated="false" digits="3" id="4" name="tax_rate" nullable="false" remarks="" size="3" type="DECIMAL"/>
          <column autoUpdated="false" digits="0" id="5" name="category" nullable="false" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" defaultValue="EUR" digits="0" id="6" name="currency" nullable="false" remarks="" size="3" type="CHAR"/>
+         <column autoUpdated="false" defaultValue="EUR" digits="0" id="6" name="currency" nullable="false" remarks="Using ISO 4217" size="3" type="CHAR"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
@@ -346,6 +371,17 @@
          </index>
          <index name="prescription" unique="false">
             <column ascending="true" name="prescription"/>
+         </index>
+      </table>
+      <table name="prescription_state" numRows="7" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="state" foreignKey="prescription_ibfk_1" implied="false" onDeleteCascade="false" table="prescription"/>
+            <child column="state_of_next_prescription" foreignKey="prescription_ibfk_2" implied="false" onDeleteCascade="false" table="prescription"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
          </index>
       </table>
       <table name="region" numRows="0" remarks="" type="TABLE">

@@ -7,6 +7,7 @@ customer_therapist
 therapist_vacation
 person_language
 matching
+prescription
 therapist
 customer
 company
@@ -14,10 +15,11 @@ therapist_state
 skill
 region
 prescription_benefit
+matching_state
 inquiry_source
 employee
 customer_state
 case_state
-prescription
+prescription_state
 payment_type
 person

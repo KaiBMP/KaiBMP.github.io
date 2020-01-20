@@ -160,14 +160,23 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>state</td>
- <td class='detail'>enum</td>
- <td class='detail' align='right'>22</td>
+ <td class='indexedColumn' title='Indexed'>state</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='center'></td>
  <td class='detail'></td>
  <td class='detail'></td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="prescription.state refs prescription_state.id via prescription_ibfk_1"><a href='prescription_state.html'>prescription_state</a><span class='relatedKey'>.id</span>
+    </td>
+    <td class='constraint detail'>prescription_ibfk_1<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
@@ -182,18 +191,27 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>state_of_next_prescription</td>
- <td class='detail'>enum</td>
- <td class='detail' align='right'>9</td>
+ <td class='indexedColumn' title='Indexed'>state_of_next_prescription</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
  <td class='detail'></td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="prescription.state_of_next_prescription refs prescription_state.id via prescription_ibfk_2"><a href='prescription_state.html'>prescription_state</a><span class='relatedKey'>.id</span>
+    </td>
+    <td class='constraint detail'>prescription_ibfk_2<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='7 columns'>Table contained 0 rows at Fr. Jan. 17 13:31 MEZ 2020<p/>
+<p title='7 columns'>Table contained 0 rows at Mo. Jan. 20 18:19 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -213,25 +231,39 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
  </tr>
+ <tr>
+  <td class='indexedColumn'>state</td>
+  <td class='detail'>Performance</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>state</td>
+ </tr>
+ <tr>
+  <td class='indexedColumn'>state_of_next_prescription</td>
+  <td class='detail'>Performance</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>state_of_next_prescription</td>
+ </tr>
 </table>
 </div>
 <table width='100%' border='0'><tr><td class='container'>
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from prescription'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="420,5,541,376">
-<area shape="rect" id="node2" href="prescription.html" title="prescription" alt="" coords="5,233,319,465">
-<area shape="rect" id="node3" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="363,393,599,524">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="607,5,728,376">
+<area shape="rect" id="node2" href="prescription.html" title="prescription" alt="" coords="192,233,505,465">
+<area shape="rect" id="node3" href="prescription_state.html" title="prescription_state" alt="" coords="5,356,148,463">
+<area shape="rect" id="node4" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="549,393,785,524">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/prescription.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="584,92,705,463">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="260,255,392,337">
-<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="5,289,125,372">
-<area shape="rect" id="node4" href="prescription.html" title="prescription" alt="" coords="169,5,483,237">
-<area shape="rect" id="node5" href="case_state.html" title="case_state" alt="" coords="266,391,386,473">
-<area shape="rect" id="node6" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="527,485,763,616">
-<area shape="rect" id="node7" href="prescription_benefit.html" title="prescription_benefit" alt="" coords="249,491,403,573">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="607,5,728,376">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="283,16,415,99">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="17,51,137,133">
+<area shape="rect" id="node4" href="prescription.html" title="prescription" alt="" coords="192,152,505,384">
+<area shape="rect" id="node5" href="case_state.html" title="case_state" alt="" coords="289,401,409,484">
+<area shape="rect" id="node6" href="prescription_state.html" title="prescription_state" alt="" coords="5,275,148,381">
+<area shape="rect" id="node7" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="549,465,785,596">
+<area shape="rect" id="node8" href="prescription_benefit.html" title="prescription_benefit" alt="" coords="271,501,426,584">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/prescription.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

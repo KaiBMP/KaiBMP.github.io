@@ -100,7 +100,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -109,31 +109,31 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer_therapist.therapist refs therapist.id via customer_therapist_ibfk_2"><a href='customer_therapist.html'>customer_therapist</a><span class='relatedKey'>.therapist</span>
     </td>
     <td class='constraint detail'>customer_therapist_ibfk_2<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="request.therapist refs therapist.id via request_ibfk_1"><a href='request.html'>request</a><span class='relatedKey'>.therapist</span>
     </td>
     <td class='constraint detail'>request_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="skill_therapist.therapist refs therapist.id via skill_therapist_ibfk_1"><a href='skill_therapist.html'>skill_therapist</a><span class='relatedKey'>.therapist</span>
     </td>
     <td class='constraint detail'>skill_therapist_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="therapist_vacation.therapist refs therapist.id via therapist_vacation_ibfk_1"><a href='therapist_vacation.html'>therapist_vacation</a><span class='relatedKey'>.therapist</span>
     </td>
     <td class='constraint detail'>therapist_vacation_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="treatment_documentation.therapist refs therapist.id via treatment_documentation_ibfk_2"><a href='treatment_documentation.html'>treatment_documentation</a><span class='relatedKey'>.therapist</span>
     </td>
     <td class='constraint detail'>treatment_documentation_ibfk_2<span title='Restrict delete:
@@ -144,7 +144,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>person</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -154,7 +154,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="therapist.person refs person.id via therapist_ibfk_1"><a href='person.html'>person</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>therapist_ibfk_1<span title='Restrict delete:
@@ -164,7 +164,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>employment_type</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>7</td>
@@ -175,7 +175,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>state</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -185,7 +185,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="therapist.state refs therapist_state.id via therapist_ibfk_3"><a href='therapist_state.html'>therapist_state</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>therapist_ibfk_3<span title='Restrict delete:
@@ -195,7 +195,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>contract_state</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>10</td>
@@ -206,7 +206,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>start_date</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>10</td>
@@ -217,7 +217,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>leaving_date</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>10</td>
@@ -228,7 +228,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>region</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -238,7 +238,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="therapist.region refs region.id via therapist_ibfk_2"><a href='region.html'>region</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>therapist_ibfk_2<span title='Restrict delete:
@@ -248,7 +248,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>information</td>
  <td class='detail'>text</td>
  <td class='detail' align='right'>65535</td>
@@ -259,7 +259,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>working_area_zip_codes</td>
  <td class='detail'>text</td>
  <td class='detail' align='right'>65535</td>
@@ -271,7 +271,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='10 columns'>Table contained 0 rows at Fr. Jan. 17 13:31 MEZ 2020<p/>
+<p title='10 columns'>Table contained 0 rows at Mo. Jan. 20 18:19 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
