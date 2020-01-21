@@ -211,6 +211,16 @@
             <column ascending="true" name="display_name"/>
          </index>
       </table>
+      <table name="form_of_address" numRows="8" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="form_of_address" foreignKey="person_ibfk_1" implied="false" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
       <table name="inquiry_source" numRows="5" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="source" foreignKey="customer_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
@@ -283,23 +293,29 @@
          <column autoUpdated="false" digits="0" id="1" name="first_name" nullable="false" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="2" name="last_name" nullable="false" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="3" name="title" nullable="true" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="4" name="birth_date" nullable="true" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="5" name="street" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="6" name="streetnumber" nullable="true" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="7" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="8" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="9" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="10" name="country_iso" nullable="false" remarks="Using ISO 3166 country codes" size="2" type="CHAR"/>
-         <column autoUpdated="false" digits="0" id="11" name="phone_private" nullable="true" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="12" name="phone_business" nullable="true" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="13" name="phone_mobile" nullable="true" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="14" name="fax" nullable="true" remarks="" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="15" name="email" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="16" name="website" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="17" name="gender" nullable="true" remarks="" size="2" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="4" name="form_of_address" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="person_ibfk_1" implied="false" onDeleteCascade="false" table="form_of_address"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="birth_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="6" name="street" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="7" name="streetnumber" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="8" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="9" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="10" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="11" name="country_iso" nullable="false" remarks="Using ISO 3166 country codes" size="2" type="CHAR"/>
+         <column autoUpdated="false" digits="0" id="12" name="phone_private" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="13" name="phone_business" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="14" name="phone_mobile" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="15" name="fax" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="16" name="email" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="17" name="website" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="18" name="gender" nullable="true" remarks="" size="2" type="ENUM"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
+         </index>
+         <index name="form_of_address" unique="false">
+            <column ascending="true" name="form_of_address"/>
          </index>
       </table>
       <table name="person_language" numRows="0" remarks="" type="TABLE">

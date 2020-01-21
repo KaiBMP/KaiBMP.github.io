@@ -11,15 +11,16 @@ prescription
 therapist
 customer
 company
+person
 therapist_state
 skill
 region
 prescription_benefit
 matching_state
 inquiry_source
+form_of_address
 employee
 customer_state
 case_state
 prescription_state
 payment_type
-person

@@ -1,15 +1,16 @@
-person
 payment_type
 prescription_state
 case_state
 customer_state
 employee
+form_of_address
 inquiry_source
 matching_state
 prescription_benefit
 region
 skill
 therapist_state
+person
 company
 customer
 therapist
