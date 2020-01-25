@@ -290,7 +290,7 @@
             <child column="person" foreignKey="person_language_ibfk_1" implied="false" onDeleteCascade="false" table="person_language"/>
             <child column="person" foreignKey="therapist_ibfk_1" implied="false" onDeleteCascade="false" table="therapist"/>
          </column>
-         <column autoUpdated="false" digits="0" id="1" name="first_name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="1" name="first_name" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="2" name="last_name" nullable="false" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="3" name="title" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="4" name="form_of_address" nullable="true" remarks="" size="10" type="INT UNSIGNED">
@@ -303,7 +303,7 @@
          <column autoUpdated="false" digits="0" id="9" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="10" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="11" name="country_iso" nullable="false" remarks="Using ISO 3166 country codes" size="2" type="CHAR"/>
-         <column autoUpdated="false" digits="0" id="12" name="phone_private" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="12" name="phone_private" nullable="true" remarks="Using E.164 standard" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="13" name="phone_business" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="14" name="phone_mobile" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="15" name="fax" nullable="true" remarks="" size="45" type="VARCHAR"/>
