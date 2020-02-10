@@ -1,4 +1,4 @@
-// dot 2.40.1 on Linux 5.3.0-26-generic
+// dot 2.40.1 on Linux 5.3.0-28-generic
 // SchemaSpy rev 590
 digraph "twoDegreesRelationshipsDiagram" {
   graph [
@@ -26,9 +26,9 @@ digraph "twoDegreesRelationshipsDiagram" {
   "customer":"elipses":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"elipses":w -> "company":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"elipses":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee":"elipses":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "person":"form_of_address":w -> "form_of_address":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "person_language":"person":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist":"elipses":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "company" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -48,6 +48,16 @@ digraph "twoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="customer.html"
     tooltip="customer"
+  ];
+  "employee" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employee</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="employee.html"
+    tooltip="employee"
   ];
   "form_of_address" [
     label=<
@@ -97,15 +107,5 @@ digraph "twoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="person_language.html"
     tooltip="person_language"
-  ];
-  "therapist" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
-    </TABLE>>
-    URL="therapist.html"
-    tooltip="therapist"
   ];
 }

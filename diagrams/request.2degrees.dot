@@ -1,4 +1,4 @@
-// dot 2.40.1 on Linux 5.3.0-26-generic
+// dot 2.40.1 on Linux 5.3.0-28-generic
 // SchemaSpy rev 590
 digraph "twoDegreesRelationshipsDiagram" {
   graph [
@@ -19,20 +19,17 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "customer":"elipses":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"elipses":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"elipses":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer_therapist":"elipses":w -> "customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer_therapist":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"customer":w -> "customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "matching":"processor":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "matching":"processor":w -> "office_employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"state":w -> "matching_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office_employee":"elipses":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "request":"matching":w -> "matching":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "request":"therapist":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "skill_therapist":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist":"person":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist":"employee":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist":"region":w -> "region":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist":"state":w -> "therapist_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist_vacation":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"elipses":w -> "customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -61,7 +58,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employee</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="employee.html"
     tooltip="employee"
@@ -91,15 +88,15 @@ digraph "twoDegreesRelationshipsDiagram" {
     URL="matching_state.html"
     tooltip="matching_state"
   ];
-  "person" [
+  "office_employee" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">person</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">office_employee</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
-    URL="person.html"
-    tooltip="person"
+    URL="office_employee.html"
+    tooltip="office_employee"
   ];
   "region" [
     label=<
@@ -144,29 +141,14 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist</TD></TR>
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="person" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person</TD></TR>
-      <TR><TD PORT="employment_type" COLSPAN="3" ALIGN="LEFT">employment_type</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
-      <TR><TD PORT="contract_state" COLSPAN="3" ALIGN="LEFT">contract_state</TD></TR>
-      <TR><TD PORT="start_date" COLSPAN="3" ALIGN="LEFT">start_date</TD></TR>
-      <TR><TD PORT="leaving_date" COLSPAN="3" ALIGN="LEFT">leaving_date</TD></TR>
+      <TR><TD PORT="employee" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee</TD></TR>
       <TR><TD PORT="region" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
       <TR><TD PORT="working_area_zip_codes" COLSPAN="3" ALIGN="LEFT">working_area_zip_codes</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="therapist.html"
     tooltip="therapist"
-  ];
-  "therapist_state" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist_state</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
-    </TABLE>>
-    URL="therapist_state.html"
-    tooltip="therapist_state"
   ];
   "therapist_vacation" [
     label=<

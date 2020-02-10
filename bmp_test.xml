@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<database name="bmp_test" type="MySQL - 5.7.28-0ubuntu0.18.04.4">
+<database name="bmp_test" type="MySQL - 5.7.29-0ubuntu0.18.04.1">
    <tables>
       <table name="case" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="45" type="VARCHAR"/>
@@ -197,18 +197,77 @@
             <column ascending="true" name="therapist"/>
          </index>
       </table>
-      <table name="employee" numRows="0" remarks="" type="TABLE">
+      <table name="departement" numRows="0" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <child column="processor" foreignKey="matching_ibfk_2" implied="false" onDeleteCascade="false" table="matching"/>
+            <child column="departement" foreignKey="employee_ibfk_4" implied="false" onDeleteCascade="false" table="employee"/>
          </column>
-         <column autoUpdated="false" digits="0" id="1" name="display_name" nullable="false" remarks="" size="5" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="2" name="name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="VARCHAR"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
          </index>
-         <index name="display_name" unique="true">
-            <column ascending="true" name="display_name"/>
+      </table>
+      <table name="employee" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="employee" foreignKey="office_employee_ibfk_1" implied="false" onDeleteCascade="false" table="office_employee"/>
+            <child column="employee" foreignKey="therapist_ibfk_1" implied="false" onDeleteCascade="false" table="therapist"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="person" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="employee_ibfk_1" implied="false" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="work_email" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="work_phone" nullable="true" remarks="Using E.164 standard" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="state" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="employee_ibfk_2" implied="false" onDeleteCascade="false" table="employee_state"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="employment_type" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="employee_ibfk_3" implied="false" onDeleteCascade="false" table="employment_type"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="start_date" nullable="false" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="7" name="leaving_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="8" name="probation_start_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="9" name="probation_end_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" defaultValue="b'0'" digits="0" id="10" name="contract_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" digits="0" id="11" name="job_title" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="12" name="departement" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="employee_ibfk_4" implied="false" onDeleteCascade="false" table="departement"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="13" name="team" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="departement" unique="false">
+            <column ascending="true" name="departement"/>
+         </index>
+         <index name="employment_type" unique="false">
+            <column ascending="true" name="employment_type"/>
+         </index>
+         <index name="person" unique="false">
+            <column ascending="true" name="person"/>
+         </index>
+         <index name="state" unique="false">
+            <column ascending="true" name="state"/>
+         </index>
+      </table>
+      <table name="employee_state" numRows="5" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="state" foreignKey="employee_ibfk_2" implied="false" onDeleteCascade="false" table="employee"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="employment_type" numRows="4" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="employment_type" foreignKey="employee_ibfk_3" implied="false" onDeleteCascade="false" table="employee"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
          </index>
       </table>
       <table name="form_of_address" numRows="8" remarks="" type="TABLE">
@@ -236,7 +295,7 @@
             <child column="matching" foreignKey="request_ibfk_2" implied="false" onDeleteCascade="false" table="request"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="processor" nullable="true" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="matching_ibfk_2" implied="false" onDeleteCascade="false" table="employee"/>
+            <parent column="id" foreignKey="matching_ibfk_2" implied="false" onDeleteCascade="false" table="office_employee"/>
          </column>
          <column autoUpdated="false" digits="0" id="2" name="customer" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <parent column="id" foreignKey="matching_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
@@ -270,6 +329,26 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
+      <table name="office_employee" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="processor" foreignKey="matching_ibfk_2" implied="false" onDeleteCascade="false" table="matching"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="office_location" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="employee" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="office_employee_ibfk_1" implied="false" onDeleteCascade="false" table="employee"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="display_name" nullable="false" remarks="" size="5" type="VARCHAR"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="display_name" unique="true">
+            <column ascending="true" name="display_name"/>
+         </index>
+         <index name="employee" unique="false">
+            <column ascending="true" name="employee"/>
+         </index>
+      </table>
       <table name="payment_type" numRows="4" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="payment_type" foreignKey="case_ibfk_4" implied="false" onDeleteCascade="false" table="case"/>
@@ -287,8 +366,8 @@
             <child column="carer_person_id" foreignKey="customer_ibfk_4" implied="false" onDeleteCascade="false" table="customer"/>
             <child column="other_person_id" foreignKey="customer_ibfk_6" implied="false" onDeleteCascade="false" table="customer"/>
             <child column="patient_person_id" foreignKey="customer_ibfk_2" implied="false" onDeleteCascade="false" table="customer"/>
+            <child column="person" foreignKey="employee_ibfk_1" implied="false" onDeleteCascade="false" table="employee"/>
             <child column="person" foreignKey="person_language_ibfk_1" implied="false" onDeleteCascade="false" table="person_language"/>
-            <child column="person" foreignKey="therapist_ibfk_1" implied="false" onDeleteCascade="false" table="therapist"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="first_name" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="2" name="last_name" nullable="false" remarks="" size="45" type="VARCHAR"/>
@@ -470,43 +549,23 @@
             <child column="therapist" foreignKey="therapist_vacation_ibfk_1" implied="false" onDeleteCascade="false" table="therapist_vacation"/>
             <child column="therapist" foreignKey="treatment_documentation_ibfk_2" implied="false" onDeleteCascade="false" table="treatment_documentation"/>
          </column>
-         <column autoUpdated="false" digits="0" id="1" name="person" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="therapist_ibfk_1" implied="false" onDeleteCascade="false" table="person"/>
+         <column autoUpdated="false" digits="0" id="1" name="employee" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="id" foreignKey="therapist_ibfk_1" implied="false" onDeleteCascade="false" table="employee"/>
          </column>
-         <column autoUpdated="false" digits="0" id="2" name="employment_type" nullable="false" remarks="" size="7" type="ENUM"/>
-         <column autoUpdated="false" digits="0" id="3" name="state" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <parent column="id" foreignKey="therapist_ibfk_3" implied="false" onDeleteCascade="false" table="therapist_state"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="4" name="contract_state" nullable="true" remarks="" size="10" type="ENUM"/>
-         <column autoUpdated="false" digits="0" id="5" name="start_date" nullable="false" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="6" name="leaving_date" nullable="true" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="7" name="region" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+         <column autoUpdated="false" digits="0" id="2" name="region" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <parent column="id" foreignKey="therapist_ibfk_2" implied="false" onDeleteCascade="false" table="region"/>
          </column>
-         <column autoUpdated="false" digits="0" id="8" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
-         <column autoUpdated="false" digits="0" id="9" name="working_area_zip_codes" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="3" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="4" name="working_area_zip_codes" nullable="true" remarks="" size="65535" type="TEXT"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="id"/>
          </index>
-         <index name="person" unique="false">
-            <column ascending="true" name="person"/>
+         <index name="employee" unique="false">
+            <column ascending="true" name="employee"/>
          </index>
          <index name="region" unique="false">
             <column ascending="true" name="region"/>
-         </index>
-         <index name="state" unique="false">
-            <column ascending="true" name="state"/>
-         </index>
-      </table>
-      <table name="therapist_state" numRows="5" remarks="" type="TABLE">
-         <column autoUpdated="true" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <child column="state" foreignKey="therapist_ibfk_3" implied="false" onDeleteCascade="false" table="therapist"/>
-         </column>
-         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="PRIMARY" unique="true">
-            <column ascending="true" name="id"/>
          </index>
       </table>
       <table name="therapist_vacation" numRows="0" remarks="" type="TABLE">
