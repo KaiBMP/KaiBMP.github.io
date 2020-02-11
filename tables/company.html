@@ -100,7 +100,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -109,19 +109,19 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer.carer_company_id refs company.id via customer_ibfk_5"><a href='customer.html'>customer</a><span class='relatedKey'>.carer_company_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_5<span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer.other_company_id refs company.id via customer_ibfk_7"><a href='customer.html'>customer</a><span class='relatedKey'>.other_company_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_7<span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>&nbsp;N</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer.patient_company_id refs company.id via customer_ibfk_3"><a href='customer.html'>customer</a><span class='relatedKey'>.patient_company_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_3<span title='Null on delete:
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>contact_person</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -142,7 +142,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="company.contact_person refs person.id via company_ibfk_1"><a href='person.html'>person</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>company_ibfk_1<span title='Null on delete:
@@ -152,7 +152,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>name</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -163,70 +163,24 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
- <td class='detail'>street</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>255</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
 <tr class='odd'>
- <td class='detail'>street_number</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>45</td>
+ <td class='indexedColumn' title='Indexed'>address</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
  <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>additional_address_line</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>255</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>zip_code</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>45</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>city</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>45</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>country_iso</td>
- <td class='detail'>char</td>
- <td class='detail' align='right'>2</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="company.address refs address.id via company_ibfk_2"><a href='address.html'>address</a><span class='relatedKey'>.id</span>
+    </td>
+    <td class='constraint detail'>company_ibfk_2<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
@@ -285,7 +239,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='14 columns'>Table contained 0 rows at Mo. Feb. 10 17:36 MEZ 2020<p/>
+<p title='9 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -306,6 +260,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
  </tr>
  <tr>
+  <td class='indexedColumn'>address</td>
+  <td class='detail'>Performance</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>address</td>
+ </tr>
+ <tr>
   <td class='indexedColumn'>contact_person</td>
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
@@ -317,25 +277,28 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from company'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="229,65,524,465">
-<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="5,272,185,786">
-<area shape="rect" id="node3" href="customer.html" title="customer" alt="" coords="568,20,804,870">
+<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="412,44,655,324">
+<area shape="rect" id="node2" href="address.html" title="address" alt="" coords="5,403,185,629">
+<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="229,23,368,417">
+<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="699,23,904,729">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/company.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="1067,773,1187,856">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="751,255,987,1105">
-<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="499,1091,619,1173">
-<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="412,276,707,676">
-<area shape="rect" id="node5" href="person.html" title="person" alt="" coords="188,240,368,755">
-<area shape="rect" id="node6" href="inquiry_source.html" title="inquiry_source" alt="" coords="498,765,621,848">
-<area shape="rect" id="node7" href="customer_state.html" title="customer_state" alt="" coords="495,991,623,1073">
-<area shape="rect" id="node11" href="form_of_address.html" title="form_of_address" alt="" coords="5,336,144,419">
-<area shape="rect" id="node8" href="customer_therapist.html" title="customer_therapist" alt="" coords="1051,355,1203,437">
-<area shape="rect" id="node9" href="employee.html" title="employee" alt="" coords="493,76,625,159">
-<area shape="rect" id="node10" href="matching.html" title="matching" alt="" coords="1061,155,1193,237">
-<area shape="rect" id="node12" href="person_language.html" title="person_language" alt="" coords="489,176,630,259">
-<area shape="rect" id="node13" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="1031,255,1224,337">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="985,784,1105,867">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="699,337,904,1044">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="473,1029,593,1112">
+<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="412,265,655,545">
+<area shape="rect" id="node5" href="address.html" title="address" alt="" coords="5,585,185,812">
+<area shape="rect" id="node6" href="person.html" title="person" alt="" coords="229,187,368,581">
+<area shape="rect" id="node7" href="inquiry_source.html" title="inquiry_source" alt="" coords="472,671,595,753">
+<area shape="rect" id="node8" href="customer_state.html" title="customer_state" alt="" coords="469,929,597,1012">
+<area shape="rect" id="node13" href="form_of_address.html" title="form_of_address" alt="" coords="26,283,165,365">
+<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="969,237,1121,320">
+<area shape="rect" id="node10" href="employee.html" title="employee" alt="" coords="467,65,599,148">
+<area shape="rect" id="node11" href="matching.html" title="matching" alt="" coords="979,337,1111,420">
+<area shape="rect" id="node12" href="office.html" title="office" alt="" coords="233,671,365,753">
+<area shape="rect" id="node14" href="person_language.html" title="person_language" alt="" coords="463,165,604,248">
+<area shape="rect" id="node15" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="948,437,1141,520">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/company.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

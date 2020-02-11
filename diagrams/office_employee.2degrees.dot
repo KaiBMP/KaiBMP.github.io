@@ -20,6 +20,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     arrowsize="0.8"
   ];
   "customer":"elipses":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"elipses":w -> "address":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"elipses":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"elipses":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"departement":w -> "departement":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -29,16 +30,29 @@ digraph "twoDegreesRelationshipsDiagram" {
   "matching":"customer":w -> "customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"processor":w -> "office_employee":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"state":w -> "matching_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office":"address":w -> "address":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "office_employee":"employee":w -> "employee":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office_employee":"office":w -> "office":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "person":"elipses":w -> "address":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "request":"elipses":w -> "matching":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "request":"elipses":w -> "therapist":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist":"elipses":w -> "employee":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "address" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">address</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+    </TABLE>>
+    URL="address.html"
+    tooltip="address"
+  ];
   "customer" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="customer.html"
     tooltip="customer"
@@ -63,6 +77,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="work_phone" COLSPAN="3" ALIGN="LEFT">work_phone</TD></TR>
       <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
       <TR><TD PORT="employment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employment_type</TD></TR>
+      <TR><TD PORT="hours_per_week" COLSPAN="3" ALIGN="LEFT">hours_per_week</TD></TR>
       <TR><TD PORT="start_date" COLSPAN="3" ALIGN="LEFT">start_date</TD></TR>
       <TR><TD PORT="leaving_date" COLSPAN="3" ALIGN="LEFT">leaving_date</TD></TR>
       <TR><TD PORT="probation_start_date" COLSPAN="3" ALIGN="LEFT">probation_start_date</TD></TR>
@@ -71,6 +86,9 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="job_title" COLSPAN="3" ALIGN="LEFT">job_title</TD></TR>
       <TR><TD PORT="departement" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">departement</TD></TR>
       <TR><TD PORT="team" COLSPAN="3" ALIGN="LEFT">team</TD></TR>
+      <TR><TD PORT="salary" COLSPAN="3" ALIGN="LEFT">salary</TD></TR>
+      <TR><TD PORT="salary_currency" COLSPAN="3" ALIGN="LEFT">salary_currency</TD></TR>
+      <TR><TD PORT="salary_rate" COLSPAN="3" ALIGN="LEFT">salary_rate</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="employee.html"
@@ -121,15 +139,27 @@ digraph "twoDegreesRelationshipsDiagram" {
     URL="matching_state.html"
     tooltip="matching_state"
   ];
+  "office" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">office</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD PORT="address" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">address</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="office.html"
+    tooltip="office"
+  ];
   "office_employee" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">office_employee</TD></TR>
       <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="office_location" COLSPAN="2" ALIGN="LEFT">office_location</TD><TD PORT="office_location.type" ALIGN="LEFT">varchar[45]</TD></TR>
+      <TR><TD PORT="office" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">office</TD><TD PORT="office.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="employee" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">employee</TD><TD PORT="employee.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="display_name" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">display_name</TD><TD PORT="display_name.type" ALIGN="LEFT">varchar[5]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="office_employee.html"
     tooltip="office_employee"
@@ -139,7 +169,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">person</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="person.html"
     tooltip="person"

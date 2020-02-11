@@ -13,6 +13,7 @@ office_employee
 customer
 employee
 company
+office
 person
 skill
 region
@@ -27,3 +28,4 @@ customer_state
 case_state
 prescription_state
 payment_type
+address

@@ -23,9 +23,11 @@ digraph "twoDegreesRelationshipsDiagram" {
   "case":"payment_type":w -> "payment_type":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "case":"prescription":w -> "prescription":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "case":"state":w -> "case_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "company":"address":w -> "address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "company":"contact_person":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"carer_company_id":w -> "company":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"carer_person_id":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"location_of_therapy":w -> "address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"other_company_id":w -> "company":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"other_person_id":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"patient_company_id":w -> "company":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -39,7 +41,10 @@ digraph "twoDegreesRelationshipsDiagram" {
   "matching":"customer":w -> "customer":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"processor":w -> "office_employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"state":w -> "matching_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office":"elipses":w -> "address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "office_employee":"elipses":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office_employee":"elipses":w -> "office":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "person":"address":w -> "address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "person":"form_of_address":w -> "form_of_address":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "person_language":"elipses":w -> "person":"id":e [arrowhead=none dir=back arrowtail=crowodot];
   "request":"elipses":w -> "matching":"id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -47,6 +52,22 @@ digraph "twoDegreesRelationshipsDiagram" {
   "therapist":"elipses":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"customer":w -> "customer":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"therapist":w -> "therapist":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "address" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">address</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="street" COLSPAN="3" ALIGN="LEFT">street</TD></TR>
+      <TR><TD PORT="streetnumber" COLSPAN="3" ALIGN="LEFT">streetnumber</TD></TR>
+      <TR><TD PORT="additional_address_line" COLSPAN="3" ALIGN="LEFT">additional_address_line</TD></TR>
+      <TR><TD PORT="zip_code" COLSPAN="3" ALIGN="LEFT">zip_code</TD></TR>
+      <TR><TD PORT="city" COLSPAN="3" ALIGN="LEFT">city</TD></TR>
+      <TR><TD PORT="country_iso" COLSPAN="3" ALIGN="LEFT">country_iso</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+    </TABLE>>
+    URL="address.html"
+    tooltip="address"
+  ];
   "case" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -86,18 +107,13 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
       <TR><TD PORT="contact_person" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">contact_person</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
-      <TR><TD PORT="street" COLSPAN="3" ALIGN="LEFT">street</TD></TR>
-      <TR><TD PORT="street_number" COLSPAN="3" ALIGN="LEFT">street_number</TD></TR>
-      <TR><TD PORT="additional_address_line" COLSPAN="3" ALIGN="LEFT">additional_address_line</TD></TR>
-      <TR><TD PORT="zip_code" COLSPAN="3" ALIGN="LEFT">zip_code</TD></TR>
-      <TR><TD PORT="city" COLSPAN="3" ALIGN="LEFT">city</TD></TR>
-      <TR><TD PORT="country_iso" COLSPAN="3" ALIGN="LEFT">country_iso</TD></TR>
+      <TR><TD PORT="address" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">address</TD></TR>
       <TR><TD PORT="phone" COLSPAN="3" ALIGN="LEFT">phone</TD></TR>
       <TR><TD PORT="fax" COLSPAN="3" ALIGN="LEFT">fax</TD></TR>
       <TR><TD PORT="email" COLSPAN="3" ALIGN="LEFT">email</TD></TR>
       <TR><TD PORT="website" COLSPAN="3" ALIGN="LEFT">website</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="company.html"
     tooltip="company"
@@ -113,13 +129,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="carer_person_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">carer_person_id</TD><TD PORT="carer_person_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="patient_person_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">patient_person_id</TD><TD PORT="patient_person_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="patient_company_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">patient_company_id</TD><TD PORT="patient_company_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="separate_location_of_therapy" COLSPAN="2" ALIGN="LEFT">separate_location_of_therapy</TD><TD PORT="separate_location_of_therapy.type" ALIGN="LEFT">bit[1]</TD></TR>
-      <TR><TD PORT="therapy_street" COLSPAN="2" ALIGN="LEFT">therapy_street</TD><TD PORT="therapy_street.type" ALIGN="LEFT">varchar[255]</TD></TR>
-      <TR><TD PORT="therapy_street_number" COLSPAN="2" ALIGN="LEFT">therapy_street_number</TD><TD PORT="therapy_street_number.type" ALIGN="LEFT">varchar[45]</TD></TR>
-      <TR><TD PORT="therapy_additional_address_line" COLSPAN="2" ALIGN="LEFT">therapy_additional_address_line</TD><TD PORT="therapy_additional_address_line.type" ALIGN="LEFT">varchar[255]</TD></TR>
-      <TR><TD PORT="therapy_zip_code" COLSPAN="2" ALIGN="LEFT">therapy_zip_code</TD><TD PORT="therapy_zip_code.type" ALIGN="LEFT">varchar[45]</TD></TR>
-      <TR><TD PORT="therapy_city" COLSPAN="2" ALIGN="LEFT">therapy_city</TD><TD PORT="therapy_city.type" ALIGN="LEFT">varchar[45]</TD></TR>
-      <TR><TD PORT="therapy_country_iso" COLSPAN="2" ALIGN="LEFT">therapy_country_iso</TD><TD PORT="therapy_country_iso.type" ALIGN="LEFT">char[2]</TD></TR>
+      <TR><TD PORT="location_of_therapy" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">location_of_therapy</TD><TD PORT="location_of_therapy.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="entrance_date" COLSPAN="2" ALIGN="LEFT">entrance_date</TD><TD PORT="entrance_date.type" ALIGN="LEFT">date[10]</TD></TR>
       <TR><TD PORT="request_date" COLSPAN="2" ALIGN="LEFT">request_date</TD><TD PORT="request_date.type" ALIGN="LEFT">date[10]</TD></TR>
       <TR><TD PORT="source" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">source</TD><TD PORT="source.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
@@ -139,7 +149,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="prescription_information" COLSPAN="2" ALIGN="LEFT">prescription_information</TD><TD PORT="prescription_information.type" ALIGN="LEFT">text[65535]</TD></TR>
       <TR><TD PORT="state" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD><TD PORT="state.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="2" ALIGN="LEFT">preferred_therapist_gender</TD><TD PORT="preferred_therapist_gender.type" ALIGN="LEFT">enum[2]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="customer.html"
     tooltip="customer"
@@ -224,12 +234,22 @@ digraph "twoDegreesRelationshipsDiagram" {
     URL="matching_state.html"
     tooltip="matching_state"
   ];
+  "office" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">office</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="office.html"
+    tooltip="office"
+  ];
   "office_employee" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">office_employee</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="office_employee.html"
     tooltip="office_employee"
@@ -255,12 +275,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="title" COLSPAN="3" ALIGN="LEFT">title</TD></TR>
       <TR><TD PORT="form_of_address" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">form_of_address</TD></TR>
       <TR><TD PORT="birth_date" COLSPAN="3" ALIGN="LEFT">birth_date</TD></TR>
-      <TR><TD PORT="street" COLSPAN="3" ALIGN="LEFT">street</TD></TR>
-      <TR><TD PORT="streetnumber" COLSPAN="3" ALIGN="LEFT">streetnumber</TD></TR>
-      <TR><TD PORT="additional_address_line" COLSPAN="3" ALIGN="LEFT">additional_address_line</TD></TR>
-      <TR><TD PORT="zip_code" COLSPAN="3" ALIGN="LEFT">zip_code</TD></TR>
-      <TR><TD PORT="city" COLSPAN="3" ALIGN="LEFT">city</TD></TR>
-      <TR><TD PORT="country_iso" COLSPAN="3" ALIGN="LEFT">country_iso</TD></TR>
+      <TR><TD PORT="address" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">address</TD></TR>
       <TR><TD PORT="phone_private" COLSPAN="3" ALIGN="LEFT">phone_private</TD></TR>
       <TR><TD PORT="phone_business" COLSPAN="3" ALIGN="LEFT">phone_business</TD></TR>
       <TR><TD PORT="phone_mobile" COLSPAN="3" ALIGN="LEFT">phone_mobile</TD></TR>
@@ -268,7 +283,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="email" COLSPAN="3" ALIGN="LEFT">email</TD></TR>
       <TR><TD PORT="website" COLSPAN="3" ALIGN="LEFT">website</TD></TR>
       <TR><TD PORT="gender" COLSPAN="3" ALIGN="LEFT">gender</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="person.html"
     tooltip="person"

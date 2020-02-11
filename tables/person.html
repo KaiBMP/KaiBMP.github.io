@@ -215,72 +215,26 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='detail'>street</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>255</td>
+ <td class='indexedColumn' title='Indexed'>address</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
  <td class='detail'></td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="person.address refs address.id via person_ibfk_2"><a href='address.html'>address</a><span class='relatedKey'>.id</span>
+    </td>
+    <td class='constraint detail'>person_ibfk_2<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>streetnumber</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>45</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>additional_address_line</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>255</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>zip_code</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>45</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>city</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>45</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>country_iso</td>
- <td class='detail'>char</td>
- <td class='detail' align='right'>2</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'>Using ISO 3166 country codes</td>
-</tr>
-<tr class='even'>
  <td class='detail'>phone_private</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -291,7 +245,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'>Using E.164 standard</td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>phone_business</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -302,7 +256,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>phone_mobile</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -313,7 +267,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>fax</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -324,7 +278,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>email</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>255</td>
@@ -335,7 +289,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>website</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>255</td>
@@ -346,7 +300,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>gender</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>2</td>
@@ -358,7 +312,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='19 columns'>Table contained 0 rows at Mo. Feb. 10 17:36 MEZ 2020<p/>
+<p title='14 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -379,6 +333,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
  </tr>
  <tr>
+  <td class='indexedColumn'>address</td>
+  <td class='detail'>Performance</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>address</td>
+ </tr>
+ <tr>
   <td class='indexedColumn'>form_of_address</td>
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
@@ -390,33 +350,36 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from person'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="527,53,707,448">
-<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="188,449,483,969">
-<area shape="rect" id="node5" href="form_of_address.html" title="form_of_address" alt="" coords="5,548,144,655">
-<area shape="rect" id="node3" href="customer.html" title="customer" alt="" coords="751,5,987,856">
-<area shape="rect" id="node4" href="employee.html" title="employee" alt="" coords="535,537,698,932">
-<area shape="rect" id="node6" href="person_language.html" title="person_language" alt="" coords="546,949,687,1056">
+<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="542,714,674,988">
+<area shape="rect" id="node2" href="address.html" title="address" alt="" coords="5,879,185,1106">
+<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="229,494,483,894">
+<area shape="rect" id="node6" href="form_of_address.html" title="form_of_address" alt="" coords="26,592,165,699">
+<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="733,642,939,1348">
+<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="527,82,689,572">
+<area shape="rect" id="node7" href="person_language.html" title="person_language" alt="" coords="537,590,679,696">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/person.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="1067,183,1187,266">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="751,139,987,990">
-<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="557,774,677,856">
-<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="527,176,707,571">
-<area shape="rect" id="node5" href="person.html" title="person" alt="" coords="188,407,483,927">
-<area shape="rect" id="node6" href="inquiry_source.html" title="inquiry_source" alt="" coords="555,660,678,743">
-<area shape="rect" id="node7" href="customer_state.html" title="customer_state" alt="" coords="553,883,681,966">
-<area shape="rect" id="node16" href="form_of_address.html" title="form_of_address" alt="" coords="5,506,144,612">
-<area shape="rect" id="node8" href="customer_therapist.html" title="customer_therapist" alt="" coords="1051,515,1203,598">
-<area shape="rect" id="node9" href="therapist.html" title="therapist" alt="" coords="803,1043,935,1126">
-<area shape="rect" id="node10" href="employee.html" title="employee" alt="" coords="535,1043,698,1438">
-<area shape="rect" id="node11" href="departement.html" title="departement" alt="" coords="275,1331,395,1414">
-<area shape="rect" id="node12" href="employment_type.html" title="employment_type" alt="" coords="264,1196,407,1279">
-<area shape="rect" id="node13" href="employee_state.html" title="employee_state" alt="" coords="270,1096,401,1179">
-<area shape="rect" id="node14" href="matching.html" title="matching" alt="" coords="1061,791,1193,874">
-<area shape="rect" id="node15" href="office_employee.html" title="office_employee" alt="" coords="801,1143,936,1226">
-<area shape="rect" id="node17" href="person_language.html" title="person_language" alt="" coords="546,52,687,159">
-<area shape="rect" id="node18" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="1031,327,1224,410">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="1019,127,1139,209">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="733,160,939,867">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="548,412,668,495">
+<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="542,48,674,323">
+<area shape="rect" id="node5" href="address.html" title="address" alt="" coords="5,523,185,749">
+<area shape="rect" id="node6" href="person.html" title="person" alt="" coords="229,219,483,619">
+<area shape="rect" id="node7" href="inquiry_source.html" title="inquiry_source" alt="" coords="547,672,669,755">
+<area shape="rect" id="node8" href="customer_state.html" title="customer_state" alt="" coords="544,772,672,855">
+<area shape="rect" id="node18" href="form_of_address.html" title="form_of_address" alt="" coords="26,317,165,424">
+<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="1003,292,1155,375">
+<area shape="rect" id="node10" href="therapist.html" title="therapist" alt="" coords="770,884,902,967">
+<area shape="rect" id="node11" href="employee.html" title="employee" alt="" coords="527,872,689,1363">
+<area shape="rect" id="node12" href="departement.html" title="departement" alt="" coords="296,1184,416,1267">
+<area shape="rect" id="node13" href="employment_type.html" title="employment_type" alt="" coords="285,1031,427,1113">
+<area shape="rect" id="node14" href="employee_state.html" title="employee_state" alt="" coords="291,931,421,1013">
+<area shape="rect" id="node15" href="matching.html" title="matching" alt="" coords="1013,884,1145,967">
+<area shape="rect" id="node16" href="office_employee.html" title="office_employee" alt="" coords="769,984,903,1067">
+<area shape="rect" id="node17" href="office.html" title="office" alt="" coords="290,1316,422,1399">
+<area shape="rect" id="node19" href="person_language.html" title="person_language" alt="" coords="537,512,679,619">
+<area shape="rect" id="node20" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="983,523,1176,605">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/person.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

@@ -55,13 +55,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="carer_person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">carer_person_id</TD></TR>
       <TR><TD PORT="patient_person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">patient_person_id</TD></TR>
       <TR><TD PORT="patient_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">patient_company_id</TD></TR>
-      <TR><TD PORT="separate_location_of_therapy" COLSPAN="3" ALIGN="LEFT">separate_location_of_therapy</TD></TR>
-      <TR><TD PORT="therapy_street" COLSPAN="3" ALIGN="LEFT">therapy_street</TD></TR>
-      <TR><TD PORT="therapy_street_number" COLSPAN="3" ALIGN="LEFT">therapy_street_number</TD></TR>
-      <TR><TD PORT="therapy_additional_address_line" COLSPAN="3" ALIGN="LEFT">therapy_additional_address_line</TD></TR>
-      <TR><TD PORT="therapy_zip_code" COLSPAN="3" ALIGN="LEFT">therapy_zip_code</TD></TR>
-      <TR><TD PORT="therapy_city" COLSPAN="3" ALIGN="LEFT">therapy_city</TD></TR>
-      <TR><TD PORT="therapy_country_iso" COLSPAN="3" ALIGN="LEFT">therapy_country_iso</TD></TR>
+      <TR><TD PORT="location_of_therapy" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">location_of_therapy</TD></TR>
       <TR><TD PORT="entrance_date" COLSPAN="3" ALIGN="LEFT">entrance_date</TD></TR>
       <TR><TD PORT="request_date" COLSPAN="3" ALIGN="LEFT">request_date</TD></TR>
       <TR><TD PORT="source" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">source</TD></TR>
@@ -81,7 +75,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="prescription_information" COLSPAN="3" ALIGN="LEFT">prescription_information</TD></TR>
       <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="3" ALIGN="LEFT">preferred_therapist_gender</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="customer.html"
     tooltip="customer"

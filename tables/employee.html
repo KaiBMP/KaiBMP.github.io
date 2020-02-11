@@ -100,7 +100,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -109,13 +109,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="office_employee.employee refs employee.id via office_employee_ibfk_1"><a href='office_employee.html'>office_employee</a><span class='relatedKey'>.employee</span>
     </td>
     <td class='constraint detail'>office_employee_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="therapist.employee refs employee.id via therapist_ibfk_1"><a href='therapist.html'>therapist</a><span class='relatedKey'>.employee</span>
     </td>
     <td class='constraint detail'>therapist_ibfk_1<span title='Restrict delete:
@@ -126,7 +126,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>person</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -136,7 +136,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="employee.person refs person.id via employee_ibfk_1"><a href='person.html'>person</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>employee_ibfk_1<span title='Restrict delete:
@@ -146,7 +146,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>work_email</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>255</td>
@@ -157,7 +157,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>work_phone</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -168,7 +168,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'>Using E.164 standard</td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>state</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -178,7 +178,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="employee.state refs employee_state.id via employee_ibfk_2"><a href='employee_state.html'>employee_state</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>employee_ibfk_2<span title='Restrict delete:
@@ -188,7 +188,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>employment_type</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -198,7 +198,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="employee.employment_type refs employment_type.id via employee_ibfk_3"><a href='employment_type.html'>employment_type</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>employee_ibfk_3<span title='Restrict delete:
@@ -207,6 +207,17 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   </table>
  </td>
  <td class='comment detail'></td>
+</tr>
+<tr class='even'>
+ <td class='detail'>hours_per_week</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'>For part-time employees</td>
 </tr>
 <tr class='odd'>
  <td class='detail'>start_date</td>
@@ -305,8 +316,41 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
+<tr class='odd'>
+ <td class='detail'>salary</td>
+ <td class='detail'>decimal</td>
+ <td class='detail' align='right'>10,3</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='even'>
+ <td class='detail'>salary_currency</td>
+ <td class='detail'>char</td>
+ <td class='detail' align='right'>3</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'>ISO 4217</td>
+</tr>
+<tr class='odd'>
+ <td class='detail'>salary_rate</td>
+ <td class='detail'>enum</td>
+ <td class='detail' align='right'>14</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'></td>
+</tr>
 </table>
-<p title='14 columns'>Table contained 0 rows at Mo. Feb. 10 17:36 MEZ 2020<p/>
+<p title='18 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -356,34 +400,36 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from employee'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="employee.html" title="employee" alt="" coords="229,467,507,867">
-<area shape="rect" id="node2" href="departement.html" title="departement" alt="" coords="35,785,155,892">
-<area shape="rect" id="node3" href="employment_type.html" title="employment_type" alt="" coords="24,661,167,768">
-<area shape="rect" id="node4" href="person.html" title="person" alt="" coords="5,5,185,520">
-<area shape="rect" id="node5" href="employee_state.html" title="employee_state" alt="" coords="30,537,161,644">
-<area shape="rect" id="node6" href="office_employee.html" title="office_employee" alt="" coords="578,348,713,503">
-<area shape="rect" id="node7" href="therapist.html" title="therapist" alt="" coords="551,520,740,699">
+<area shape="rect" id="node1" href="employee.html" title="employee" alt="" coords="192,335,469,831">
+<area shape="rect" id="node2" href="departement.html" title="departement" alt="" coords="17,665,137,772">
+<area shape="rect" id="node3" href="employment_type.html" title="employment_type" alt="" coords="5,541,148,648">
+<area shape="rect" id="node4" href="person.html" title="person" alt="" coords="7,5,146,400">
+<area shape="rect" id="node5" href="employee_state.html" title="employee_state" alt="" coords="11,417,142,524">
+<area shape="rect" id="node6" href="office_employee.html" title="office_employee" alt="" coords="541,216,675,371">
+<area shape="rect" id="node7" href="therapist.html" title="therapist" alt="" coords="513,388,703,567">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/employee.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="485,5,617,88">
-<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="188,89,368,604">
-<area shape="rect" id="node12" href="form_of_address.html" title="form_of_address" alt="" coords="5,185,144,268">
-<area shape="rect" id="node3" href="customer.html" title="customer" alt="" coords="762,89,894,172">
-<area shape="rect" id="node4" href="customer_therapist.html" title="customer_therapist" alt="" coords="987,189,1139,272">
-<area shape="rect" id="node5" href="therapist.html" title="therapist" alt="" coords="733,409,923,588">
-<area shape="rect" id="node6" href="employee.html" title="employee" alt="" coords="412,431,689,831">
-<area shape="rect" id="node16" href="region.html" title="region" alt="" coords="491,848,611,931">
-<area shape="rect" id="node7" href="departement.html" title="departement" alt="" coords="218,869,338,976">
-<area shape="rect" id="node8" href="employment_type.html" title="employment_type" alt="" coords="207,745,349,852">
-<area shape="rect" id="node9" href="employee_state.html" title="employee_state" alt="" coords="213,621,343,728">
-<area shape="rect" id="node10" href="matching.html" title="matching" alt="" coords="997,89,1129,172">
-<area shape="rect" id="node11" href="office_employee.html" title="office_employee" alt="" coords="761,221,895,376">
-<area shape="rect" id="node13" href="person_language.html" title="person_language" alt="" coords="480,173,621,256">
-<area shape="rect" id="node14" href="request.html" title="request" alt="" coords="1204,224,1324,307">
-<area shape="rect" id="node15" href="skill_therapist.html" title="skill_therapist" alt="" coords="1003,425,1123,508">
-<area shape="rect" id="node17" href="therapist_vacation.html" title="therapist_vacation" alt="" coords="990,525,1137,608">
-<area shape="rect" id="node18" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="967,289,1160,372">
+<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="447,5,579,88">
+<area shape="rect" id="node2" href="address.html" title="address" alt="" coords="15,361,135,444">
+<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="190,73,329,468">
+<area shape="rect" id="node14" href="form_of_address.html" title="form_of_address" alt="" coords="5,169,144,252">
+<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="721,89,861,172">
+<area shape="rect" id="node5" href="customer_therapist.html" title="customer_therapist" alt="" coords="950,189,1102,272">
+<area shape="rect" id="node6" href="therapist.html" title="therapist" alt="" coords="696,419,885,597">
+<area shape="rect" id="node7" href="employee.html" title="employee" alt="" coords="375,435,652,931">
+<area shape="rect" id="node18" href="region.html" title="region" alt="" coords="453,984,573,1067">
+<area shape="rect" id="node8" href="departement.html" title="departement" alt="" coords="199,769,319,876">
+<area shape="rect" id="node9" href="employment_type.html" title="employment_type" alt="" coords="188,645,331,752">
+<area shape="rect" id="node10" href="employee_state.html" title="employee_state" alt="" coords="194,521,325,628">
+<area shape="rect" id="node11" href="matching.html" title="matching" alt="" coords="960,89,1092,172">
+<area shape="rect" id="node12" href="office_employee.html" title="office_employee" alt="" coords="723,247,858,401">
+<area shape="rect" id="node13" href="office.html" title="office" alt="" coords="193,899,325,981">
+<area shape="rect" id="node15" href="person_language.html" title="person_language" alt="" coords="443,173,584,256">
+<area shape="rect" id="node16" href="request.html" title="request" alt="" coords="1167,224,1287,307">
+<area shape="rect" id="node17" href="skill_therapist.html" title="skill_therapist" alt="" coords="966,425,1086,508">
+<area shape="rect" id="node19" href="therapist_vacation.html" title="therapist_vacation" alt="" coords="953,525,1099,608">
+<area shape="rect" id="node20" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="929,289,1123,372">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/employee.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

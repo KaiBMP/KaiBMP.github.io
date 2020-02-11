@@ -121,14 +121,23 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>office_location</td>
- <td class='detail'>varchar</td>
- <td class='detail' align='right'>45</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='indexedColumn' title='Indexed'>office</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
+ <td class='detail' align='center'></td>
  <td class='detail'></td>
- <td class='detail'> </td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="office_employee.office refs office.id via office_employee_ibfk_2"><a href='office.html'>office</a><span class='relatedKey'>.id</span>
+    </td>
+    <td class='constraint detail'>office_employee_ibfk_2<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
@@ -163,7 +172,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='4 columns'>Table contained 0 rows at Mo. Feb. 10 17:36 MEZ 2020<p/>
+<p title='4 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -195,29 +204,38 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>employee</td>
  </tr>
+ <tr>
+  <td class='indexedColumn'>office</td>
+  <td class='detail'>Performance</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>office</td>
+ </tr>
 </table>
 </div>
 <table width='100%' border='0'><tr><td class='container'>
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from office_employee'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="matching.html" title="matching" alt="" coords="492,5,624,208">
-<area shape="rect" id="node2" href="office_employee.html" title="office_employee" alt="" coords="212,27,448,187">
-<area shape="rect" id="node3" href="employee.html" title="employee" alt="" coords="5,77,168,472">
+<area shape="rect" id="node1" href="matching.html" title="matching" alt="" coords="489,20,621,223">
+<area shape="rect" id="node2" href="office_employee.html" title="office_employee" alt="" coords="212,41,445,201">
+<area shape="rect" id="node3" href="employee.html" title="employee" alt="" coords="5,153,168,644">
+<area shape="rect" id="node4" href="office.html" title="office" alt="" coords="21,5,153,136">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/office_employee.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="customer.html" title="customer" alt="" coords="451,5,583,88">
-<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="11,5,143,88">
-<area shape="rect" id="node3" href="employee.html" title="employee" alt="" coords="192,156,355,551">
-<area shape="rect" id="node4" href="departement.html" title="departement" alt="" coords="17,444,137,527">
-<area shape="rect" id="node5" href="employment_type.html" title="employment_type" alt="" coords="5,311,148,393">
-<area shape="rect" id="node6" href="employee_state.html" title="employee_state" alt="" coords="11,211,142,293">
-<area shape="rect" id="node7" href="matching.html" title="matching" alt="" coords="679,96,811,299">
-<area shape="rect" id="node8" href="office_employee.html" title="office_employee" alt="" coords="399,105,635,265">
-<area shape="rect" id="node9" href="matching_state.html" title="matching_state" alt="" coords="453,283,580,365">
-<area shape="rect" id="node10" href="request.html" title="request" alt="" coords="855,219,975,301">
-<area shape="rect" id="node11" href="therapist.html" title="therapist" alt="" coords="679,328,811,411">
+<area shape="rect" id="node1" href="customer.html" title="customer" alt="" coords="609,33,749,116">
+<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="175,41,307,124">
+<area shape="rect" id="node3" href="address.html" title="address" alt="" coords="5,41,125,124">
+<area shape="rect" id="node4" href="employee.html" title="employee" alt="" coords="356,265,519,756">
+<area shape="rect" id="node5" href="departement.html" title="departement" alt="" coords="181,577,301,660">
+<area shape="rect" id="node6" href="employment_type.html" title="employment_type" alt="" coords="169,424,312,506">
+<area shape="rect" id="node7" href="employee_state.html" title="employee_state" alt="" coords="175,324,306,406">
+<area shape="rect" id="node8" href="matching.html" title="matching" alt="" coords="840,124,972,326">
+<area shape="rect" id="node9" href="office_employee.html" title="office_employee" alt="" coords="563,133,796,293">
+<area shape="rect" id="node10" href="matching_state.html" title="matching_state" alt="" coords="616,310,743,393">
+<area shape="rect" id="node11" href="office.html" title="office" alt="" coords="371,117,503,248">
+<area shape="rect" id="node12" href="request.html" title="request" alt="" coords="1016,246,1136,329">
+<area shape="rect" id="node13" href="therapist.html" title="therapist" alt="" coords="840,356,972,438">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/office_employee.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

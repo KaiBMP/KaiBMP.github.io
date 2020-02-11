@@ -100,7 +100,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='even'>
+<tr class='odd'>
  <td class='primaryKey' title='Primary Key'>id</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -111,7 +111,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>prescription</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -121,7 +121,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="case.prescription refs prescription.id via case_ibfk_2"><a href='prescription.html'>prescription</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>case_ibfk_2<span title='Restrict delete:
@@ -131,7 +131,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>customer</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -141,7 +141,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="case.customer refs customer.id via case_ibfk_1"><a href='customer.html'>customer</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>case_ibfk_1<span title='Restrict delete:
@@ -151,7 +151,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>bill_number</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -162,7 +162,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>bill_date</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>10</td>
@@ -173,7 +173,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>bill_type</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>17</td>
@@ -184,7 +184,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>bill_amount</td>
  <td class='detail'>decimal</td>
  <td class='detail' align='right'>10,3</td>
@@ -195,7 +195,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>currency</td>
  <td class='detail'>char</td>
  <td class='detail' align='right'>3</td>
@@ -206,7 +206,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'>Using ISO 4217</td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>payment_date</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>10</td>
@@ -217,7 +217,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>information</td>
  <td class='detail'>text</td>
  <td class='detail' align='right'>65535</td>
@@ -228,7 +228,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>payment_type</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -238,7 +238,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="case.payment_type refs payment_type.id via case_ibfk_4"><a href='payment_type.html'>payment_type</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>case_ibfk_4<span title='Restrict delete:
@@ -248,7 +248,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>state</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -258,7 +258,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="case.state refs case_state.id via case_ibfk_3"><a href='case_state.html'>case_state</a><span class='relatedKey'>.id</span>
     </td>
     <td class='constraint detail'>case_ibfk_3<span title='Restrict delete:
@@ -268,7 +268,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>countdown</td>
  <td class='detail'>float</td>
  <td class='detail' align='right'>12</td>
@@ -280,7 +280,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='13 columns'>Table contained 0 rows at Mo. Feb. 10 17:36 MEZ 2020<p/>
+<p title='13 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -330,28 +330,29 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from case'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="449,521,685,897">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="169,249,405,1100">
-<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="5,980,125,1087">
-<area shape="rect" id="node4" href="prescription.html" title="prescription" alt="" coords="188,5,387,232">
-<area shape="rect" id="node5" href="case_state.html" title="case_state" alt="" coords="227,1153,347,1260">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="419,449,655,825">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="169,249,375,956">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="5,836,125,943">
+<area shape="rect" id="node4" href="prescription.html" title="prescription" alt="" coords="173,5,371,232">
+<area shape="rect" id="node5" href="case_state.html" title="case_state" alt="" coords="212,1009,332,1116">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/case.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="648,719,884,1095">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="368,105,604,956">
-<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="193,941,313,1048">
-<area shape="rect" id="node4" href="prescription.html" title="prescription" alt="" coords="387,1133,585,1360">
-<area shape="rect" id="node5" href="case_state.html" title="case_state" alt="" coords="426,1009,546,1116">
-<area shape="rect" id="node6" href="company.html" title="company" alt="" coords="187,156,319,239">
-<area shape="rect" id="node7" href="person.html" title="person" alt="" coords="5,191,137,273">
-<area shape="rect" id="node8" href="inquiry_source.html" title="inquiry_source" alt="" coords="191,489,314,572">
-<area shape="rect" id="node9" href="customer_state.html" title="customer_state" alt="" coords="189,841,317,924">
-<area shape="rect" id="node12" href="prescription_state.html" title="prescription_state" alt="" coords="181,1253,324,1336">
-<area shape="rect" id="node10" href="customer_therapist.html" title="customer_therapist" alt="" coords="690,5,842,88">
-<area shape="rect" id="node11" href="matching.html" title="matching" alt="" coords="700,105,832,188">
-<area shape="rect" id="node13" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="648,1133,884,1216">
-<area shape="rect" id="node14" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="669,205,863,288">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="781,575,1017,951">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="532,105,737,812">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="357,797,477,904">
+<area shape="rect" id="node4" href="prescription.html" title="prescription" alt="" coords="535,989,734,1216">
+<area shape="rect" id="node5" href="case_state.html" title="case_state" alt="" coords="575,865,695,972">
+<area shape="rect" id="node6" href="company.html" title="company" alt="" coords="351,133,483,216">
+<area shape="rect" id="node7" href="address.html" title="address" alt="" coords="5,201,125,284">
+<area shape="rect" id="node8" href="person.html" title="person" alt="" coords="169,201,301,284">
+<area shape="rect" id="node9" href="inquiry_source.html" title="inquiry_source" alt="" coords="355,345,478,428">
+<area shape="rect" id="node10" href="customer_state.html" title="customer_state" alt="" coords="353,697,481,780">
+<area shape="rect" id="node13" href="prescription_state.html" title="prescription_state" alt="" coords="345,1109,488,1192">
+<area shape="rect" id="node11" href="customer_therapist.html" title="customer_therapist" alt="" coords="823,5,975,88">
+<area shape="rect" id="node12" href="matching.html" title="matching" alt="" coords="833,105,965,188">
+<area shape="rect" id="node14" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="781,989,1017,1072">
+<area shape="rect" id="node15" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="803,205,996,288">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/case.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
