@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='even'>
- <td class='primaryKey' title='Primary Key'>customer</td>
+ <td class='primaryKey' title='Primary Key'>customer_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -111,7 +111,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="customer_therapist.customer refs customer.id via customer_therapist_ibfk_1"><a href='customer.html'>customer</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="customer_therapist.customer_id refs customer.customer_id via customer_therapist_ibfk_1"><a href='customer.html'>customer</a><span class='relatedKey'>.customer_id</span>
     </td>
     <td class='constraint detail'>customer_therapist_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -121,7 +121,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='primaryKey' title='Primary Key'>therapist</td>
+ <td class='primaryKey' title='Primary Key'>therapist_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -131,7 +131,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="customer_therapist.therapist refs therapist.id via customer_therapist_ibfk_2"><a href='therapist.html'>therapist</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="customer_therapist.therapist_id refs therapist.therapist_id via customer_therapist_ibfk_2"><a href='therapist.html'>therapist</a><span class='relatedKey'>.therapist_id</span>
     </td>
     <td class='constraint detail'>customer_therapist_ibfk_2<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -163,7 +163,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='4 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='4 columns'>Table contained 0 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -178,16 +178,16 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>customer + therapist</td>
+  <td class='primaryKey'>customer_id + therapist_id</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
  </tr>
  <tr>
-  <td class='indexedColumn'>therapist</td>
+  <td class='indexedColumn'>therapist_id</td>
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
-  <td class='constraint' style='text-align:left;'>therapist</td>
+  <td class='constraint' style='text-align:left;'>therapist_id</td>
  </tr>
 </table>
 </div>
@@ -195,29 +195,29 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from customer_therapist'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="customer_therapist.html" title="customer_therapist" alt="" coords="255,353,472,513">
+<area shape="rect" id="node1" href="customer_therapist.html" title="customer_therapist" alt="" coords="255,353,477,513">
 <area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="5,5,211,712">
 <area shape="rect" id="node3" href="therapist.html" title="therapist" alt="" coords="13,729,203,908">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/customer_therapist.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="819,127,939,210">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="822,127,942,210">
 <area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="521,6,727,712">
 <area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="351,651,471,734">
 <area shape="rect" id="node4" href="company.html" title="company" alt="" coords="345,36,477,119">
 <area shape="rect" id="node5" href="address.html" title="address" alt="" coords="5,104,125,187">
 <area shape="rect" id="node6" href="person.html" title="person" alt="" coords="169,104,301,187">
-<area shape="rect" id="node7" href="inquiry_source.html" title="inquiry_source" alt="" coords="350,246,473,328">
-<area shape="rect" id="node8" href="customer_state.html" title="customer_state" alt="" coords="347,551,475,634">
-<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="771,254,988,414">
+<area shape="rect" id="node7" href="customer_state.html" title="customer_state" alt="" coords="347,551,475,634">
+<area shape="rect" id="node8" href="inquiry_source.html" title="inquiry_source" alt="" coords="350,246,473,328">
+<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="771,254,993,414">
 <area shape="rect" id="node10" href="therapist.html" title="therapist" alt="" coords="529,766,719,944">
 <area shape="rect" id="node11" href="employee.html" title="employee" alt="" coords="345,751,477,834">
 <area shape="rect" id="node15" href="region.html" title="region" alt="" coords="351,851,471,934">
-<area shape="rect" id="node12" href="matching.html" title="matching" alt="" coords="813,14,945,96">
-<area shape="rect" id="node13" href="request.html" title="request" alt="" coords="1032,387,1152,470">
-<area shape="rect" id="node14" href="skill_therapist.html" title="skill_therapist" alt="" coords="819,827,939,910">
-<area shape="rect" id="node16" href="therapist_vacation.html" title="therapist_vacation" alt="" coords="806,691,953,774">
-<area shape="rect" id="node17" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="783,484,976,567">
+<area shape="rect" id="node12" href="matching.html" title="matching" alt="" coords="816,14,948,96">
+<area shape="rect" id="node13" href="request.html" title="request" alt="" coords="1037,387,1157,470">
+<area shape="rect" id="node14" href="skill_therapist.html" title="skill_therapist" alt="" coords="822,827,942,910">
+<area shape="rect" id="node16" href="therapist_vacation.html" title="therapist_vacation" alt="" coords="809,691,955,774">
+<area shape="rect" id="node17" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="785,484,979,567">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/customer_therapist.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

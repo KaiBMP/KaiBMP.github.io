@@ -19,42 +19,42 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "case":"elipses":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "case":"elipses":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "company":"address":w -> "address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "company":"contact_person":w -> "person":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"carer_company_id":w -> "company":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"carer_person_id":w -> "person":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"location_of_therapy":w -> "address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"other_company_id":w -> "company":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"other_person_id":w -> "person":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"patient_company_id":w -> "company":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"patient_person_id":w -> "person":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"preferred_payment_type":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"source":w -> "inquiry_source":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"state":w -> "customer_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer_therapist":"elipses":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "company":"address_id":w -> "address":"address_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "company":"person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"carer_company_id":w -> "company":"company_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"carer_person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"customer_state_id":w -> "customer_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"inquiry_source_id":w -> "inquiry_source":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"location_of_therapy":w -> "address":"address_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"other_company_id":w -> "company":"company_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"other_person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"patient_company_id":w -> "company":"company_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"patient_person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"payment_type_id":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer_therapist":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer_therapist":"elipses":w -> "therapist":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "employee":"departement":w -> "departement":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "employee":"employment_type":w -> "employment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "employee":"person":w -> "person":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "employee":"state":w -> "employee_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "matching":"elipses":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee":"departement_id":w -> "departement":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee":"employment_type_id":w -> "employment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee":"person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee":"state_id":w -> "employee_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "matching":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"elipses":w -> "office_employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "office":"elipses":w -> "address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "office_employee":"elipses":w -> "employee":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office":"elipses":w -> "address":"address_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office_employee":"elipses":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "office_employee":"elipses":w -> "office":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "person":"address":w -> "address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "person":"form_of_address":w -> "form_of_address":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "person_language":"person":w -> "person":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist":"elipses":w -> "employee":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "treatment_documentation":"elipses":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "person":"address_id":w -> "address":"address_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "person":"form_of_address_id":w -> "form_of_address":"form_of_address_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "person_language":"person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist":"elipses":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "treatment_documentation":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"elipses":w -> "therapist":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "address" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">address</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="address_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">address_id</TD></TR>
       <TR><TD PORT="street" COLSPAN="3" ALIGN="LEFT">street</TD></TR>
       <TR><TD PORT="streetnumber" COLSPAN="3" ALIGN="LEFT">streetnumber</TD></TR>
       <TR><TD PORT="additional_address_line" COLSPAN="3" ALIGN="LEFT">additional_address_line</TD></TR>
@@ -80,10 +80,10 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">company</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="contact_person" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">contact_person</TD></TR>
+      <TR><TD PORT="company_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">company_id</TD></TR>
+      <TR><TD PORT="person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person_id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
-      <TR><TD PORT="address" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">address</TD></TR>
+      <TR><TD PORT="address_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">address_id</TD></TR>
       <TR><TD PORT="phone" COLSPAN="3" ALIGN="LEFT">phone</TD></TR>
       <TR><TD PORT="fax" COLSPAN="3" ALIGN="LEFT">fax</TD></TR>
       <TR><TD PORT="email" COLSPAN="3" ALIGN="LEFT">email</TD></TR>
@@ -98,7 +98,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">customer_id</TD></TR>
       <TR><TD PORT="other_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">other_company_id</TD></TR>
       <TR><TD PORT="other_person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">other_person_id</TD></TR>
       <TR><TD PORT="carer_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">carer_company_id</TD></TR>
@@ -108,7 +108,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="location_of_therapy" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">location_of_therapy</TD></TR>
       <TR><TD PORT="entrance_date" COLSPAN="3" ALIGN="LEFT">entrance_date</TD></TR>
       <TR><TD PORT="request_date" COLSPAN="3" ALIGN="LEFT">request_date</TD></TR>
-      <TR><TD PORT="source" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">source</TD></TR>
+      <TR><TD PORT="inquiry_source_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">inquiry_source_id</TD></TR>
       <TR><TD PORT="documents" COLSPAN="3" ALIGN="LEFT">documents</TD></TR>
       <TR><TD PORT="treatment_contract_signed" COLSPAN="3" ALIGN="LEFT">treatment_contract_signed</TD></TR>
       <TR><TD PORT="privacy_policy_signed" COLSPAN="3" ALIGN="LEFT">privacy_policy_signed</TD></TR>
@@ -118,12 +118,12 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="carer_relationship" COLSPAN="3" ALIGN="LEFT">carer_relationship</TD></TR>
       <TR><TD PORT="other_relationship" COLSPAN="3" ALIGN="LEFT">other_relationship</TD></TR>
       <TR><TD PORT="invoice_recipient" COLSPAN="3" ALIGN="LEFT">invoice_recipient</TD></TR>
-      <TR><TD PORT="preferred_payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">preferred_payment_type</TD></TR>
+      <TR><TD PORT="payment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type_id</TD></TR>
       <TR><TD PORT="insurance_type" COLSPAN="3" ALIGN="LEFT">insurance_type</TD></TR>
       <TR><TD PORT="notes" COLSPAN="3" ALIGN="LEFT">notes</TD></TR>
       <TR><TD PORT="health_information" COLSPAN="3" ALIGN="LEFT">health_information</TD></TR>
       <TR><TD PORT="prescription_information" COLSPAN="3" ALIGN="LEFT">prescription_information</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="customer_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_state_id</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="3" ALIGN="LEFT">preferred_therapist_gender</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
@@ -164,12 +164,12 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employee</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="person" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person</TD></TR>
+      <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">employee_id</TD></TR>
+      <TR><TD PORT="person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person_id</TD></TR>
       <TR><TD PORT="work_email" COLSPAN="3" ALIGN="LEFT">work_email</TD></TR>
       <TR><TD PORT="work_phone" COLSPAN="3" ALIGN="LEFT">work_phone</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
-      <TR><TD PORT="employment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employment_type</TD></TR>
+      <TR><TD PORT="state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state_id</TD></TR>
+      <TR><TD PORT="employment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employment_type_id</TD></TR>
       <TR><TD PORT="hours_per_week" COLSPAN="3" ALIGN="LEFT">hours_per_week</TD></TR>
       <TR><TD PORT="start_date" COLSPAN="3" ALIGN="LEFT">start_date</TD></TR>
       <TR><TD PORT="leaving_date" COLSPAN="3" ALIGN="LEFT">leaving_date</TD></TR>
@@ -177,7 +177,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="probation_end_date" COLSPAN="3" ALIGN="LEFT">probation_end_date</TD></TR>
       <TR><TD PORT="contract_signed" COLSPAN="3" ALIGN="LEFT">contract_signed</TD></TR>
       <TR><TD PORT="job_title" COLSPAN="3" ALIGN="LEFT">job_title</TD></TR>
-      <TR><TD PORT="departement" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">departement</TD></TR>
+      <TR><TD PORT="departement_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">departement_id</TD></TR>
       <TR><TD PORT="team" COLSPAN="3" ALIGN="LEFT">team</TD></TR>
       <TR><TD PORT="salary" COLSPAN="3" ALIGN="LEFT">salary</TD></TR>
       <TR><TD PORT="salary_currency" COLSPAN="3" ALIGN="LEFT">salary_currency</TD></TR>
@@ -211,7 +211,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">form_of_address</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="form_of_address_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">form_of_address_id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">8 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
@@ -272,13 +272,13 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">person</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="person_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">person_id</TD><TD PORT="person_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="first_name" COLSPAN="2" ALIGN="LEFT">first_name</TD><TD PORT="first_name.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="last_name" COLSPAN="2" ALIGN="LEFT">last_name</TD><TD PORT="last_name.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="title" COLSPAN="2" ALIGN="LEFT">title</TD><TD PORT="title.type" ALIGN="LEFT">varchar[45]</TD></TR>
-      <TR><TD PORT="form_of_address" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">form_of_address</TD><TD PORT="form_of_address.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="form_of_address_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">form_of_address_id</TD><TD PORT="form_of_address_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="birth_date" COLSPAN="2" ALIGN="LEFT">birth_date</TD><TD PORT="birth_date.type" ALIGN="LEFT">date[10]</TD></TR>
-      <TR><TD PORT="address" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">address</TD><TD PORT="address.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="address_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">address_id</TD><TD PORT="address_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="phone_private" COLSPAN="2" ALIGN="LEFT">phone_private</TD><TD PORT="phone_private.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="phone_business" COLSPAN="2" ALIGN="LEFT">phone_business</TD><TD PORT="phone_business.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="phone_mobile" COLSPAN="2" ALIGN="LEFT">phone_mobile</TD><TD PORT="phone_mobile.type" ALIGN="LEFT">varchar[45]</TD></TR>
@@ -295,7 +295,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">person_language</TD></TR>
-      <TR><TD PORT="person" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">person</TD></TR>
+      <TR><TD PORT="person_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">person_id</TD></TR>
       <TR><TD PORT="language_iso" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">language_iso</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>

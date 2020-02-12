@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='odd'>
- <td class='primaryKey' title='Primary Key'>therapist</td>
+ <td class='primaryKey' title='Primary Key'>therapist_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -111,7 +111,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="request.therapist refs therapist.id via request_ibfk_1"><a href='therapist.html'>therapist</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="request.therapist_id refs therapist.therapist_id via request_ibfk_1"><a href='therapist.html'>therapist</a><span class='relatedKey'>.therapist_id</span>
     </td>
     <td class='constraint detail'>request_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -121,7 +121,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='primaryKey' title='Primary Key'>matching</td>
+ <td class='primaryKey' title='Primary Key'>matching_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -131,7 +131,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="request.matching refs matching.id via request_ibfk_2"><a href='matching.html'>matching</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="request.matching_id refs matching.matching_id via request_ibfk_2"><a href='matching.html'>matching</a><span class='relatedKey'>.matching_id</span>
     </td>
     <td class='constraint detail'>request_ibfk_2<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -218,7 +218,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='9 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='9 columns'>Table contained 0 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -233,16 +233,16 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>therapist + matching</td>
+  <td class='primaryKey'>therapist_id + matching_id</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
  </tr>
  <tr>
-  <td class='indexedColumn'>matching</td>
+  <td class='indexedColumn'>matching_id</td>
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
-  <td class='constraint' style='text-align:left;'>matching</td>
+  <td class='constraint' style='text-align:left;'>matching_id</td>
  </tr>
 </table>
 </div>
@@ -251,7 +251,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
 <area shape="rect" id="node1" href="request.html" title="request" alt="" coords="239,89,507,369">
-<area shape="rect" id="node2" href="matching.html" title="matching" alt="" coords="34,201,166,404">
+<area shape="rect" id="node2" href="matching.html" title="matching" alt="" coords="23,201,177,404">
 <area shape="rect" id="node3" href="therapist.html" title="therapist" alt="" coords="5,5,195,184">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/request.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
@@ -261,9 +261,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <area shape="rect" id="node3" href="therapist.html" title="therapist" alt="" coords="181,360,371,539">
 <area shape="rect" id="node7" href="employee.html" title="employee" alt="" coords="5,184,137,267">
 <area shape="rect" id="node10" href="region.html" title="region" alt="" coords="11,408,131,491">
-<area shape="rect" id="node4" href="matching.html" title="matching" alt="" coords="445,5,577,208">
-<area shape="rect" id="node5" href="office_employee.html" title="office_employee" alt="" coords="209,28,343,111">
-<area shape="rect" id="node6" href="matching_state.html" title="matching_state" alt="" coords="213,128,339,211">
+<area shape="rect" id="node4" href="matching.html" title="matching" alt="" coords="435,5,588,208">
+<area shape="rect" id="node5" href="matching_state.html" title="matching_state" alt="" coords="213,128,339,211">
+<area shape="rect" id="node6" href="office_employee.html" title="office_employee" alt="" coords="209,28,343,111">
 <area shape="rect" id="node8" href="request.html" title="request" alt="" coords="652,185,920,465">
 <area shape="rect" id="node9" href="skill_therapist.html" title="skill_therapist" alt="" coords="451,461,571,544">
 <area shape="rect" id="node11" href="therapist_vacation.html" title="therapist_vacation" alt="" coords="438,561,585,644">

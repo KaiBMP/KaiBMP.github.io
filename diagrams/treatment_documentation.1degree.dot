@@ -19,13 +19,13 @@ digraph "oneDegreeRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "treatment_documentation":"customer":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "treatment_documentation":"therapist":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "treatment_documentation":"customer_id":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "treatment_documentation":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">customer_id</TD></TR>
       <TR><TD PORT="other_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">other_company_id</TD></TR>
       <TR><TD PORT="other_person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">other_person_id</TD></TR>
       <TR><TD PORT="carer_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">carer_company_id</TD></TR>
@@ -35,7 +35,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="location_of_therapy" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">location_of_therapy</TD></TR>
       <TR><TD PORT="entrance_date" COLSPAN="3" ALIGN="LEFT">entrance_date</TD></TR>
       <TR><TD PORT="request_date" COLSPAN="3" ALIGN="LEFT">request_date</TD></TR>
-      <TR><TD PORT="source" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">source</TD></TR>
+      <TR><TD PORT="inquiry_source_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">inquiry_source_id</TD></TR>
       <TR><TD PORT="documents" COLSPAN="3" ALIGN="LEFT">documents</TD></TR>
       <TR><TD PORT="treatment_contract_signed" COLSPAN="3" ALIGN="LEFT">treatment_contract_signed</TD></TR>
       <TR><TD PORT="privacy_policy_signed" COLSPAN="3" ALIGN="LEFT">privacy_policy_signed</TD></TR>
@@ -45,12 +45,12 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="carer_relationship" COLSPAN="3" ALIGN="LEFT">carer_relationship</TD></TR>
       <TR><TD PORT="other_relationship" COLSPAN="3" ALIGN="LEFT">other_relationship</TD></TR>
       <TR><TD PORT="invoice_recipient" COLSPAN="3" ALIGN="LEFT">invoice_recipient</TD></TR>
-      <TR><TD PORT="preferred_payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">preferred_payment_type</TD></TR>
+      <TR><TD PORT="payment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type_id</TD></TR>
       <TR><TD PORT="insurance_type" COLSPAN="3" ALIGN="LEFT">insurance_type</TD></TR>
       <TR><TD PORT="notes" COLSPAN="3" ALIGN="LEFT">notes</TD></TR>
       <TR><TD PORT="health_information" COLSPAN="3" ALIGN="LEFT">health_information</TD></TR>
       <TR><TD PORT="prescription_information" COLSPAN="3" ALIGN="LEFT">prescription_information</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="customer_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_state_id</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="3" ALIGN="LEFT">preferred_therapist_gender</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
@@ -61,9 +61,9 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="employee" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee</TD></TR>
-      <TR><TD PORT="region" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region</TD></TR>
+      <TR><TD PORT="therapist_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD></TR>
+      <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD></TR>
+      <TR><TD PORT="region_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region_id</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
       <TR><TD PORT="working_area_zip_codes" COLSPAN="3" ALIGN="LEFT">working_area_zip_codes</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
@@ -75,8 +75,8 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">treatment_documentation</TD></TR>
-      <TR><TD PORT="customer" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">customer</TD><TD PORT="customer.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="therapist" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist</TD><TD PORT="therapist.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">customer_id</TD><TD PORT="customer_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="therapist_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD><TD PORT="therapist_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="date" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">date</TD><TD PORT="date.type" ALIGN="LEFT">date[10]</TD></TR>
       <TR><TD PORT="length" COLSPAN="2" ALIGN="LEFT">length</TD><TD PORT="length.type" ALIGN="LEFT">float[12]</TD></TR>
       <TR><TD PORT="documentation" COLSPAN="2" ALIGN="LEFT">documentation</TD><TD PORT="documentation.type" ALIGN="LEFT">text[65535]</TD></TR>

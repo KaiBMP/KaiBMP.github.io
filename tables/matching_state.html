@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='even'>
- <td class='primaryKey' title='Primary Key'>id</td>
+ <td class='primaryKey' title='Primary Key'>matching_state_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -110,7 +110,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="matching.state refs matching_state.id via matching_ibfk_3"><a href='matching.html'>matching</a><span class='relatedKey'>.state</span>
+    <td class='relatedTable detail' title="matching.matching_state_id refs matching_state.matching_state_id via matching_ibfk_3"><a href='matching.html'>matching</a><span class='relatedKey'>.matching_state_id</span>
     </td>
     <td class='constraint detail'>matching_ibfk_3<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'>The "open" state must have id 0</td>
 </tr>
 </table>
-<p title='2 columns'>Table contained 4 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='2 columns'>Table contained 4 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -147,7 +147,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>id</td>
+  <td class='primaryKey'>matching_state_id</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
@@ -158,16 +158,16 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from matching_state'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="matching.html" title="matching" alt="" coords="267,5,399,208">
-<area shape="rect" id="node2" href="matching_state.html" title="matching_state" alt="" coords="5,99,223,211">
+<area shape="rect" id="node1" href="matching.html" title="matching" alt="" coords="311,5,464,208">
+<area shape="rect" id="node2" href="matching_state.html" title="matching_state" alt="" coords="5,99,267,211">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/matching_state.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="matching.html" title="matching" alt="" coords="267,57,399,260">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="44,105,184,188">
-<area shape="rect" id="node3" href="office_employee.html" title="office_employee" alt="" coords="47,5,181,88">
-<area shape="rect" id="node4" href="matching_state.html" title="matching_state" alt="" coords="5,205,223,317">
-<area shape="rect" id="node5" href="request.html" title="request" alt="" coords="443,57,563,140">
+<area shape="rect" id="node1" href="matching.html" title="matching" alt="" coords="311,57,464,260">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="66,105,206,188">
+<area shape="rect" id="node3" href="matching_state.html" title="matching_state" alt="" coords="5,205,267,317">
+<area shape="rect" id="node4" href="office_employee.html" title="office_employee" alt="" coords="69,5,203,88">
+<area shape="rect" id="node5" href="request.html" title="request" alt="" coords="508,57,628,140">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/matching_state.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

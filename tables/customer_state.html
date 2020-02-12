@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='even'>
- <td class='primaryKey' title='Primary Key'>id</td>
+ <td class='primaryKey' title='Primary Key'>customer_state_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -110,7 +110,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="customer.state refs customer_state.id via customer_ibfk_9"><a href='customer.html'>customer</a><span class='relatedKey'>.state</span>
+    <td class='relatedTable detail' title="customer.customer_state_id refs customer_state.customer_state_id via customer_ibfk_9"><a href='customer.html'>customer</a><span class='relatedKey'>.customer_state_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_9<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='2 columns'>Table contained 4 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='2 columns'>Table contained 4 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -147,7 +147,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>id</td>
+  <td class='primaryKey'>customer_state_id</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
@@ -158,22 +158,22 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from customer_state'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="customer.html" title="customer" alt="" coords="267,5,472,712">
-<area shape="rect" id="node2" href="customer_state.html" title="customer_state" alt="" coords="5,603,223,715">
+<area shape="rect" id="node1" href="customer.html" title="customer" alt="" coords="311,5,516,712">
+<area shape="rect" id="node2" href="customer_state.html" title="customer_state" alt="" coords="5,603,267,715">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/customer_state.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="893,552,1013,635">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="607,105,812,812">
-<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="394,797,514,880">
-<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="388,133,520,216">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="937,552,1057,635">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="651,105,856,812">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="416,797,536,880">
+<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="410,133,542,216">
 <area shape="rect" id="node5" href="address.html" title="address" alt="" coords="5,201,125,284">
 <area shape="rect" id="node6" href="person.html" title="person" alt="" coords="169,201,301,284">
-<area shape="rect" id="node7" href="inquiry_source.html" title="inquiry_source" alt="" coords="393,345,515,428">
-<area shape="rect" id="node8" href="customer_state.html" title="customer_state" alt="" coords="345,668,563,780">
-<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="877,5,1029,88">
-<area shape="rect" id="node10" href="matching.html" title="matching" alt="" coords="887,105,1019,188">
-<area shape="rect" id="node11" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="856,205,1049,288">
+<area shape="rect" id="node7" href="customer_state.html" title="customer_state" alt="" coords="345,668,607,780">
+<area shape="rect" id="node8" href="inquiry_source.html" title="inquiry_source" alt="" coords="415,345,537,428">
+<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="921,5,1073,88">
+<area shape="rect" id="node10" href="matching.html" title="matching" alt="" coords="931,105,1063,188">
+<area shape="rect" id="node11" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="900,205,1093,288">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/customer_state.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='even'>
- <td class='primaryKey' title='Primary Key'>id</td>
+ <td class='primaryKey' title='Primary Key'>office_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -110,7 +110,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="office_employee.office refs office.id via office_employee_ibfk_2"><a href='office_employee.html'>office_employee</a><span class='relatedKey'>.office</span>
+    <td class='relatedTable detail' title="office_employee.office_id refs office.office_id via office_employee_ibfk_2"><a href='office_employee.html'>office_employee</a><span class='relatedKey'>.office_id</span>
     </td>
     <td class='constraint detail'>office_employee_ibfk_2<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='indexedColumn' title='Indexed'>address</td>
+ <td class='indexedColumn' title='Indexed'>address_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -142,7 +142,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="office.address refs address.id via office_ibfk_1"><a href='address.html'>address</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="office.address_id refs address.address_id via office_ibfk_1"><a href='address.html'>address</a><span class='relatedKey'>.address_id</span>
     </td>
     <td class='constraint detail'>office_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -152,7 +152,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='3 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='3 columns'>Table contained 0 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -167,16 +167,16 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>id</td>
+  <td class='primaryKey'>office_id</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
  </tr>
  <tr>
-  <td class='indexedColumn'>address</td>
+  <td class='indexedColumn'>address_id</td>
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
-  <td class='constraint' style='text-align:left;'>address</td>
+  <td class='constraint' style='text-align:left;'>address_id</td>
  </tr>
 </table>
 </div>
@@ -186,18 +186,18 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
 <area shape="rect" id="node1" href="office.html" title="office" alt="" coords="229,27,447,163">
 <area shape="rect" id="node2" href="address.html" title="address" alt="" coords="5,77,185,304">
-<area shape="rect" id="node3" href="office_employee.html" title="office_employee" alt="" coords="491,5,625,160">
+<area shape="rect" id="node3" href="office_employee.html" title="office_employee" alt="" coords="491,5,644,160">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/office.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="491,27,623,109">
-<area shape="rect" id="node2" href="address.html" title="address" alt="" coords="5,69,185,296">
-<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="272,107,404,189">
-<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="667,33,807,116">
-<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="491,231,623,313">
-<area shape="rect" id="node6" href="matching.html" title="matching" alt="" coords="851,87,983,169">
-<area shape="rect" id="node7" href="office_employee.html" title="office_employee" alt="" coords="669,139,804,293">
-<area shape="rect" id="node8" href="office.html" title="office" alt="" coords="229,207,447,343">
+<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="491,26,623,109">
+<area shape="rect" id="node2" href="address.html" title="address" alt="" coords="5,69,185,295">
+<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="272,106,404,189">
+<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="673,33,813,115">
+<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="491,230,623,313">
+<area shape="rect" id="node6" href="matching.html" title="matching" alt="" coords="864,86,996,169">
+<area shape="rect" id="node7" href="office_employee.html" title="office_employee" alt="" coords="667,138,820,293">
+<area shape="rect" id="node8" href="office.html" title="office" alt="" coords="229,206,447,342">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/office.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

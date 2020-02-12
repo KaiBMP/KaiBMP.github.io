@@ -19,33 +19,33 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "case":"elipses":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "case":"elipses":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "company":"elipses":w -> "address":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "company":"elipses":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"carer_company_id":w -> "company":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"carer_person_id":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"customer_state_id":w -> "customer_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"inquiry_source_id":w -> "inquiry_source":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"location_of_therapy":w -> "address":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"other_company_id":w -> "company":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"other_person_id":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"patient_company_id":w -> "company":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"patient_person_id":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"preferred_payment_type":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"source":w -> "inquiry_source":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"state":w -> "customer_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer_therapist":"elipses":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer_therapist":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"payment_type_id":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer_therapist":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer_therapist":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"elipses":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "matching":"elipses":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "matching":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "person":"elipses":w -> "address":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "request":"elipses":w -> "matching":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "request":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "skill_therapist":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist":"employee":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist":"region":w -> "region":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist_vacation":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "treatment_documentation":"customer":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "treatment_documentation":"therapist":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "request":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "skill_therapist":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist":"employee_id":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist":"region_id":w -> "region":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist_vacation":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "treatment_documentation":"customer_id":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "treatment_documentation":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "address" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -80,7 +80,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">customer_id</TD></TR>
       <TR><TD PORT="other_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">other_company_id</TD></TR>
       <TR><TD PORT="other_person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">other_person_id</TD></TR>
       <TR><TD PORT="carer_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">carer_company_id</TD></TR>
@@ -90,7 +90,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="location_of_therapy" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">location_of_therapy</TD></TR>
       <TR><TD PORT="entrance_date" COLSPAN="3" ALIGN="LEFT">entrance_date</TD></TR>
       <TR><TD PORT="request_date" COLSPAN="3" ALIGN="LEFT">request_date</TD></TR>
-      <TR><TD PORT="source" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">source</TD></TR>
+      <TR><TD PORT="inquiry_source_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">inquiry_source_id</TD></TR>
       <TR><TD PORT="documents" COLSPAN="3" ALIGN="LEFT">documents</TD></TR>
       <TR><TD PORT="treatment_contract_signed" COLSPAN="3" ALIGN="LEFT">treatment_contract_signed</TD></TR>
       <TR><TD PORT="privacy_policy_signed" COLSPAN="3" ALIGN="LEFT">privacy_policy_signed</TD></TR>
@@ -100,12 +100,12 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="carer_relationship" COLSPAN="3" ALIGN="LEFT">carer_relationship</TD></TR>
       <TR><TD PORT="other_relationship" COLSPAN="3" ALIGN="LEFT">other_relationship</TD></TR>
       <TR><TD PORT="invoice_recipient" COLSPAN="3" ALIGN="LEFT">invoice_recipient</TD></TR>
-      <TR><TD PORT="preferred_payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">preferred_payment_type</TD></TR>
+      <TR><TD PORT="payment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type_id</TD></TR>
       <TR><TD PORT="insurance_type" COLSPAN="3" ALIGN="LEFT">insurance_type</TD></TR>
       <TR><TD PORT="notes" COLSPAN="3" ALIGN="LEFT">notes</TD></TR>
       <TR><TD PORT="health_information" COLSPAN="3" ALIGN="LEFT">health_information</TD></TR>
       <TR><TD PORT="prescription_information" COLSPAN="3" ALIGN="LEFT">prescription_information</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="customer_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_state_id</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="3" ALIGN="LEFT">preferred_therapist_gender</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
@@ -216,9 +216,9 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="employee" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee</TD></TR>
-      <TR><TD PORT="region" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region</TD></TR>
+      <TR><TD PORT="therapist_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD></TR>
+      <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD></TR>
+      <TR><TD PORT="region_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region_id</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
       <TR><TD PORT="working_area_zip_codes" COLSPAN="3" ALIGN="LEFT">working_area_zip_codes</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
@@ -240,8 +240,8 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">treatment_documentation</TD></TR>
-      <TR><TD PORT="customer" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">customer</TD><TD PORT="customer.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="therapist" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist</TD><TD PORT="therapist.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">customer_id</TD><TD PORT="customer_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="therapist_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD><TD PORT="therapist_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="date" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">date</TD><TD PORT="date.type" ALIGN="LEFT">date[10]</TD></TR>
       <TR><TD PORT="length" COLSPAN="2" ALIGN="LEFT">length</TD><TD PORT="length.type" ALIGN="LEFT">float[12]</TD></TR>
       <TR><TD PORT="documentation" COLSPAN="2" ALIGN="LEFT">documentation</TD><TD PORT="documentation.type" ALIGN="LEFT">text[65535]</TD></TR>

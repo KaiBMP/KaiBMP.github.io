@@ -19,18 +19,18 @@ digraph "oneDegreeRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "case":"customer":w -> "customer":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "case":"payment_type":w -> "payment_type":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "case":"prescription":w -> "prescription":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "case":"state":w -> "case_state":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "customer":"preferred_payment_type":w -> "payment_type":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"case_state_id":w -> "case_state":"case_state_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"customer_id":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"payment_type_id":w -> "payment_type":"payment_type_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"prescription_id":w -> "prescription":"prescription_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"payment_type_id":w -> "payment_type":"payment_type_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "case" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">case</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">varchar[45]</TD></TR>
-      <TR><TD PORT="prescription" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">prescription</TD><TD PORT="prescription.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="customer" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">customer</TD><TD PORT="customer.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="case_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">case_id</TD><TD PORT="case_id.type" ALIGN="LEFT">varchar[45]</TD></TR>
+      <TR><TD PORT="prescription_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">prescription_id</TD><TD PORT="prescription_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_id</TD><TD PORT="customer_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="bill_number" COLSPAN="2" ALIGN="LEFT">bill_number</TD><TD PORT="bill_number.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="bill_date" COLSPAN="2" ALIGN="LEFT">bill_date</TD><TD PORT="bill_date.type" ALIGN="LEFT">date[10]</TD></TR>
       <TR><TD PORT="bill_type" COLSPAN="2" ALIGN="LEFT">bill_type</TD><TD PORT="bill_type.type" ALIGN="LEFT">enum[17]</TD></TR>
@@ -38,8 +38,8 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="currency" COLSPAN="2" ALIGN="LEFT">currency</TD><TD PORT="currency.type" ALIGN="LEFT">char[3]</TD></TR>
       <TR><TD PORT="payment_date" COLSPAN="2" ALIGN="LEFT">payment_date</TD><TD PORT="payment_date.type" ALIGN="LEFT">date[10]</TD></TR>
       <TR><TD PORT="information" COLSPAN="2" ALIGN="LEFT">information</TD><TD PORT="information.type" ALIGN="LEFT">text[65535]</TD></TR>
-      <TR><TD PORT="payment_type" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type</TD><TD PORT="payment_type.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="state" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD><TD PORT="state.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="payment_type_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type_id</TD><TD PORT="payment_type_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="case_state_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">case_state_id</TD><TD PORT="case_state_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="countdown" COLSPAN="2" ALIGN="LEFT">countdown</TD><TD PORT="countdown.type" ALIGN="LEFT">float[12]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>
     </TABLE>>
@@ -50,7 +50,7 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">case_state</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="case_state_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">case_state_id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">9 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
@@ -61,7 +61,7 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">customer_id</TD></TR>
       <TR><TD PORT="other_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">other_company_id</TD></TR>
       <TR><TD PORT="other_person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">other_person_id</TD></TR>
       <TR><TD PORT="carer_company_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">carer_company_id</TD></TR>
@@ -71,7 +71,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="location_of_therapy" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">location_of_therapy</TD></TR>
       <TR><TD PORT="entrance_date" COLSPAN="3" ALIGN="LEFT">entrance_date</TD></TR>
       <TR><TD PORT="request_date" COLSPAN="3" ALIGN="LEFT">request_date</TD></TR>
-      <TR><TD PORT="source" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">source</TD></TR>
+      <TR><TD PORT="inquiry_source_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">inquiry_source_id</TD></TR>
       <TR><TD PORT="documents" COLSPAN="3" ALIGN="LEFT">documents</TD></TR>
       <TR><TD PORT="treatment_contract_signed" COLSPAN="3" ALIGN="LEFT">treatment_contract_signed</TD></TR>
       <TR><TD PORT="privacy_policy_signed" COLSPAN="3" ALIGN="LEFT">privacy_policy_signed</TD></TR>
@@ -81,12 +81,12 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="carer_relationship" COLSPAN="3" ALIGN="LEFT">carer_relationship</TD></TR>
       <TR><TD PORT="other_relationship" COLSPAN="3" ALIGN="LEFT">other_relationship</TD></TR>
       <TR><TD PORT="invoice_recipient" COLSPAN="3" ALIGN="LEFT">invoice_recipient</TD></TR>
-      <TR><TD PORT="preferred_payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">preferred_payment_type</TD></TR>
+      <TR><TD PORT="payment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type_id</TD></TR>
       <TR><TD PORT="insurance_type" COLSPAN="3" ALIGN="LEFT">insurance_type</TD></TR>
       <TR><TD PORT="notes" COLSPAN="3" ALIGN="LEFT">notes</TD></TR>
       <TR><TD PORT="health_information" COLSPAN="3" ALIGN="LEFT">health_information</TD></TR>
       <TR><TD PORT="prescription_information" COLSPAN="3" ALIGN="LEFT">prescription_information</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="customer_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_state_id</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="3" ALIGN="LEFT">preferred_therapist_gender</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
@@ -97,7 +97,7 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">payment_type</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="payment_type_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">payment_type_id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
@@ -108,11 +108,11 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">prescription</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="prescription_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">prescription_id</TD></TR>
       <TR><TD PORT="date" COLSPAN="3" ALIGN="LEFT">date</TD></TR>
       <TR><TD PORT="doctor" COLSPAN="3" ALIGN="LEFT">doctor</TD></TR>
       <TR><TD PORT="diagnosis" COLSPAN="3" ALIGN="LEFT">diagnosis</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="prescription_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">prescription_state_id</TD></TR>
       <TR><TD PORT="prescription_counter" COLSPAN="3" ALIGN="LEFT">prescription_counter</TD></TR>
       <TR><TD PORT="state_of_next_prescription" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state_of_next_prescription</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>

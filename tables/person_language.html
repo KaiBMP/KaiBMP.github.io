@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='even'>
- <td class='primaryKey' title='Primary Key'>person</td>
+ <td class='primaryKey' title='Primary Key'>person_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -111,7 +111,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="person_language.person refs person.id via person_language_ibfk_1"><a href='person.html'>person</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="person_language.person_id refs person.person_id via person_language_ibfk_1"><a href='person.html'>person</a><span class='relatedKey'>.person_id</span>
     </td>
     <td class='constraint detail'>person_language_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'>Using ISO 639-1 for language codes</td>
 </tr>
 </table>
-<p title='2 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='2 columns'>Table contained 0 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -147,7 +147,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>person + language_iso</td>
+  <td class='primaryKey'>person_id + language_iso</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
@@ -158,18 +158,18 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from person_language'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="person_language.html" title="person_language" alt="" coords="188,5,417,117">
-<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="5,8,144,403">
+<area shape="rect" id="node1" href="person_language.html" title="person_language" alt="" coords="207,5,436,117">
+<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="5,8,163,403">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/person_language.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="419,303,551,385">
+<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="438,303,570,385">
 <area shape="rect" id="node2" href="address.html" title="address" alt="" coords="15,543,135,625">
-<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="188,163,327,557">
+<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="188,163,345,557">
 <area shape="rect" id="node6" href="form_of_address.html" title="form_of_address" alt="" coords="5,259,144,341">
-<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="644,303,784,385">
-<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="419,5,551,88">
-<area shape="rect" id="node7" href="person_language.html" title="person_language" alt="" coords="371,105,600,217">
+<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="663,303,803,385">
+<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="438,5,570,88">
+<area shape="rect" id="node7" href="person_language.html" title="person_language" alt="" coords="389,105,619,217">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/person_language.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

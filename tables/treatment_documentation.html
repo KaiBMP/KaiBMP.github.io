@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='odd'>
- <td class='primaryKey' title='Primary Key'>customer</td>
+ <td class='primaryKey' title='Primary Key'>customer_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -111,7 +111,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="treatment_documentation.customer refs customer.id via treatment_documentation_ibfk_1"><a href='customer.html'>customer</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="treatment_documentation.customer_id refs customer.customer_id via treatment_documentation_ibfk_1"><a href='customer.html'>customer</a><span class='relatedKey'>.customer_id</span>
     </td>
     <td class='constraint detail'>treatment_documentation_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -121,7 +121,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='primaryKey' title='Primary Key'>therapist</td>
+ <td class='primaryKey' title='Primary Key'>therapist_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -131,7 +131,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="treatment_documentation.therapist refs therapist.id via treatment_documentation_ibfk_2"><a href='therapist.html'>therapist</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="treatment_documentation.therapist_id refs therapist.therapist_id via treatment_documentation_ibfk_2"><a href='therapist.html'>therapist</a><span class='relatedKey'>.therapist_id</span>
     </td>
     <td class='constraint detail'>treatment_documentation_ibfk_2<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -273,7 +273,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='14 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='14 columns'>Table contained 0 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -288,16 +288,16 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>customer + therapist + date</td>
+  <td class='primaryKey'>customer_id + therapist_id + date</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
  </tr>
  <tr>
-  <td class='indexedColumn'>therapist</td>
+  <td class='indexedColumn'>therapist_id</td>
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
-  <td class='constraint' style='text-align:left;'>therapist</td>
+  <td class='constraint' style='text-align:left;'>therapist_id</td>
  </tr>
 </table>
 </div>
@@ -317,8 +317,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <area shape="rect" id="node4" href="company.html" title="company" alt="" coords="345,49,477,132">
 <area shape="rect" id="node5" href="address.html" title="address" alt="" coords="5,117,125,200">
 <area shape="rect" id="node6" href="person.html" title="person" alt="" coords="169,117,301,200">
-<area shape="rect" id="node7" href="inquiry_source.html" title="inquiry_source" alt="" coords="350,259,473,341">
-<area shape="rect" id="node8" href="customer_state.html" title="customer_state" alt="" coords="347,564,475,647">
+<area shape="rect" id="node7" href="customer_state.html" title="customer_state" alt="" coords="347,564,475,647">
+<area shape="rect" id="node8" href="inquiry_source.html" title="inquiry_source" alt="" coords="350,259,473,341">
 <area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="868,205,1020,288">
 <area shape="rect" id="node10" href="therapist.html" title="therapist" alt="" coords="529,779,719,957">
 <area shape="rect" id="node11" href="employee.html" title="employee" alt="" coords="345,764,477,847">

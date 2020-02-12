@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='odd'>
- <td class='primaryKey' title='Primary Key'>id</td>
+ <td class='primaryKey' title='Primary Key'>address_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -110,25 +110,25 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="company.address refs address.id via company_ibfk_2"><a href='company.html'>company</a><span class='relatedKey'>.address</span>
+    <td class='relatedTable detail' title="company.address_id refs address.address_id via company_ibfk_2"><a href='company.html'>company</a><span class='relatedKey'>.address_id</span>
     </td>
     <td class='constraint detail'>company_ibfk_2<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="customer.location_of_therapy refs address.id via customer_ibfk_10"><a href='customer.html'>customer</a><span class='relatedKey'>.location_of_therapy</span>
+    <td class='relatedTable detail' title="customer.location_of_therapy refs address.address_id via customer_ibfk_10"><a href='customer.html'>customer</a><span class='relatedKey'>.location_of_therapy</span>
     </td>
     <td class='constraint detail'>customer_ibfk_10<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="office.address refs address.id via office_ibfk_1"><a href='office.html'>office</a><span class='relatedKey'>.address</span>
+    <td class='relatedTable detail' title="office.address_id refs address.address_id via office_ibfk_1"><a href='office.html'>office</a><span class='relatedKey'>.address_id</span>
     </td>
     <td class='constraint detail'>office_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="person.address refs address.id via person_ibfk_2"><a href='person.html'>person</a><span class='relatedKey'>.address</span>
+    <td class='relatedTable detail' title="person.address_id refs address.address_id via person_ibfk_2"><a href='person.html'>person</a><span class='relatedKey'>.address_id</span>
     </td>
     <td class='constraint detail'>person_ibfk_2<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -205,7 +205,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'>Using ISO 3166 country codes</td>
 </tr>
 </table>
-<p title='7 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='7 columns'>Table contained 0 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -220,7 +220,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>id</td>
+  <td class='primaryKey'>address_id</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
@@ -231,30 +231,30 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from address'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="527,31,659,305">
+<area shape="rect" id="node1" href="company.html" title="company" alt="" coords="545,31,677,305">
 <area shape="rect" id="node2" href="address.html" title="address" alt="" coords="5,404,300,636">
-<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="344,8,483,403">
-<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="703,7,908,713">
-<area shape="rect" id="node5" href="office.html" title="office" alt="" coords="347,492,479,623">
+<area shape="rect" id="node3" href="person.html" title="person" alt="" coords="344,8,501,403">
+<area shape="rect" id="node4" href="customer.html" title="customer" alt="" coords="721,7,927,713">
+<area shape="rect" id="node5" href="office.html" title="office" alt="" coords="357,492,489,623">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/address.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="998,671,1118,753">
-<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="712,249,917,956">
-<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="537,941,657,1024">
-<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="531,273,663,548">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="1017,671,1137,753">
+<area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="731,249,936,956">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="556,941,676,1024">
+<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="550,273,682,548">
 <area shape="rect" id="node5" href="address.html" title="address" alt="" coords="5,476,300,708">
-<area shape="rect" id="node6" href="person.html" title="person" alt="" coords="344,189,483,584">
-<area shape="rect" id="node7" href="inquiry_source.html" title="inquiry_source" alt="" coords="536,673,659,756">
-<area shape="rect" id="node8" href="customer_state.html" title="customer_state" alt="" coords="533,841,661,924">
+<area shape="rect" id="node6" href="person.html" title="person" alt="" coords="344,189,501,584">
+<area shape="rect" id="node7" href="customer_state.html" title="customer_state" alt="" coords="552,841,680,924">
+<area shape="rect" id="node8" href="inquiry_source.html" title="inquiry_source" alt="" coords="555,673,677,756">
 <area shape="rect" id="node14" href="form_of_address.html" title="form_of_address" alt="" coords="83,285,222,368">
-<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="982,300,1134,383">
-<area shape="rect" id="node10" href="employee.html" title="employee" alt="" coords="531,37,663,120">
-<area shape="rect" id="node11" href="matching.html" title="matching" alt="" coords="992,69,1124,152">
-<area shape="rect" id="node12" href="office_employee.html" title="office_employee" alt="" coords="747,37,882,120">
-<area shape="rect" id="node13" href="office.html" title="office" alt="" coords="347,5,479,136">
-<area shape="rect" id="node15" href="person_language.html" title="person_language" alt="" coords="527,137,668,220">
-<area shape="rect" id="node16" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="961,200,1155,283">
+<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="1001,300,1153,383">
+<area shape="rect" id="node10" href="employee.html" title="employee" alt="" coords="550,37,682,120">
+<area shape="rect" id="node11" href="matching.html" title="matching" alt="" coords="1011,69,1143,152">
+<area shape="rect" id="node12" href="office_employee.html" title="office_employee" alt="" coords="766,37,901,120">
+<area shape="rect" id="node13" href="office.html" title="office" alt="" coords="357,5,489,136">
+<area shape="rect" id="node15" href="person_language.html" title="person_language" alt="" coords="545,137,687,220">
+<area shape="rect" id="node16" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="980,200,1173,283">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/address.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

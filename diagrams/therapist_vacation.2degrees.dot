@@ -19,13 +19,13 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "customer_therapist":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "request":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "skill_therapist":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist":"employee":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist":"region":w -> "region":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist_vacation":"therapist":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "treatment_documentation":"elipses":w -> "therapist":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer_therapist":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "request":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "skill_therapist":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist":"employee_id":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist":"region_id":w -> "region":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist_vacation":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "treatment_documentation":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer_therapist" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -80,9 +80,9 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="employee" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee</TD></TR>
-      <TR><TD PORT="region" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region</TD></TR>
+      <TR><TD PORT="therapist_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD></TR>
+      <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD></TR>
+      <TR><TD PORT="region_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region_id</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
       <TR><TD PORT="working_area_zip_codes" COLSPAN="3" ALIGN="LEFT">working_area_zip_codes</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
@@ -94,8 +94,8 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist_vacation</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="therapist" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">therapist</TD><TD PORT="therapist.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="therapist_vacation_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_vacation_id</TD><TD PORT="therapist_vacation_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="therapist_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">therapist_id</TD><TD PORT="therapist_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="start" COLSPAN="2" ALIGN="LEFT">start</TD><TD PORT="start.type" ALIGN="LEFT">date[10]</TD></TR>
       <TR><TD PORT="end" COLSPAN="2" ALIGN="LEFT">end</TD><TD PORT="end.type" ALIGN="LEFT">date[10]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>

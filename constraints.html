@@ -72,309 +72,309 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <tbody>
   <tr class='even'>
   <td class='detail'>case_ibfk_1</td>
-  <td class='detail'><a href='tables/case.html'>case</a>.customer</td>
-  <td class='detail'><a href='tables/customer.html'>customer</a>.id</td>
+  <td class='detail'><a href='tables/case.html'>case</a>.customer_id</td>
+  <td class='detail'><a href='tables/customer.html'>customer</a>.customer_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>case_ibfk_2</td>
-  <td class='detail'><a href='tables/case.html'>case</a>.prescription</td>
-  <td class='detail'><a href='tables/prescription.html'>prescription</a>.id</td>
+  <td class='detail'><a href='tables/case.html'>case</a>.prescription_id</td>
+  <td class='detail'><a href='tables/prescription.html'>prescription</a>.prescription_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>case_ibfk_3</td>
-  <td class='detail'><a href='tables/case.html'>case</a>.state</td>
-  <td class='detail'><a href='tables/case_state.html'>case_state</a>.id</td>
+  <td class='detail'><a href='tables/case.html'>case</a>.case_state_id</td>
+  <td class='detail'><a href='tables/case_state.html'>case_state</a>.case_state_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>case_ibfk_4</td>
-  <td class='detail'><a href='tables/case.html'>case</a>.payment_type</td>
-  <td class='detail'><a href='tables/payment_type.html'>payment_type</a>.id</td>
+  <td class='detail'><a href='tables/case.html'>case</a>.payment_type_id</td>
+  <td class='detail'><a href='tables/payment_type.html'>payment_type</a>.payment_type_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>company_ibfk_1</td>
-  <td class='detail'><a href='tables/company.html'>company</a>.contact_person</td>
-  <td class='detail'><a href='tables/person.html'>person</a>.id</td>
+  <td class='detail'><a href='tables/company.html'>company</a>.person_id</td>
+  <td class='detail'><a href='tables/person.html'>person</a>.person_id</td>
   <td class='detail'><span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>Null on delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>company_ibfk_2</td>
-  <td class='detail'><a href='tables/company.html'>company</a>.address</td>
-  <td class='detail'><a href='tables/address.html'>address</a>.id</td>
+  <td class='detail'><a href='tables/company.html'>company</a>.address_id</td>
+  <td class='detail'><a href='tables/address.html'>address</a>.address_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>customer_ibfk_1</td>
-  <td class='detail'><a href='tables/customer.html'>customer</a>.source</td>
-  <td class='detail'><a href='tables/inquiry_source.html'>inquiry_source</a>.id</td>
+  <td class='detail'><a href='tables/customer.html'>customer</a>.inquiry_source_id</td>
+  <td class='detail'><a href='tables/inquiry_source.html'>inquiry_source</a>.inquiry_source_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>customer_ibfk_10</td>
   <td class='detail'><a href='tables/customer.html'>customer</a>.location_of_therapy</td>
-  <td class='detail'><a href='tables/address.html'>address</a>.id</td>
+  <td class='detail'><a href='tables/address.html'>address</a>.address_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>customer_ibfk_2</td>
   <td class='detail'><a href='tables/customer.html'>customer</a>.patient_person_id</td>
-  <td class='detail'><a href='tables/person.html'>person</a>.id</td>
+  <td class='detail'><a href='tables/person.html'>person</a>.person_id</td>
   <td class='detail'><span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>Null on delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>customer_ibfk_3</td>
   <td class='detail'><a href='tables/customer.html'>customer</a>.patient_company_id</td>
-  <td class='detail'><a href='tables/company.html'>company</a>.id</td>
+  <td class='detail'><a href='tables/company.html'>company</a>.company_id</td>
   <td class='detail'><span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>Null on delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>customer_ibfk_4</td>
   <td class='detail'><a href='tables/customer.html'>customer</a>.carer_person_id</td>
-  <td class='detail'><a href='tables/person.html'>person</a>.id</td>
+  <td class='detail'><a href='tables/person.html'>person</a>.person_id</td>
   <td class='detail'><span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>Null on delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>customer_ibfk_5</td>
   <td class='detail'><a href='tables/customer.html'>customer</a>.carer_company_id</td>
-  <td class='detail'><a href='tables/company.html'>company</a>.id</td>
+  <td class='detail'><a href='tables/company.html'>company</a>.company_id</td>
   <td class='detail'><span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>Null on delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>customer_ibfk_6</td>
   <td class='detail'><a href='tables/customer.html'>customer</a>.other_person_id</td>
-  <td class='detail'><a href='tables/person.html'>person</a>.id</td>
+  <td class='detail'><a href='tables/person.html'>person</a>.person_id</td>
   <td class='detail'><span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>Null on delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>customer_ibfk_7</td>
   <td class='detail'><a href='tables/customer.html'>customer</a>.other_company_id</td>
-  <td class='detail'><a href='tables/company.html'>company</a>.id</td>
+  <td class='detail'><a href='tables/company.html'>company</a>.company_id</td>
   <td class='detail'><span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>Null on delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>customer_ibfk_8</td>
-  <td class='detail'><a href='tables/customer.html'>customer</a>.preferred_payment_type</td>
-  <td class='detail'><a href='tables/payment_type.html'>payment_type</a>.id</td>
+  <td class='detail'><a href='tables/customer.html'>customer</a>.payment_type_id</td>
+  <td class='detail'><a href='tables/payment_type.html'>payment_type</a>.payment_type_id</td>
   <td class='detail'><span title='Null on delete:
  Foreign key to parent set to NULL when parent deleted'>Null on delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>customer_ibfk_9</td>
-  <td class='detail'><a href='tables/customer.html'>customer</a>.state</td>
-  <td class='detail'><a href='tables/customer_state.html'>customer_state</a>.id</td>
+  <td class='detail'><a href='tables/customer.html'>customer</a>.customer_state_id</td>
+  <td class='detail'><a href='tables/customer_state.html'>customer_state</a>.customer_state_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>customer_therapist_ibfk_1</td>
-  <td class='detail'><a href='tables/customer_therapist.html'>customer_therapist</a>.customer</td>
-  <td class='detail'><a href='tables/customer.html'>customer</a>.id</td>
+  <td class='detail'><a href='tables/customer_therapist.html'>customer_therapist</a>.customer_id</td>
+  <td class='detail'><a href='tables/customer.html'>customer</a>.customer_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>customer_therapist_ibfk_2</td>
-  <td class='detail'><a href='tables/customer_therapist.html'>customer_therapist</a>.therapist</td>
-  <td class='detail'><a href='tables/therapist.html'>therapist</a>.id</td>
+  <td class='detail'><a href='tables/customer_therapist.html'>customer_therapist</a>.therapist_id</td>
+  <td class='detail'><a href='tables/therapist.html'>therapist</a>.therapist_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>employee_ibfk_1</td>
-  <td class='detail'><a href='tables/employee.html'>employee</a>.person</td>
-  <td class='detail'><a href='tables/person.html'>person</a>.id</td>
+  <td class='detail'><a href='tables/employee.html'>employee</a>.person_id</td>
+  <td class='detail'><a href='tables/person.html'>person</a>.person_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>employee_ibfk_2</td>
-  <td class='detail'><a href='tables/employee.html'>employee</a>.state</td>
-  <td class='detail'><a href='tables/employee_state.html'>employee_state</a>.id</td>
+  <td class='detail'><a href='tables/employee.html'>employee</a>.state_id</td>
+  <td class='detail'><a href='tables/employee_state.html'>employee_state</a>.employee_state_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>employee_ibfk_3</td>
-  <td class='detail'><a href='tables/employee.html'>employee</a>.employment_type</td>
-  <td class='detail'><a href='tables/employment_type.html'>employment_type</a>.id</td>
+  <td class='detail'><a href='tables/employee.html'>employee</a>.employment_type_id</td>
+  <td class='detail'><a href='tables/employment_type.html'>employment_type</a>.employment_type_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>employee_ibfk_4</td>
-  <td class='detail'><a href='tables/employee.html'>employee</a>.departement</td>
-  <td class='detail'><a href='tables/departement.html'>departement</a>.id</td>
+  <td class='detail'><a href='tables/employee.html'>employee</a>.departement_id</td>
+  <td class='detail'><a href='tables/departement.html'>departement</a>.departement_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>matching_ibfk_1</td>
-  <td class='detail'><a href='tables/matching.html'>matching</a>.customer</td>
-  <td class='detail'><a href='tables/customer.html'>customer</a>.id</td>
+  <td class='detail'><a href='tables/matching.html'>matching</a>.customer_id</td>
+  <td class='detail'><a href='tables/customer.html'>customer</a>.customer_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>matching_ibfk_2</td>
-  <td class='detail'><a href='tables/matching.html'>matching</a>.processor</td>
-  <td class='detail'><a href='tables/office_employee.html'>office_employee</a>.id</td>
+  <td class='detail'><a href='tables/matching.html'>matching</a>.office_employee_id</td>
+  <td class='detail'><a href='tables/office_employee.html'>office_employee</a>.office_employee_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>matching_ibfk_3</td>
-  <td class='detail'><a href='tables/matching.html'>matching</a>.state</td>
-  <td class='detail'><a href='tables/matching_state.html'>matching_state</a>.id</td>
+  <td class='detail'><a href='tables/matching.html'>matching</a>.matching_state_id</td>
+  <td class='detail'><a href='tables/matching_state.html'>matching_state</a>.matching_state_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>office_employee_ibfk_1</td>
-  <td class='detail'><a href='tables/office_employee.html'>office_employee</a>.employee</td>
-  <td class='detail'><a href='tables/employee.html'>employee</a>.id</td>
+  <td class='detail'><a href='tables/office_employee.html'>office_employee</a>.employee_id</td>
+  <td class='detail'><a href='tables/employee.html'>employee</a>.employee_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>office_employee_ibfk_2</td>
-  <td class='detail'><a href='tables/office_employee.html'>office_employee</a>.office</td>
-  <td class='detail'><a href='tables/office.html'>office</a>.id</td>
+  <td class='detail'><a href='tables/office_employee.html'>office_employee</a>.office_id</td>
+  <td class='detail'><a href='tables/office.html'>office</a>.office_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>office_ibfk_1</td>
-  <td class='detail'><a href='tables/office.html'>office</a>.address</td>
-  <td class='detail'><a href='tables/address.html'>address</a>.id</td>
+  <td class='detail'><a href='tables/office.html'>office</a>.address_id</td>
+  <td class='detail'><a href='tables/address.html'>address</a>.address_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>person_ibfk_1</td>
-  <td class='detail'><a href='tables/person.html'>person</a>.form_of_address</td>
-  <td class='detail'><a href='tables/form_of_address.html'>form_of_address</a>.id</td>
+  <td class='detail'><a href='tables/person.html'>person</a>.form_of_address_id</td>
+  <td class='detail'><a href='tables/form_of_address.html'>form_of_address</a>.form_of_address_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>person_ibfk_2</td>
-  <td class='detail'><a href='tables/person.html'>person</a>.address</td>
-  <td class='detail'><a href='tables/address.html'>address</a>.id</td>
+  <td class='detail'><a href='tables/person.html'>person</a>.address_id</td>
+  <td class='detail'><a href='tables/address.html'>address</a>.address_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>person_language_ibfk_1</td>
-  <td class='detail'><a href='tables/person_language.html'>person_language</a>.person</td>
-  <td class='detail'><a href='tables/person.html'>person</a>.id</td>
+  <td class='detail'><a href='tables/person_language.html'>person_language</a>.person_id</td>
+  <td class='detail'><a href='tables/person.html'>person</a>.person_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>prescription_benefit_assignment_ibfk_1</td>
-  <td class='detail'><a href='tables/prescription_benefit_assignment.html'>prescription_benefit_assignment</a>.benefit</td>
-  <td class='detail'><a href='tables/prescription_benefit.html'>prescription_benefit</a>.id</td>
+  <td class='detail'><a href='tables/prescription_benefit_assignment.html'>prescription_benefit_assignment</a>.prescription_benefit_id</td>
+  <td class='detail'><a href='tables/prescription_benefit.html'>prescription_benefit</a>.prescription_benefit_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>prescription_benefit_assignment_ibfk_2</td>
-  <td class='detail'><a href='tables/prescription_benefit_assignment.html'>prescription_benefit_assignment</a>.prescription</td>
-  <td class='detail'><a href='tables/prescription.html'>prescription</a>.id</td>
+  <td class='detail'><a href='tables/prescription_benefit_assignment.html'>prescription_benefit_assignment</a>.prescription_id</td>
+  <td class='detail'><a href='tables/prescription.html'>prescription</a>.prescription_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>prescription_ibfk_1</td>
-  <td class='detail'><a href='tables/prescription.html'>prescription</a>.state</td>
-  <td class='detail'><a href='tables/prescription_state.html'>prescription_state</a>.id</td>
+  <td class='detail'><a href='tables/prescription.html'>prescription</a>.prescription_state_id</td>
+  <td class='detail'><a href='tables/prescription_state.html'>prescription_state</a>.prescription_state_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>prescription_ibfk_2</td>
   <td class='detail'><a href='tables/prescription.html'>prescription</a>.state_of_next_prescription</td>
-  <td class='detail'><a href='tables/prescription_state.html'>prescription_state</a>.id</td>
+  <td class='detail'><a href='tables/prescription_state.html'>prescription_state</a>.prescription_state_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>request_ibfk_1</td>
-  <td class='detail'><a href='tables/request.html'>request</a>.therapist</td>
-  <td class='detail'><a href='tables/therapist.html'>therapist</a>.id</td>
+  <td class='detail'><a href='tables/request.html'>request</a>.therapist_id</td>
+  <td class='detail'><a href='tables/therapist.html'>therapist</a>.therapist_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>request_ibfk_2</td>
-  <td class='detail'><a href='tables/request.html'>request</a>.matching</td>
-  <td class='detail'><a href='tables/matching.html'>matching</a>.id</td>
+  <td class='detail'><a href='tables/request.html'>request</a>.matching_id</td>
+  <td class='detail'><a href='tables/matching.html'>matching</a>.matching_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>skill_therapist_ibfk_1</td>
-  <td class='detail'><a href='tables/skill_therapist.html'>skill_therapist</a>.therapist</td>
-  <td class='detail'><a href='tables/therapist.html'>therapist</a>.id</td>
+  <td class='detail'><a href='tables/skill_therapist.html'>skill_therapist</a>.therapist_id</td>
+  <td class='detail'><a href='tables/therapist.html'>therapist</a>.therapist_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>skill_therapist_ibfk_2</td>
-  <td class='detail'><a href='tables/skill_therapist.html'>skill_therapist</a>.skill</td>
-  <td class='detail'><a href='tables/skill.html'>skill</a>.id</td>
+  <td class='detail'><a href='tables/skill_therapist.html'>skill_therapist</a>.skill_id</td>
+  <td class='detail'><a href='tables/skill.html'>skill</a>.skill_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>therapist_ibfk_1</td>
-  <td class='detail'><a href='tables/therapist.html'>therapist</a>.employee</td>
-  <td class='detail'><a href='tables/employee.html'>employee</a>.id</td>
+  <td class='detail'><a href='tables/therapist.html'>therapist</a>.employee_id</td>
+  <td class='detail'><a href='tables/employee.html'>employee</a>.employee_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>therapist_ibfk_2</td>
-  <td class='detail'><a href='tables/therapist.html'>therapist</a>.region</td>
-  <td class='detail'><a href='tables/region.html'>region</a>.id</td>
+  <td class='detail'><a href='tables/therapist.html'>therapist</a>.region_id</td>
+  <td class='detail'><a href='tables/region.html'>region</a>.region_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>therapist_vacation_ibfk_1</td>
-  <td class='detail'><a href='tables/therapist_vacation.html'>therapist_vacation</a>.therapist</td>
-  <td class='detail'><a href='tables/therapist.html'>therapist</a>.id</td>
+  <td class='detail'><a href='tables/therapist_vacation.html'>therapist_vacation</a>.therapist_id</td>
+  <td class='detail'><a href='tables/therapist.html'>therapist</a>.therapist_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
   <td class='detail'>treatment_documentation_ibfk_1</td>
-  <td class='detail'><a href='tables/treatment_documentation.html'>treatment_documentation</a>.customer</td>
-  <td class='detail'><a href='tables/customer.html'>customer</a>.id</td>
+  <td class='detail'><a href='tables/treatment_documentation.html'>treatment_documentation</a>.customer_id</td>
+  <td class='detail'><a href='tables/customer.html'>customer</a>.customer_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='odd'>
   <td class='detail'>treatment_documentation_ibfk_2</td>
-  <td class='detail'><a href='tables/treatment_documentation.html'>treatment_documentation</a>.therapist</td>
-  <td class='detail'><a href='tables/therapist.html'>therapist</a>.id</td>
+  <td class='detail'><a href='tables/treatment_documentation.html'>treatment_documentation</a>.therapist_id</td>
+  <td class='detail'><a href='tables/therapist.html'>therapist</a>.therapist_id</td>
   <td class='detail'><span title='Restrict delete:
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>

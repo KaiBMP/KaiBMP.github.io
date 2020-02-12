@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='odd'>
- <td class='primaryKey' title='Primary Key'>benefit</td>
+ <td class='primaryKey' title='Primary Key'>prescription_benefit_id</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
  <td class='detail' align='center'></td>
@@ -111,7 +111,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="prescription_benefit_assignment.benefit refs prescription_benefit.id via prescription_benefit_assignment_ibfk_1"><a href='prescription_benefit.html'>prescription_benefit</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="prescription_benefit_assignment.prescription_benefit_id refs prescription_benefit.prescription_benefit_id via prescription_benefit_assignment_ibfk_1"><a href='prescription_benefit.html'>prescription_benefit</a><span class='relatedKey'>.prescription_benefit_id</span>
     </td>
     <td class='constraint detail'>prescription_benefit_assignment_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='primaryKey' title='Primary Key'>prescription</td>
+ <td class='primaryKey' title='Primary Key'>prescription_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -142,7 +142,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="prescription_benefit_assignment.prescription refs prescription.id via prescription_benefit_assignment_ibfk_2"><a href='prescription.html'>prescription</a><span class='relatedKey'>.id</span>
+    <td class='relatedTable detail' title="prescription_benefit_assignment.prescription_id refs prescription.prescription_id via prescription_benefit_assignment_ibfk_2"><a href='prescription.html'>prescription</a><span class='relatedKey'>.prescription_id</span>
     </td>
     <td class='constraint detail'>prescription_benefit_assignment_ibfk_2<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -152,7 +152,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='3 columns'>Table contained 0 rows at Di. Feb. 11 13:24 MEZ 2020<p/>
+<p title='3 columns'>Table contained 0 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -167,16 +167,16 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>benefit + prescription</td>
+  <td class='primaryKey'>prescription_benefit_id + prescription_id</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>PRIMARY</td>
  </tr>
  <tr>
-  <td class='indexedColumn'>prescription</td>
+  <td class='indexedColumn'>prescription_id</td>
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
-  <td class='constraint' style='text-align:left;'>prescription</td>
+  <td class='constraint' style='text-align:left;'>prescription_id</td>
  </tr>
 </table>
 </div>
@@ -184,17 +184,17 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from prescription_benefit_assignment'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="248,101,489,237">
-<area shape="rect" id="node2" href="prescription_benefit.html" title="prescription_benefit" alt="" coords="27,5,182,232">
+<area shape="rect" id="node1" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="248,101,537,237">
+<area shape="rect" id="node2" href="prescription_benefit.html" title="prescription_benefit" alt="" coords="17,5,192,232">
 <area shape="rect" id="node3" href="prescription.html" title="prescription" alt="" coords="5,249,204,476">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/prescription_benefit_assignment.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="495,249,615,332">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="519,249,639,332">
 <area shape="rect" id="node2" href="prescription.html" title="prescription" alt="" coords="192,249,391,476">
 <area shape="rect" id="node3" href="prescription_state.html" title="prescription_state" alt="" coords="5,369,148,452">
-<area shape="rect" id="node4" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="435,49,676,185">
-<area shape="rect" id="node5" href="prescription_benefit.html" title="prescription_benefit" alt="" coords="214,5,369,232">
+<area shape="rect" id="node4" href="prescription_benefit_assignment.html" title="prescription_benefit_assignment" alt="" coords="435,49,724,185">
+<area shape="rect" id="node5" href="prescription_benefit.html" title="prescription_benefit" alt="" coords="204,5,379,232">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/prescription_benefit_assignment.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

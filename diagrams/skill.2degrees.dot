@@ -19,13 +19,13 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "skill_therapist":"skill":w -> "skill":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "skill_therapist":"therapist":w -> "therapist":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "skill_therapist":"skill_id":w -> "skill":"skill_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "skill_therapist":"therapist_id":w -> "therapist":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "skill" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">skill</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="skill_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">skill_id</TD><TD PORT="skill_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
@@ -36,8 +36,8 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">skill_therapist</TD></TR>
-      <TR><TD PORT="therapist" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist</TD></TR>
-      <TR><TD PORT="skill" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">skill</TD></TR>
+      <TR><TD PORT="therapist_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD></TR>
+      <TR><TD PORT="skill_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">skill_id</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>

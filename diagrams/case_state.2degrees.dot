@@ -19,18 +19,18 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "case":"customer":w -> "customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "case":"payment_type":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "case":"prescription":w -> "prescription":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "case":"state":w -> "case_state":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"case_state_id":w -> "case_state":"case_state_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"customer_id":w -> "customer":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"payment_type_id":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "case":"prescription_id":w -> "prescription":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"elipses":w -> "payment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "case" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">case</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="prescription" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">prescription</TD></TR>
-      <TR><TD PORT="customer" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer</TD></TR>
+      <TR><TD PORT="case_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">case_id</TD></TR>
+      <TR><TD PORT="prescription_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">prescription_id</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_id</TD></TR>
       <TR><TD PORT="bill_number" COLSPAN="3" ALIGN="LEFT">bill_number</TD></TR>
       <TR><TD PORT="bill_date" COLSPAN="3" ALIGN="LEFT">bill_date</TD></TR>
       <TR><TD PORT="bill_type" COLSPAN="3" ALIGN="LEFT">bill_type</TD></TR>
@@ -38,8 +38,8 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="currency" COLSPAN="3" ALIGN="LEFT">currency</TD></TR>
       <TR><TD PORT="payment_date" COLSPAN="3" ALIGN="LEFT">payment_date</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
-      <TR><TD PORT="payment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="payment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type_id</TD></TR>
+      <TR><TD PORT="case_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">case_state_id</TD></TR>
       <TR><TD PORT="countdown" COLSPAN="3" ALIGN="LEFT">countdown</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
@@ -50,7 +50,7 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">case_state</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="case_state_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">case_state_id</TD><TD PORT="case_state_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">varchar[255]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">9 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>

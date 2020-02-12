@@ -19,19 +19,19 @@ digraph "oneDegreeRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "matching":"processor":w -> "office_employee":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "office_employee":"employee":w -> "employee":"id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "office_employee":"office":w -> "office":"id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "matching":"office_employee_id":w -> "office_employee":"office_employee_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office_employee":"employee_id":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "office_employee":"office_id":w -> "office":"office_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employee</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="person" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person</TD></TR>
+      <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">employee_id</TD></TR>
+      <TR><TD PORT="person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person_id</TD></TR>
       <TR><TD PORT="work_email" COLSPAN="3" ALIGN="LEFT">work_email</TD></TR>
       <TR><TD PORT="work_phone" COLSPAN="3" ALIGN="LEFT">work_phone</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
-      <TR><TD PORT="employment_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employment_type</TD></TR>
+      <TR><TD PORT="state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state_id</TD></TR>
+      <TR><TD PORT="employment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employment_type_id</TD></TR>
       <TR><TD PORT="hours_per_week" COLSPAN="3" ALIGN="LEFT">hours_per_week</TD></TR>
       <TR><TD PORT="start_date" COLSPAN="3" ALIGN="LEFT">start_date</TD></TR>
       <TR><TD PORT="leaving_date" COLSPAN="3" ALIGN="LEFT">leaving_date</TD></TR>
@@ -39,7 +39,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="probation_end_date" COLSPAN="3" ALIGN="LEFT">probation_end_date</TD></TR>
       <TR><TD PORT="contract_signed" COLSPAN="3" ALIGN="LEFT">contract_signed</TD></TR>
       <TR><TD PORT="job_title" COLSPAN="3" ALIGN="LEFT">job_title</TD></TR>
-      <TR><TD PORT="departement" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">departement</TD></TR>
+      <TR><TD PORT="departement_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">departement_id</TD></TR>
       <TR><TD PORT="team" COLSPAN="3" ALIGN="LEFT">team</TD></TR>
       <TR><TD PORT="salary" COLSPAN="3" ALIGN="LEFT">salary</TD></TR>
       <TR><TD PORT="salary_currency" COLSPAN="3" ALIGN="LEFT">salary_currency</TD></TR>
@@ -53,11 +53,11 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">matching</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="processor" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">processor</TD></TR>
-      <TR><TD PORT="customer" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer</TD></TR>
+      <TR><TD PORT="matching_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">matching_id</TD></TR>
+      <TR><TD PORT="office_employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">office_employee_id</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_id</TD></TR>
       <TR><TD PORT="customer_wish" COLSPAN="3" ALIGN="LEFT">customer_wish</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="matching_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">matching_state_id</TD></TR>
       <TR><TD PORT="request_date" COLSPAN="3" ALIGN="LEFT">request_date</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
@@ -68,9 +68,9 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">office</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="office_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">office_id</TD></TR>
       <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
-      <TR><TD PORT="address" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">address</TD></TR>
+      <TR><TD PORT="address_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">address_id</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="office.html"
@@ -80,9 +80,9 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">office_employee</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="office" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">office</TD><TD PORT="office.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="employee" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">employee</TD><TD PORT="employee.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="office_employee_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">office_employee_id</TD><TD PORT="office_employee_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="office_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">office_id</TD><TD PORT="office_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="employee_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD><TD PORT="employee_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="display_name" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">display_name</TD><TD PORT="display_name.type" ALIGN="LEFT">varchar[5]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>

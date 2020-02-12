@@ -19,16 +19,16 @@ digraph "oneDegreeRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "matching":"state":w -> "matching_state":"id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "matching":"matching_state_id":w -> "matching_state":"matching_state_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">matching</TD></TR>
-      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
-      <TR><TD PORT="processor" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">processor</TD></TR>
-      <TR><TD PORT="customer" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer</TD></TR>
+      <TR><TD PORT="matching_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">matching_id</TD></TR>
+      <TR><TD PORT="office_employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">office_employee_id</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_id</TD></TR>
       <TR><TD PORT="customer_wish" COLSPAN="3" ALIGN="LEFT">customer_wish</TD></TR>
-      <TR><TD PORT="state" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="matching_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">matching_state_id</TD></TR>
       <TR><TD PORT="request_date" COLSPAN="3" ALIGN="LEFT">request_date</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
@@ -39,7 +39,7 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">matching_state</TD></TR>
-      <TR><TD PORT="id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD><TD PORT="id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="matching_state_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">matching_state_id</TD><TD PORT="matching_state_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">varchar[255]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
