@@ -83,9 +83,10 @@ digraph "compactRelationshipsDiagram" {
       <TR><TD PORT="location_of_therapy" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">location_of_therapy</TD></TR>
       <TR><TD PORT="inquiry_source_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">inquiry_source_id</TD></TR>
       <TR><TD PORT="payment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">payment_type_id</TD></TR>
+      <TR><TD PORT="insurance_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">insurance_type_id</TD></TR>
       <TR><TD PORT="customer_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_state_id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 11</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="tables/customer.html"
     tooltip="customer"
@@ -182,6 +183,17 @@ digraph "compactRelationshipsDiagram" {
     </TABLE>>
     URL="tables/inquiry_source.html"
     tooltip="inquiry_source"
+  ];
+  "insurance_type" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">insurance_type</TD></TR>
+      <TR><TD PORT="insurance_type_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">insurance_type_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/insurance_type.html"
+    tooltip="insurance_type"
   ];
   "matching" [
     label=<
@@ -409,6 +421,7 @@ digraph "compactRelationshipsDiagram" {
   "customer":"carer_person_id":w -> "person":"person_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"customer_state_id":w -> "customer_state":"customer_state_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"inquiry_source_id":w -> "inquiry_source":"inquiry_source_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "customer":"insurance_type_id":w -> "insurance_type":"insurance_type_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"location_of_therapy":w -> "address":"address_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"other_company_id":w -> "company":"company_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "customer":"other_person_id":w -> "person":"person_id":e [arrowhead=none dir=back arrowtail=crowodot];

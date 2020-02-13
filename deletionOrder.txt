@@ -19,6 +19,7 @@ skill
 region
 prescription_benefit
 matching_state
+insurance_type
 inquiry_source
 form_of_address
 employment_type

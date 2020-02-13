@@ -17,6 +17,7 @@
  <ul>
   <li><a href='../index.html' title='All tables and views in the schema'>Tables</a></li>
   <li><a href='../relationships.html' title='Diagram of table relationships'>Relationships</a></li>
+  <li><a href='../utilities.html' title='View of tables with neither parents nor children'>Utility&nbsp;Tables</a></li>
   <li><a href='../constraints.html' title='Useful for diagnosing error messages that just give constraint name or number'>Constraints</a></li>
   <li><a href='../anomalies.html' title="Things that might not be quite right">Anomalies</a></li>
   <li><a href='../columns.byTable.html' title="All of the columns in the schema">Columns</a></li>
@@ -34,6 +35,7 @@
 <table width='100%' border='0'>
 <tr valign='top'><td class='container' align='left' valign='top'>
 <form name='options' action=''>
+ <label for='implied'><input type=checkbox id='implied'>Implied relationships</label>
  <label for='showRelatedCols'><input type=checkbox id='showRelatedCols'>Related columns</label>
  <label for='showConstNames'><input type=checkbox id='showConstNames'>Constraints</label>
  <label for='showComments'><input type=checkbox checked id='showComments'>Comments</label>
@@ -236,7 +238,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
    </tr>
   </table>
  </td>
- <td class='comment detail'></td>
+ <td class='comment detail'>Important: Patient is either a person or a company, not both</td>
 </tr>
 <tr class='odd'>
  <td class='indexedColumn' title='Indexed'>patient_company_id</td>
@@ -256,7 +258,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
    </tr>
   </table>
  </td>
- <td class='comment detail'></td>
+ <td class='comment detail'>One of patient_person_id or patient_company_id has to be NULL</td>
 </tr>
 <tr class='even'>
  <td class='indexedColumn' title='Indexed'>location_of_therapy</td>
@@ -440,14 +442,23 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'>Preferred payment type</td>
 </tr>
 <tr class='even'>
- <td class='detail'>insurance_type</td>
- <td class='detail'>enum</td>
- <td class='detail' align='right'>12</td>
+ <td class='indexedColumn' title='Indexed'>insurance_type_id</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
  <td class='detail'></td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="customer.insurance_type_id refs insurance_type.insurance_type_id via customer_ibfk_11"><a href='insurance_type.html'>insurance_type</a><span class='relatedKey'>.insurance_type_id</span>
+    </td>
+    <td class='constraint detail'>customer_ibfk_11<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
@@ -515,7 +526,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='27 columns'>Table contained 0 rows at Di. Feb. 11 19:06 MEZ 2020<p/>
+<p title='27 columns'>Table contained 0 rows at Do. Feb. 13 18:43 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -558,6 +569,12 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <td class='detail'>Performance</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>inquiry_source_id</td>
+ </tr>
+ <tr>
+  <td class='indexedColumn'>insurance_type_id</td>
+  <td class='detail'>Performance</td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
+  <td class='constraint' style='text-align:left;'>insurance_type_id</td>
  </tr>
  <tr>
   <td class='indexedColumn'>location_of_therapy</td>
@@ -603,39 +620,69 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
 <area shape="rect" id="node1" href="case.html" title="case" alt="" coords="1032,5,1171,376">
 <area shape="rect" id="node2" href="customer.html" title="customer" alt="" coords="621,391,941,1103">
-<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="435,520,573,627">
-<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="438,228,570,503">
-<area shape="rect" id="node5" href="address.html" title="address" alt="" coords="5,640,185,867">
-<area shape="rect" id="node6" href="person.html" title="person" alt="" coords="229,260,387,655">
-<area shape="rect" id="node7" href="customer_state.html" title="customer_state" alt="" coords="431,993,577,1100">
-<area shape="rect" id="node8" href="inquiry_source.html" title="inquiry_source" alt="" coords="433,752,575,859">
-<area shape="rect" id="node9" href="customer_therapist.html" title="customer_therapist" alt="" coords="1025,393,1177,548">
-<area shape="rect" id="node10" href="matching.html" title="matching" alt="" coords="1025,565,1178,768">
-<area shape="rect" id="node11" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="985,785,1217,1180">
+<area shape="rect" id="node3" href="payment_type.html" title="payment_type" alt="" coords="435,464,573,571">
+<area shape="rect" id="node4" href="company.html" title="company" alt="" coords="438,172,570,447">
+<area shape="rect" id="node5" href="address.html" title="address" alt="" coords="5,584,185,811">
+<area shape="rect" id="node6" href="person.html" title="person" alt="" coords="229,204,387,599">
+<area shape="rect" id="node7" href="customer_state.html" title="customer_state" alt="" coords="431,1007,577,1113">
+<area shape="rect" id="node8" href="inquiry_source.html" title="inquiry_source" alt="" coords="433,696,575,803">
+<area shape="rect" id="node9" href="insurance_type.html" title="insurance_type" alt="" coords="431,883,577,989">
+<area shape="rect" id="node10" href="customer_therapist.html" title="customer_therapist" alt="" coords="1025,393,1177,548">
+<area shape="rect" id="node11" href="matching.html" title="matching" alt="" coords="1025,565,1178,768">
+<area shape="rect" id="node12" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="985,785,1217,1180">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/customer.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
+<map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="case.html" title="case" alt="" coords="1032,5,1171,376">
+<area shape="rect" id="node2" href="case_state.html" title="case_state" alt="" coords="721,269,841,352">
+<area shape="rect" id="node3" href="customer.html" title="customer" alt="" coords="621,469,941,1181">
+<area shape="rect" id="node4" href="payment_type.html" title="payment_type" alt="" coords="435,428,573,535">
+<area shape="rect" id="node5" href="prescription.html" title="prescription" alt="" coords="715,29,847,112">
+<area shape="rect" id="node6" href="company.html" title="company" alt="" coords="438,136,570,411">
+<area shape="rect" id="node7" href="address.html" title="address" alt="" coords="5,808,185,1035">
+<area shape="rect" id="node8" href="person.html" title="person" alt="" coords="229,520,387,915">
+<area shape="rect" id="node9" href="customer_state.html" title="customer_state" alt="" coords="431,1144,577,1251">
+<area shape="rect" id="node10" href="inquiry_source.html" title="inquiry_source" alt="" coords="433,896,575,1003">
+<area shape="rect" id="node11" href="insurance_type.html" title="insurance_type" alt="" coords="431,1020,577,1127">
+<area shape="rect" id="node21" href="form_of_address.html" title="form_of_address" alt="" coords="26,616,165,699">
+<area shape="rect" id="node12" href="customer_therapist.html" title="customer_therapist" alt="" coords="1025,1016,1177,1171">
+<area shape="rect" id="node13" href="therapist.html" title="therapist" alt="" coords="715,1199,847,1281">
+<area shape="rect" id="node14" href="employee.html" title="employee" alt="" coords="438,1268,570,1351">
+<area shape="rect" id="node15" href="full_company.html" title="full_company" alt="" coords="724,369,839,452">
+<area shape="rect" id="node16" href="full_person.html" title="full_person" alt="" coords="451,660,557,743">
+<area shape="rect" id="node17" href="matching.html" title="matching" alt="" coords="1025,1273,1178,1476">
+<area shape="rect" id="node18" href="matching_state.html" title="matching_state" alt="" coords="718,1399,845,1481">
+<area shape="rect" id="node19" href="office_employee.html" title="office_employee" alt="" coords="714,1299,849,1381">
+<area shape="rect" id="node20" href="office.html" title="office" alt="" coords="242,1152,374,1235">
+<area shape="rect" id="node22" href="person_language.html" title="person_language" alt="" coords="433,760,575,843">
+<area shape="rect" id="node23" href="request.html" title="request" alt="" coords="1261,1237,1381,1320">
+<area shape="rect" id="node24" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="985,563,1217,957">
+</map>
+
+  <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/customer.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
 <area shape="rect" id="node1" href="case.html" title="case" alt="" coords="1032,5,1171,376">
 <area shape="rect" id="node2" href="case_state.html" title="case_state" alt="" coords="721,269,841,352">
-<area shape="rect" id="node3" href="customer.html" title="customer" alt="" coords="621,369,941,1081">
-<area shape="rect" id="node4" href="payment_type.html" title="payment_type" alt="" coords="435,324,573,431">
+<area shape="rect" id="node3" href="customer.html" title="customer" alt="" coords="621,380,941,1092">
+<area shape="rect" id="node4" href="payment_type.html" title="payment_type" alt="" coords="435,81,573,188">
 <area shape="rect" id="node5" href="prescription.html" title="prescription" alt="" coords="715,29,847,112">
-<area shape="rect" id="node6" href="company.html" title="company" alt="" coords="438,32,570,307">
-<area shape="rect" id="node7" href="address.html" title="address" alt="" coords="5,701,185,928">
-<area shape="rect" id="node8" href="person.html" title="person" alt="" coords="229,413,387,808">
-<area shape="rect" id="node9" href="customer_state.html" title="customer_state" alt="" coords="431,983,577,1089">
-<area shape="rect" id="node10" href="inquiry_source.html" title="inquiry_source" alt="" coords="433,859,575,965">
-<area shape="rect" id="node18" href="form_of_address.html" title="form_of_address" alt="" coords="26,509,165,592">
-<area shape="rect" id="node11" href="customer_therapist.html" title="customer_therapist" alt="" coords="1025,432,1177,587">
-<area shape="rect" id="node12" href="therapist.html" title="therapist" alt="" coords="715,1099,847,1181">
-<area shape="rect" id="node13" href="employee.html" title="employee" alt="" coords="438,1107,570,1189">
-<area shape="rect" id="node14" href="matching.html" title="matching" alt="" coords="1025,1173,1178,1376">
-<area shape="rect" id="node15" href="matching_state.html" title="matching_state" alt="" coords="718,1299,845,1381">
-<area shape="rect" id="node16" href="office_employee.html" title="office_employee" alt="" coords="714,1199,849,1281">
-<area shape="rect" id="node17" href="office.html" title="office" alt="" coords="242,1037,374,1120">
-<area shape="rect" id="node19" href="person_language.html" title="person_language" alt="" coords="433,484,575,567">
-<area shape="rect" id="node20" href="request.html" title="request" alt="" coords="1261,1137,1381,1220">
-<area shape="rect" id="node21" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="985,681,1217,1076">
+<area shape="rect" id="node6" href="company.html" title="company" alt="" coords="438,205,570,480">
+<area shape="rect" id="node7" href="address.html" title="address" alt="" coords="5,693,185,920">
+<area shape="rect" id="node8" href="person.html" title="person" alt="" coords="229,405,387,800">
+<area shape="rect" id="node9" href="customer_state.html" title="customer_state" alt="" coords="431,1011,577,1117">
+<area shape="rect" id="node10" href="inquiry_source.html" title="inquiry_source" alt="" coords="433,763,575,869">
+<area shape="rect" id="node11" href="insurance_type.html" title="insurance_type" alt="" coords="431,887,577,993">
+<area shape="rect" id="node19" href="form_of_address.html" title="form_of_address" alt="" coords="26,501,165,584">
+<area shape="rect" id="node12" href="customer_therapist.html" title="customer_therapist" alt="" coords="1025,435,1177,589">
+<area shape="rect" id="node13" href="therapist.html" title="therapist" alt="" coords="715,1109,847,1192">
+<area shape="rect" id="node14" href="employee.html" title="employee" alt="" coords="438,1135,570,1217">
+<area shape="rect" id="node15" href="matching.html" title="matching" alt="" coords="1025,1184,1178,1387">
+<area shape="rect" id="node16" href="matching_state.html" title="matching_state" alt="" coords="718,1309,845,1392">
+<area shape="rect" id="node17" href="office_employee.html" title="office_employee" alt="" coords="714,1209,849,1292">
+<area shape="rect" id="node18" href="office.html" title="office" alt="" coords="242,1072,374,1155">
+<area shape="rect" id="node20" href="person_language.html" title="person_language" alt="" coords="433,569,575,652">
+<area shape="rect" id="node21" href="request.html" title="request" alt="" coords="1261,1148,1381,1231">
+<area shape="rect" id="node22" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="985,689,1217,1084">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/customer.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

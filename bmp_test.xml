@@ -73,6 +73,7 @@
             <child column="carer_company_id" foreignKey="customer_ibfk_5" implied="false" onDeleteCascade="false" table="customer"/>
             <child column="other_company_id" foreignKey="customer_ibfk_7" implied="false" onDeleteCascade="false" table="customer"/>
             <child column="patient_company_id" foreignKey="customer_ibfk_3" implied="false" onDeleteCascade="false" table="customer"/>
+            <child column="company_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="full_company"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="person_id" nullable="true" remarks="Company's contact person" size="10" type="INT UNSIGNED">
             <parent column="person_id" foreignKey="company_ibfk_1" implied="false" onDeleteCascade="false" table="person"/>
@@ -116,10 +117,10 @@
          <column autoUpdated="false" digits="0" id="4" name="carer_person_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
             <parent column="person_id" foreignKey="customer_ibfk_4" implied="false" onDeleteCascade="false" table="person"/>
          </column>
-         <column autoUpdated="false" digits="0" id="5" name="patient_person_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+         <column autoUpdated="false" digits="0" id="5" name="patient_person_id" nullable="true" remarks="Important: Patient is either a person or a company, not both" size="10" type="INT UNSIGNED">
             <parent column="person_id" foreignKey="customer_ibfk_2" implied="false" onDeleteCascade="false" table="person"/>
          </column>
-         <column autoUpdated="false" digits="0" id="6" name="patient_company_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+         <column autoUpdated="false" digits="0" id="6" name="patient_company_id" nullable="true" remarks="One of patient_person_id or patient_company_id has to be NULL" size="10" type="INT UNSIGNED">
             <parent column="company_id" foreignKey="customer_ibfk_3" implied="false" onDeleteCascade="false" table="company"/>
          </column>
          <column autoUpdated="false" digits="0" id="7" name="location_of_therapy" nullable="true" remarks="Reference different address if patient is not treated at his/her home address" size="10" type="INT UNSIGNED">
@@ -142,7 +143,9 @@
          <column autoUpdated="false" digits="0" id="20" name="payment_type_id" nullable="true" remarks="Preferred payment type" size="10" type="INT UNSIGNED">
             <parent column="payment_type_id" foreignKey="customer_ibfk_8" implied="false" onDeleteCascade="false" table="payment_type"/>
          </column>
-         <column autoUpdated="false" digits="0" id="21" name="insurance_type" nullable="true" remarks="" size="12" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="21" name="insurance_type_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="insurance_type_id" foreignKey="customer_ibfk_11" implied="false" onDeleteCascade="false" table="insurance_type"/>
+         </column>
          <column autoUpdated="false" digits="0" id="22" name="notes" nullable="true" remarks="" size="65535" type="TEXT"/>
          <column autoUpdated="false" digits="0" id="23" name="health_information" nullable="true" remarks="" size="65535" type="TEXT"/>
          <column autoUpdated="false" digits="0" id="24" name="prescription_information" nullable="true" remarks="" size="65535" type="TEXT"/>
@@ -165,6 +168,9 @@
          </index>
          <index name="inquiry_source_id" unique="false">
             <column ascending="true" name="inquiry_source_id"/>
+         </index>
+         <index name="insurance_type_id" unique="false">
+            <column ascending="true" name="insurance_type_id"/>
          </index>
          <index name="location_of_therapy" unique="false">
             <column ascending="true" name="location_of_therapy"/>
@@ -301,6 +307,48 @@
             <column ascending="true" name="form_of_address_id"/>
          </index>
       </table>
+      <table name="full_company" numRows="0" remarks="" type="VIEW" viewSql="select `bmp_test`.`company`.`company_id` AS `company_id`,`bmp_test`.`company`.`name` AS `name`,`bmp_test`.`address`.`street` AS `street`,`bmp_test`.`address`.`streetnumber` AS `streetnumber`,`bmp_test`.`address`.`additional_address_line` AS `additional_address_line`,`bmp_test`.`address`.`zip_code` AS `zip_code`,`bmp_test`.`address`.`city` AS `city`,`bmp_test`.`address`.`country_iso` AS `country_iso`,`bmp_test`.`company`.`phone` AS `phone`,`bmp_test`.`company`.`fax` AS `fax`,`bmp_test`.`company`.`website` AS `website`,`bmp_test`.`company`.`information` AS `information`,`bmp_test`.`company`.`person_id` AS `contact_person_id`,concat(`bmp_test`.`person`.`first_name`,' ',`bmp_test`.`person`.`last_name`) AS `contact_person_name` from ((`bmp_test`.`company` left join `bmp_test`.`address` on((`bmp_test`.`company`.`address_id` = `bmp_test`.`address`.`address_id`))) left join `bmp_test`.`person` on(((`bmp_test`.`company`.`address_id` = `bmp_test`.`person`.`address_id`) and (`bmp_test`.`company`.`person_id` = `bmp_test`.`person`.`person_id`) and (`bmp_test`.`company`.`fax` = `bmp_test`.`person`.`fax`) and (`bmp_test`.`company`.`email` = `bmp_test`.`person`.`email`) and (`bmp_test`.`company`.`website` = `bmp_test`.`person`.`website`))))">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="company_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="company_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="company"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="street" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="streetnumber" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="5" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="6" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="7" name="country_iso" nullable="true" remarks="Using ISO 3166 country codes" size="2" type="CHAR"/>
+         <column autoUpdated="false" digits="0" id="8" name="phone" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="9" name="fax" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="10" name="website" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="11" name="information" nullable="true" remarks="" size="65535" type="TEXT"/>
+         <column autoUpdated="false" digits="0" id="12" name="contact_person_id" nullable="true" remarks="Company's contact person" size="10" type="INT UNSIGNED"/>
+         <column autoUpdated="false" digits="0" id="13" name="contact_person_name" nullable="true" remarks="" size="91" type="VARCHAR"/>
+      </table>
+      <table name="full_person" numRows="0" remarks="" type="VIEW" viewSql="select `bmp_test`.`person`.`person_id` AS `person_id`,`bmp_test`.`person`.`first_name` AS `first_name`,`bmp_test`.`person`.`last_name` AS `last_name`,`bmp_test`.`person`.`title` AS `title`,`bmp_test`.`form_of_address`.`name` AS `form_of_address`,`bmp_test`.`person`.`birth_date` AS `birth_date`,`bmp_test`.`address`.`street` AS `street`,`bmp_test`.`address`.`streetnumber` AS `streetnumber`,`bmp_test`.`address`.`additional_address_line` AS `additional_address_line`,`bmp_test`.`address`.`zip_code` AS `zip_code`,`bmp_test`.`address`.`city` AS `city`,`bmp_test`.`address`.`country_iso` AS `country_iso`,`bmp_test`.`person`.`phone_private` AS `phone_private`,`bmp_test`.`person`.`phone_business` AS `phone_business`,`bmp_test`.`person`.`phone_mobile` AS `phone_mobile`,`bmp_test`.`person`.`fax` AS `fax`,`bmp_test`.`person`.`email` AS `email`,`bmp_test`.`person`.`website` AS `website`,`bmp_test`.`person`.`gender` AS `gender`,group_concat(`bmp_test`.`person_language`.`language_iso` separator ',') AS `spoken_languages` from (((`bmp_test`.`person` left join `bmp_test`.`form_of_address` on((`bmp_test`.`person`.`form_of_address_id` = `bmp_test`.`form_of_address`.`form_of_address_id`))) left join `bmp_test`.`address` on((`bmp_test`.`person`.`address_id` = `bmp_test`.`address`.`address_id`))) left join `bmp_test`.`person_language` on((`bmp_test`.`person`.`person_id` = `bmp_test`.`person_language`.`person_id`))) group by `bmp_test`.`person`.`person_id`">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="person_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <parent column="person_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="person"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="first_name" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="last_name" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="title" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="4" name="form_of_address" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="5" name="birth_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="6" name="street" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="7" name="streetnumber" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="8" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="9" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="10" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="11" name="country_iso" nullable="true" remarks="Using ISO 3166 country codes" size="2" type="CHAR"/>
+         <column autoUpdated="false" digits="0" id="12" name="phone_private" nullable="true" remarks="Using E.164 standard" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="13" name="phone_business" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="14" name="phone_mobile" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="15" name="fax" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="16" name="email" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="17" name="website" nullable="true" remarks="" size="255" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="18" name="gender" nullable="true" remarks="" size="2" type="ENUM"/>
+         <column autoUpdated="false" digits="0" id="19" name="spoken_languages" nullable="true" remarks="" size="65535" type="TEXT"/>
+      </table>
       <table name="inquiry_source" numRows="5" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="inquiry_source_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="inquiry_source_id" foreignKey="customer_ibfk_1" implied="false" onDeleteCascade="false" table="customer"/>
@@ -309,6 +357,16 @@
          <primaryKey column="inquiry_source_id" sequenceNumberInPK="1"/>
          <index name="PRIMARY" unique="true">
             <column ascending="true" name="inquiry_source_id"/>
+         </index>
+      </table>
+      <table name="insurance_type" numRows="2" remarks="" type="TABLE">
+         <column autoUpdated="true" digits="0" id="0" name="insurance_type_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+            <child column="insurance_type_id" foreignKey="customer_ibfk_11" implied="false" onDeleteCascade="false" table="customer"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="255" type="VARCHAR"/>
+         <primaryKey column="insurance_type_id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="insurance_type_id"/>
          </index>
       </table>
       <table name="matching" numRows="0" remarks="" type="TABLE">
@@ -409,6 +467,7 @@
             <child column="other_person_id" foreignKey="customer_ibfk_6" implied="false" onDeleteCascade="false" table="customer"/>
             <child column="patient_person_id" foreignKey="customer_ibfk_2" implied="false" onDeleteCascade="false" table="customer"/>
             <child column="person_id" foreignKey="employee_ibfk_1" implied="false" onDeleteCascade="false" table="employee"/>
+            <child column="person_id" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="full_person"/>
             <child column="person_id" foreignKey="person_language_ibfk_1" implied="false" onDeleteCascade="false" table="person_language"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="first_name" nullable="true" remarks="" size="45" type="VARCHAR"/>

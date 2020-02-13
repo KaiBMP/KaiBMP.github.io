@@ -8,6 +8,7 @@ employee_state
 employment_type
 form_of_address
 inquiry_source
+insurance_type
 matching_state
 prescription_benefit
 region
