@@ -9,7 +9,7 @@
             <child column="address_id" foreignKey="person_ibfk_2" implied="false" onDeleteCascade="false" table="person"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="street" nullable="false" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="2" name="streetnumber" nullable="false" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="2" name="streetnumber" nullable="true" remarks="" size="100" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="3" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="4" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="5" name="city" nullable="false" remarks="" size="45" type="VARCHAR"/>
@@ -127,14 +127,14 @@
             <parent column="address_id" foreignKey="customer_ibfk_10" implied="false" onDeleteCascade="false" table="address"/>
          </column>
          <column autoUpdated="false" digits="0" id="8" name="entrance_date" nullable="true" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="9" name="request_date" nullable="false" remarks="" size="10" type="DATE"/>
-         <column autoUpdated="false" digits="0" id="10" name="inquiry_source_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+         <column autoUpdated="false" digits="0" id="9" name="request_date" nullable="true" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="10" name="inquiry_source_id" nullable="true" remarks="" size="10" type="INT UNSIGNED">
             <parent column="inquiry_source_id" foreignKey="customer_ibfk_1" implied="false" onDeleteCascade="false" table="inquiry_source"/>
          </column>
          <column autoUpdated="false" digits="0" id="11" name="documents" nullable="true" remarks="" size="11" type="ENUM"/>
-         <column autoUpdated="false" digits="0" id="12" name="treatment_contract_signed" nullable="false" remarks="" size="1" type="BIT"/>
-         <column autoUpdated="false" digits="0" id="13" name="privacy_policy_signed" nullable="false" remarks="" size="1" type="BIT"/>
-         <column autoUpdated="false" digits="0" id="14" name="consent_form_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" defaultValue="b'0'" digits="0" id="12" name="treatment_contract_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" defaultValue="b'0'" digits="0" id="13" name="privacy_policy_signed" nullable="false" remarks="" size="1" type="BIT"/>
+         <column autoUpdated="false" defaultValue="b'0'" digits="0" id="14" name="consent_form_signed" nullable="false" remarks="" size="1" type="BIT"/>
          <column autoUpdated="false" digits="0" id="15" name="payment_in_advance" nullable="true" remarks="" size="19" type="ENUM"/>
          <column autoUpdated="false" defaultValue="b'0'" digits="0" id="16" name="VIP" nullable="false" remarks="" size="1" type="BIT"/>
          <column autoUpdated="false" digits="0" id="17" name="carer_relationship" nullable="true" remarks="" size="45" type="VARCHAR"/>
@@ -313,7 +313,7 @@
          </column>
          <column autoUpdated="false" digits="0" id="1" name="name" nullable="false" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="2" name="street" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="3" name="streetnumber" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="3" name="streetnumber" nullable="true" remarks="" size="100" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="4" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="5" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="6" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>
@@ -335,7 +335,7 @@
          <column autoUpdated="false" digits="0" id="4" name="form_of_address" nullable="true" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="5" name="birth_date" nullable="true" remarks="" size="10" type="DATE"/>
          <column autoUpdated="false" digits="0" id="6" name="street" nullable="true" remarks="" size="255" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="7" name="streetnumber" nullable="true" remarks="" size="45" type="VARCHAR"/>
+         <column autoUpdated="false" digits="0" id="7" name="streetnumber" nullable="true" remarks="" size="100" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="8" name="additional_address_line" nullable="true" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="9" name="zip_code" nullable="true" remarks="" size="45" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="10" name="city" nullable="true" remarks="" size="45" type="VARCHAR"/>

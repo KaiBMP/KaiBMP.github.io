@@ -26,7 +26,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="company_id" COLSPAN="2" ALIGN="LEFT">company_id</TD><TD PORT="company_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
       <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="street" COLSPAN="2" ALIGN="LEFT">street</TD><TD PORT="street.type" ALIGN="LEFT">varchar[255]</TD></TR>
-      <TR><TD PORT="streetnumber" COLSPAN="2" ALIGN="LEFT">streetnumber</TD><TD PORT="streetnumber.type" ALIGN="LEFT">varchar[45]</TD></TR>
+      <TR><TD PORT="streetnumber" COLSPAN="2" ALIGN="LEFT">streetnumber</TD><TD PORT="streetnumber.type" ALIGN="LEFT">varchar[100]</TD></TR>
       <TR><TD PORT="additional_address_line" COLSPAN="2" ALIGN="LEFT">additional_address_line</TD><TD PORT="additional_address_line.type" ALIGN="LEFT">varchar[255]</TD></TR>
       <TR><TD PORT="zip_code" COLSPAN="2" ALIGN="LEFT">zip_code</TD><TD PORT="zip_code.type" ALIGN="LEFT">varchar[45]</TD></TR>
       <TR><TD PORT="city" COLSPAN="2" ALIGN="LEFT">city</TD><TD PORT="city.type" ALIGN="LEFT">varchar[45]</TD></TR>
