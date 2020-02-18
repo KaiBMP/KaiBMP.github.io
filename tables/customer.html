@@ -102,7 +102,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>customer_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -111,25 +111,31 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="case.customer_id refs customer.customer_id via case_ibfk_1"><a href='case.html'>case</a><span class='relatedKey'>.customer_id</span>
     </td>
     <td class='constraint detail'>case_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer_therapist.customer_id refs customer.customer_id via customer_therapist_ibfk_1"><a href='customer_therapist.html'>customer_therapist</a><span class='relatedKey'>.customer_id</span>
     </td>
     <td class='constraint detail'>customer_therapist_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='impliedRelationship relative even' valign='top'>
+    <td class='relatedTable detail' title="full_customer.customer_id's name implies that it's a child of customer.customer_id, but it doesn't reference that column."><a href='full_customer.html'>full_customer</a><span class='relatedKey'>.customer_id</span>
+    </td>
+    <td class='constraint detail'>Implied Constraint<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="matching.customer_id refs customer.customer_id via matching_ibfk_1"><a href='matching.html'>matching</a><span class='relatedKey'>.customer_id</span>
     </td>
     <td class='constraint detail'>matching_ibfk_1<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="treatment_documentation.customer_id refs customer.customer_id via treatment_documentation_ibfk_1"><a href='treatment_documentation.html'>treatment_documentation</a><span class='relatedKey'>.customer_id</span>
     </td>
     <td class='constraint detail'>treatment_documentation_ibfk_1<span title='Restrict delete:
@@ -140,7 +146,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>other_company_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -150,7 +156,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.other_company_id refs company.company_id via customer_ibfk_7"><a href='company.html'>company</a><span class='relatedKey'>.company_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_7<span title='Null on delete:
@@ -160,7 +166,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>other_person_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -170,7 +176,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer.other_person_id refs person.person_id via customer_ibfk_6"><a href='person.html'>person</a><span class='relatedKey'>.person_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_6<span title='Null on delete:
@@ -180,7 +186,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>carer_company_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -190,7 +196,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.carer_company_id refs company.company_id via customer_ibfk_5"><a href='company.html'>company</a><span class='relatedKey'>.company_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_5<span title='Null on delete:
@@ -200,7 +206,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>carer_person_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -210,7 +216,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer.carer_person_id refs person.person_id via customer_ibfk_4"><a href='person.html'>person</a><span class='relatedKey'>.person_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_4<span title='Null on delete:
@@ -220,7 +226,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>patient_person_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -230,7 +236,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.patient_person_id refs person.person_id via customer_ibfk_2"><a href='person.html'>person</a><span class='relatedKey'>.person_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_2<span title='Null on delete:
@@ -240,7 +246,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'>Important: Patient is either a person or a company, not both</td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>patient_company_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -250,7 +256,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer.patient_company_id refs company.company_id via customer_ibfk_3"><a href='company.html'>company</a><span class='relatedKey'>.company_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_3<span title='Null on delete:
@@ -260,7 +266,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'>One of patient_person_id or patient_company_id has to be NULL</td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>location_of_therapy</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -270,7 +276,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.location_of_therapy refs address.address_id via customer_ibfk_10"><a href='address.html'>address</a><span class='relatedKey'>.address_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_10<span title='Restrict delete:
@@ -280,7 +286,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'>Reference different address if patient is not treated at his/her home address</td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>entrance_date</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>10</td>
@@ -291,7 +297,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>request_date</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>10</td>
@@ -302,7 +308,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>inquiry_source_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -312,7 +318,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer.inquiry_source_id refs inquiry_source.inquiry_source_id via customer_ibfk_1"><a href='inquiry_source.html'>inquiry_source</a><span class='relatedKey'>.inquiry_source_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_1<span title='Restrict delete:
@@ -322,7 +328,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>documents</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>11</td>
@@ -333,40 +339,40 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>treatment_contract_signed</td>
  <td class='detail'>bit</td>
  <td class='detail' align='right'>1</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'>1 means signed, 0 means not signed, NULL means unknown</td>
+</tr>
+<tr class='odd'>
+ <td class='detail'>privacy_policy_signed</td>
+ <td class='detail'>bit</td>
+ <td class='detail' align='right'>1</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='right'>b'0'</td>
+ <td class='detail' align='right'>null</td>
  <td class='detail'></td>
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='detail'>privacy_policy_signed</td>
+ <td class='detail'>consent_form_signed</td>
  <td class='detail'>bit</td>
  <td class='detail' align='right'>1</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>b'0'</td>
+ <td class='detail' align='right'>null</td>
  <td class='detail'></td>
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>consent_form_signed</td>
- <td class='detail'>bit</td>
- <td class='detail' align='right'>1</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>b'0'</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
  <td class='detail'>payment_in_advance</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>19</td>
@@ -377,7 +383,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>VIP</td>
  <td class='detail'>bit</td>
  <td class='detail' align='right'>1</td>
@@ -388,7 +394,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>carer_relationship</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -399,7 +405,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>other_relationship</td>
  <td class='detail'>varchar</td>
  <td class='detail' align='right'>45</td>
@@ -410,7 +416,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>invoice_recipient</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>8</td>
@@ -421,7 +427,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='indexedColumn' title='Indexed'>payment_type_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -431,7 +437,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="customer.payment_type_id refs payment_type.payment_type_id via customer_ibfk_8"><a href='payment_type.html'>payment_type</a><span class='relatedKey'>.payment_type_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_8<span title='Null on delete:
@@ -441,7 +447,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'>Preferred payment type</td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>insurance_type_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -451,7 +457,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.insurance_type_id refs insurance_type.insurance_type_id via customer_ibfk_11"><a href='insurance_type.html'>insurance_type</a><span class='relatedKey'>.insurance_type_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_11<span title='Restrict delete:
@@ -461,7 +467,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>notes</td>
  <td class='detail'>text</td>
  <td class='detail' align='right'>65535</td>
@@ -472,7 +478,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>health_information</td>
  <td class='detail'>text</td>
  <td class='detail' align='right'>65535</td>
@@ -483,7 +489,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>prescription_information</td>
  <td class='detail'>text</td>
  <td class='detail' align='right'>65535</td>
@@ -494,7 +500,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='indexedColumn' title='Indexed'>customer_state_id</td>
  <td class='detail'>int unsigned</td>
  <td class='detail' align='right'>10</td>
@@ -504,7 +510,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="customer.customer_state_id refs customer_state.customer_state_id via customer_ibfk_9"><a href='customer_state.html'>customer_state</a><span class='relatedKey'>.customer_state_id</span>
     </td>
     <td class='constraint detail'>customer_ibfk_9<span title='Restrict delete:
@@ -514,7 +520,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>preferred_therapist_gender</td>
  <td class='detail'>enum</td>
  <td class='detail' align='right'>2</td>
@@ -526,7 +532,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='27 columns'>Table contained 0 rows at Mo. Feb. 17 14:50 MEZ 2020<p/>
+<p title='27 columns'>Table contained 0 rows at Di. Feb. 18 09:10 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -634,29 +640,30 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/customer.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
 <area shape="rect" id="node1" href="case.html" title="case" alt="" coords="1032,5,1171,376">
-<area shape="rect" id="node2" href="case_state.html" title="case_state" alt="" coords="721,269,841,352">
-<area shape="rect" id="node3" href="customer.html" title="customer" alt="" coords="621,469,941,1181">
-<area shape="rect" id="node4" href="payment_type.html" title="payment_type" alt="" coords="435,428,573,535">
+<area shape="rect" id="node2" href="case_state.html" title="case_state" alt="" coords="721,313,841,396">
+<area shape="rect" id="node3" href="customer.html" title="customer" alt="" coords="621,753,941,1465">
+<area shape="rect" id="node4" href="payment_type.html" title="payment_type" alt="" coords="435,328,573,435">
 <area shape="rect" id="node5" href="prescription.html" title="prescription" alt="" coords="715,29,847,112">
-<area shape="rect" id="node6" href="company.html" title="company" alt="" coords="438,136,570,411">
-<area shape="rect" id="node7" href="address.html" title="address" alt="" coords="5,808,185,1035">
-<area shape="rect" id="node8" href="person.html" title="person" alt="" coords="229,520,387,915">
-<area shape="rect" id="node9" href="customer_state.html" title="customer_state" alt="" coords="431,1144,577,1251">
-<area shape="rect" id="node10" href="inquiry_source.html" title="inquiry_source" alt="" coords="433,896,575,1003">
-<area shape="rect" id="node11" href="insurance_type.html" title="insurance_type" alt="" coords="431,1020,577,1127">
-<area shape="rect" id="node21" href="form_of_address.html" title="form_of_address" alt="" coords="26,616,165,699">
-<area shape="rect" id="node12" href="customer_therapist.html" title="customer_therapist" alt="" coords="1025,1016,1177,1171">
-<area shape="rect" id="node13" href="therapist.html" title="therapist" alt="" coords="715,1199,847,1281">
-<area shape="rect" id="node14" href="employee.html" title="employee" alt="" coords="438,1268,570,1351">
-<area shape="rect" id="node15" href="full_company.html" title="full_company" alt="" coords="724,369,839,452">
-<area shape="rect" id="node16" href="full_person.html" title="full_person" alt="" coords="451,660,557,743">
-<area shape="rect" id="node17" href="matching.html" title="matching" alt="" coords="1025,1273,1178,1476">
-<area shape="rect" id="node18" href="matching_state.html" title="matching_state" alt="" coords="718,1399,845,1481">
-<area shape="rect" id="node19" href="office_employee.html" title="office_employee" alt="" coords="714,1299,849,1381">
-<area shape="rect" id="node20" href="office.html" title="office" alt="" coords="242,1152,374,1235">
-<area shape="rect" id="node22" href="person_language.html" title="person_language" alt="" coords="433,760,575,843">
-<area shape="rect" id="node23" href="request.html" title="request" alt="" coords="1261,1237,1381,1320">
-<area shape="rect" id="node24" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="985,563,1217,957">
+<area shape="rect" id="node6" href="company.html" title="company" alt="" coords="438,535,570,809">
+<area shape="rect" id="node7" href="address.html" title="address" alt="" coords="5,1083,185,1309">
+<area shape="rect" id="node8" href="person.html" title="person" alt="" coords="229,795,387,1189">
+<area shape="rect" id="node9" href="customer_state.html" title="customer_state" alt="" coords="431,1419,577,1525">
+<area shape="rect" id="node10" href="inquiry_source.html" title="inquiry_source" alt="" coords="433,1171,575,1277">
+<area shape="rect" id="node11" href="insurance_type.html" title="insurance_type" alt="" coords="431,1295,577,1401">
+<area shape="rect" id="node22" href="form_of_address.html" title="form_of_address" alt="" coords="26,891,165,973">
+<area shape="rect" id="node12" href="customer_therapist.html" title="customer_therapist" alt="" coords="1025,1117,1177,1272">
+<area shape="rect" id="node13" href="therapist.html" title="therapist" alt="" coords="715,1492,847,1575">
+<area shape="rect" id="node14" href="employee.html" title="employee" alt="" coords="438,1543,570,1625">
+<area shape="rect" id="node15" href="full_company.html" title="full_company" alt="" coords="724,535,839,617">
+<area shape="rect" id="node16" href="full_customer.html" title="full_customer" alt="" coords="999,393,1204,1100">
+<area shape="rect" id="node17" href="full_person.html" title="full_person" alt="" coords="451,899,557,981">
+<area shape="rect" id="node18" href="matching.html" title="matching" alt="" coords="1025,1737,1178,1940">
+<area shape="rect" id="node19" href="matching_state.html" title="matching_state" alt="" coords="718,1833,845,1916">
+<area shape="rect" id="node20" href="office_employee.html" title="office_employee" alt="" coords="714,1611,849,1693">
+<area shape="rect" id="node21" href="office.html" title="office" alt="" coords="242,1427,374,1509">
+<area shape="rect" id="node23" href="person_language.html" title="person_language" alt="" coords="433,999,575,1081">
+<area shape="rect" id="node24" href="request.html" title="request" alt="" coords="1261,1704,1381,1787">
+<area shape="rect" id="node25" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="985,1289,1217,1684">
 </map>
 
   <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/customer.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

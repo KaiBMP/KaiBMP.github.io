@@ -1,0 +1,56 @@
+// dot 2.40.1 on Linux 5.3.0-28-generic
+// SchemaSpy rev 590
+digraph "full_customer" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "full_customer" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">full_customer</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" ALIGN="LEFT">customer_id</TD></TR>
+      <TR><TD PORT="patient_person_id" COLSPAN="3" ALIGN="LEFT">patient_person_id</TD></TR>
+      <TR><TD PORT="patient_company_id" COLSPAN="3" ALIGN="LEFT">patient_company_id</TD></TR>
+      <TR><TD PORT="carer_person_id" COLSPAN="3" ALIGN="LEFT">carer_person_id</TD></TR>
+      <TR><TD PORT="carer_company_id" COLSPAN="3" ALIGN="LEFT">carer_company_id</TD></TR>
+      <TR><TD PORT="other_person_id" COLSPAN="3" ALIGN="LEFT">other_person_id</TD></TR>
+      <TR><TD PORT="other_company_id" COLSPAN="3" ALIGN="LEFT">other_company_id</TD></TR>
+      <TR><TD PORT="entrance_date" COLSPAN="3" ALIGN="LEFT">entrance_date</TD></TR>
+      <TR><TD PORT="request_date" COLSPAN="3" ALIGN="LEFT">request_date</TD></TR>
+      <TR><TD PORT="inquiry_source" COLSPAN="3" ALIGN="LEFT">inquiry_source</TD></TR>
+      <TR><TD PORT="documents" COLSPAN="3" ALIGN="LEFT">documents</TD></TR>
+      <TR><TD PORT="treatment_contract_signed" COLSPAN="3" ALIGN="LEFT">treatment_contract_signed</TD></TR>
+      <TR><TD PORT="privacy_policy_signed" COLSPAN="3" ALIGN="LEFT">privacy_policy_signed</TD></TR>
+      <TR><TD PORT="consent_form_signed" COLSPAN="3" ALIGN="LEFT">consent_form_signed</TD></TR>
+      <TR><TD PORT="payment_in_advance" COLSPAN="3" ALIGN="LEFT">payment_in_advance</TD></TR>
+      <TR><TD PORT="VIP" COLSPAN="3" ALIGN="LEFT">VIP</TD></TR>
+      <TR><TD PORT="carer_relationship" COLSPAN="3" ALIGN="LEFT">carer_relationship</TD></TR>
+      <TR><TD PORT="other_relationship" COLSPAN="3" ALIGN="LEFT">other_relationship</TD></TR>
+      <TR><TD PORT="invoice_recipient" COLSPAN="3" ALIGN="LEFT">invoice_recipient</TD></TR>
+      <TR><TD PORT="payment_type" COLSPAN="3" ALIGN="LEFT">payment_type</TD></TR>
+      <TR><TD PORT="insurance_type" COLSPAN="3" ALIGN="LEFT">insurance_type</TD></TR>
+      <TR><TD PORT="notes" COLSPAN="3" ALIGN="LEFT">notes</TD></TR>
+      <TR><TD PORT="health_information" COLSPAN="3" ALIGN="LEFT">health_information</TD></TR>
+      <TR><TD PORT="prescription_information" COLSPAN="3" ALIGN="LEFT">prescription_information</TD></TR>
+      <TR><TD PORT="customer_state" COLSPAN="3" ALIGN="LEFT">customer_state</TD></TR>
+      <TR><TD PORT="preferred_therapist_gender" COLSPAN="3" ALIGN="LEFT">preferred_therapist_gender</TD></TR>
+      <TR><TD PORT="location_of_therapy" COLSPAN="3" ALIGN="LEFT">location_of_therapy</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">view</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/full_customer.html"
+    tooltip="full_customer"
+  ];
+}

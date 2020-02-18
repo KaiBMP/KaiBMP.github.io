@@ -41,6 +41,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
   "employee":"person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"state_id":w -> "employee_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "full_company":"elipses":w -> "company":"company_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
+  "full_customer":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "full_person":"person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "matching":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"elipses":w -> "office_employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -128,7 +129,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
       <TR><TD PORT="prescription_information" COLSPAN="3" ALIGN="LEFT">prescription_information</TD></TR>
       <TR><TD PORT="customer_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">customer_state_id</TD></TR>
       <TR><TD PORT="preferred_therapist_gender" COLSPAN="3" ALIGN="LEFT">preferred_therapist_gender</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 11</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 11</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="customer.html"
     tooltip="customer"
@@ -138,7 +139,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer_state</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="customer_state.html"
     tooltip="customer_state"
@@ -230,6 +231,16 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="full_company.html"
     tooltip="full_company"
+  ];
+  "full_customer" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">full_customer</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">view</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="full_customer.html"
+    tooltip="full_customer"
   ];
   "full_person" [
     label=<
@@ -359,7 +370,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="therapist.html"
     tooltip="therapist"

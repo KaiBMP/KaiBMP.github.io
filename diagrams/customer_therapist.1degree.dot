@@ -78,8 +78,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD></TR>
       <TR><TD PORT="region_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region_id</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
-      <TR><TD PORT="working_area_zip_codes" COLSPAN="3" ALIGN="LEFT">working_area_zip_codes</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="therapist.html"
     tooltip="therapist"

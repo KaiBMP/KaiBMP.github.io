@@ -4,6 +4,7 @@ skill_therapist
 request
 prescription_benefit_assignment
 customer_therapist
+therapist_working_zip_code
 therapist_vacation
 person_language
 matching

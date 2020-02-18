@@ -97,7 +97,7 @@ digraph "compactImpliedRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">customer_state</TD></TR>
       <TR><TD PORT="customer_state_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">customer_state_id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="tables/customer_state.html"
     tooltip="customer_state"
@@ -183,6 +183,17 @@ digraph "compactImpliedRelationshipsDiagram" {
     </TABLE>>
     URL="tables/full_company.html"
     tooltip="full_company"
+  ];
+  "full_customer" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">full_customer</TD></TR>
+      <TR><TD PORT="customer_id" COLSPAN="3" ALIGN="LEFT">customer_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">view</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/full_customer.html"
+    tooltip="full_customer"
   ];
   "full_person" [
     label=<
@@ -403,7 +414,7 @@ digraph "compactImpliedRelationshipsDiagram" {
       <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD></TR>
       <TR><TD PORT="region_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region_id</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="tables/therapist.html"
     tooltip="therapist"
@@ -419,6 +430,18 @@ digraph "compactImpliedRelationshipsDiagram" {
     </TABLE>>
     URL="tables/therapist_vacation.html"
     tooltip="therapist_vacation"
+  ];
+  "therapist_working_zip_code" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist_working_zip_code</TD></TR>
+      <TR><TD PORT="therapist_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD></TR>
+      <TR><TD PORT="country_iso" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">country_iso</TD></TR>
+      <TR><TD PORT="zip_code" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">zip_code</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/therapist_working_zip_code.html"
+    tooltip="therapist_working_zip_code"
   ];
   "treatment_documentation" [
     label=<
@@ -457,6 +480,7 @@ digraph "compactImpliedRelationshipsDiagram" {
   "employee":"person_id":w -> "person":"person_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"state_id":w -> "employee_state":"employee_state_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "full_company":"company_id":w -> "company":"company_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
+  "full_customer":"customer_id":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "full_person":"person_id":w -> "person":"person_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "matching":"customer_id":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "matching":"matching_state_id":w -> "matching_state":"matching_state_id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -478,6 +502,7 @@ digraph "compactImpliedRelationshipsDiagram" {
   "therapist":"employee_id":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist":"region_id":w -> "region":"region_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist_vacation":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "therapist_working_zip_code":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"customer_id":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
 }
