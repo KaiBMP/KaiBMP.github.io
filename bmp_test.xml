@@ -241,14 +241,14 @@
          </column>
          <column autoUpdated="false" digits="0" id="2" name="work_email" nullable="true" remarks="" size="255" type="VARCHAR"/>
          <column autoUpdated="false" digits="0" id="3" name="work_phone" nullable="true" remarks="Using E.164 standard" size="45" type="VARCHAR"/>
-         <column autoUpdated="false" digits="0" id="4" name="state_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
+         <column autoUpdated="false" digits="0" id="4" name="employee_state_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <parent column="employee_state_id" foreignKey="employee_ibfk_2" implied="false" onDeleteCascade="false" table="employee_state"/>
          </column>
          <column autoUpdated="false" digits="0" id="5" name="employment_type_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <parent column="employment_type_id" foreignKey="employee_ibfk_3" implied="false" onDeleteCascade="false" table="employment_type"/>
          </column>
          <column autoUpdated="false" digits="0" id="6" name="hours_per_week" nullable="true" remarks="For part-time employees" size="10" type="INT UNSIGNED"/>
-         <column autoUpdated="false" digits="0" id="7" name="start_date" nullable="false" remarks="" size="10" type="DATE"/>
+         <column autoUpdated="false" digits="0" id="7" name="start_date" nullable="false" remarks="For some therapists only start year is known, then use 1st of January as date" size="10" type="DATE"/>
          <column autoUpdated="false" digits="0" id="8" name="leaving_date" nullable="true" remarks="" size="10" type="DATE"/>
          <column autoUpdated="false" digits="0" id="9" name="probation_start_date" nullable="true" remarks="" size="10" type="DATE"/>
          <column autoUpdated="false" digits="0" id="10" name="probation_end_date" nullable="true" remarks="" size="10" type="DATE"/>
@@ -268,19 +268,19 @@
          <index name="departement_id" unique="false">
             <column ascending="true" name="departement_id"/>
          </index>
+         <index name="employee_state_id" unique="false">
+            <column ascending="true" name="employee_state_id"/>
+         </index>
          <index name="employment_type_id" unique="false">
             <column ascending="true" name="employment_type_id"/>
          </index>
          <index name="person_id" unique="false">
             <column ascending="true" name="person_id"/>
          </index>
-         <index name="state_id" unique="false">
-            <column ascending="true" name="state_id"/>
-         </index>
       </table>
-      <table name="employee_state" numRows="5" remarks="" type="TABLE">
+      <table name="employee_state" numRows="6" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="employee_state_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
-            <child column="state_id" foreignKey="employee_ibfk_2" implied="false" onDeleteCascade="false" table="employee"/>
+            <child column="employee_state_id" foreignKey="employee_ibfk_2" implied="false" onDeleteCascade="false" table="employee"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="VARCHAR"/>
          <primaryKey column="employee_state_id" sequenceNumberInPK="1"/>
@@ -288,7 +288,7 @@
             <column ascending="true" name="employee_state_id"/>
          </index>
       </table>
-      <table name="employment_type" numRows="4" remarks="" type="TABLE">
+      <table name="employment_type" numRows="5" remarks="" type="TABLE">
          <column autoUpdated="true" digits="0" id="0" name="employment_type_id" nullable="false" remarks="" size="10" type="INT UNSIGNED">
             <child column="employment_type_id" foreignKey="employee_ibfk_3" implied="false" onDeleteCascade="false" table="employee"/>
          </column>

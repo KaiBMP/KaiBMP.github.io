@@ -30,7 +30,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="person_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">person_id</TD></TR>
       <TR><TD PORT="work_email" COLSPAN="3" ALIGN="LEFT">work_email</TD></TR>
       <TR><TD PORT="work_phone" COLSPAN="3" ALIGN="LEFT">work_phone</TD></TR>
-      <TR><TD PORT="state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">state_id</TD></TR>
+      <TR><TD PORT="employee_state_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_state_id</TD></TR>
       <TR><TD PORT="employment_type_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employment_type_id</TD></TR>
       <TR><TD PORT="hours_per_week" COLSPAN="3" ALIGN="LEFT">hours_per_week</TD></TR>
       <TR><TD PORT="start_date" COLSPAN="3" ALIGN="LEFT">start_date</TD></TR>
