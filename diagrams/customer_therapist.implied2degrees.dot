@@ -45,7 +45,6 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
   "skill_therapist":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist":"employee_id":w -> "employee":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist":"region_id":w -> "region":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist_vacation":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist_working_zip_code":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"elipses":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -143,7 +142,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employee</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="employee.html"
     tooltip="employee"
@@ -245,21 +244,13 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
       <TR><TD PORT="therapist_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD></TR>
       <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD></TR>
       <TR><TD PORT="region_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region_id</TD></TR>
+      <TR><TD PORT="capacity" COLSPAN="3" ALIGN="LEFT">capacity</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD PORT="feedback" COLSPAN="3" ALIGN="LEFT">feedback</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="therapist.html"
     tooltip="therapist"
-  ];
-  "therapist_vacation" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist_vacation</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
-    </TABLE>>
-    URL="therapist_vacation.html"
-    tooltip="therapist_vacation"
   ];
   "therapist_working_zip_code" [
     label=<

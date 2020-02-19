@@ -37,7 +37,7 @@
 <form name='options' action=''>
  <label for='showRelatedCols'><input type=checkbox id='showRelatedCols'>Related columns</label>
  <label for='showConstNames'><input type=checkbox id='showConstNames'>Constraints</label>
- <label for='showComments'><input type=checkbox id='showComments'>Comments</label>
+ <label for='showComments'><input type=checkbox checked id='showComments'>Comments</label>
  <label for='showLegend'><input type=checkbox checked id='showLegend'>Legend</label>
 </form>
 </td><td class='container' rowspan='2' align='right' valign='top'>
@@ -129,12 +129,6 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="therapist_vacation.therapist_id refs therapist.therapist_id via therapist_vacation_ibfk_1"><a href='therapist_vacation.html'>therapist_vacation</a><span class='relatedKey'>.therapist_id</span>
-    </td>
-    <td class='constraint detail'>therapist_vacation_ibfk_1<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="therapist_working_zip_code.therapist_id refs therapist.therapist_id via therapist_working_zip_code_ibfk_1"><a href='therapist_working_zip_code.html'>therapist_working_zip_code</a><span class='relatedKey'>.therapist_id</span>
     </td>
     <td class='constraint detail'>therapist_working_zip_code_ibfk_1<span title='Restrict delete:
@@ -192,6 +186,17 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
+ <td class='detail'>capacity</td>
+ <td class='detail'>int unsigned</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'>Monthly capacity in hours</td>
+</tr>
+<tr class='even'>
  <td class='detail'>information</td>
  <td class='detail'>text</td>
  <td class='detail' align='right'>65535</td>
@@ -202,8 +207,19 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
+<tr class='odd'>
+ <td class='detail'>feedback</td>
+ <td class='detail'>text</td>
+ <td class='detail' align='right'>65535</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'></td>
+</tr>
 </table>
-<p title='4 columns'>Table contained 0 rows at Di. Feb. 18 16:22 MEZ 2020<p/>
+<p title='6 columns'>Table contained 0 rows at Mi. Feb. 19 12:12 MEZ 2020<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -242,32 +258,31 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
 <area shape="rect" id="node1" href="customer_therapist.html" title="customer_therapist" alt="" coords="521,5,673,160">
-<area shape="rect" id="node2" href="therapist.html" title="therapist" alt="" coords="212,553,437,713">
-<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="5,337,168,828">
-<area shape="rect" id="node6" href="region.html" title="region" alt="" coords="27,845,147,952">
+<area shape="rect" id="node2" href="therapist.html" title="therapist" alt="" coords="212,467,437,675">
+<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="5,251,168,741">
+<area shape="rect" id="node6" href="region.html" title="region" alt="" coords="27,759,147,865">
 <area shape="rect" id="node3" href="request.html" title="request" alt="" coords="521,177,674,452">
 <area shape="rect" id="node4" href="skill_therapist.html" title="skill_therapist" alt="" coords="537,469,657,600">
-<area shape="rect" id="node7" href="therapist_vacation.html" title="therapist_vacation" alt="" coords="515,617,680,772">
-<area shape="rect" id="node8" href="therapist_working_zip_code.html" title="therapist_working_zip_code" alt="" coords="493,789,701,920">
-<area shape="rect" id="node9" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="481,937,713,1332">
+<area shape="rect" id="node7" href="therapist_working_zip_code.html" title="therapist_working_zip_code" alt="" coords="493,617,701,748">
+<area shape="rect" id="node8" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="481,765,713,1160">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/therapist.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="customer.html" title="customer" alt="" coords="203,461,343,544">
-<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="11,461,143,544">
+<area shape="rect" id="node1" href="customer.html" title="customer" alt="" coords="203,420,343,503">
+<area shape="rect" id="node2" href="person.html" title="person" alt="" coords="11,420,143,503">
 <area shape="rect" id="node3" href="customer_therapist.html" title="customer_therapist" alt="" coords="708,5,860,160">
-<area shape="rect" id="node4" href="therapist.html" title="therapist" alt="" coords="399,589,624,749">
-<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="192,724,355,1215">
-<area shape="rect" id="node14" href="region.html" title="region" alt="" coords="213,600,333,707">
-<area shape="rect" id="node6" href="departement.html" title="departement" alt="" coords="17,1036,137,1119">
-<area shape="rect" id="node7" href="employee_state.html" title="employee_state" alt="" coords="11,783,142,865">
-<area shape="rect" id="node8" href="employment_type.html" title="employment_type" alt="" coords="5,883,148,965">
-<area shape="rect" id="node9" href="matching.html" title="matching" alt="" coords="718,1093,850,1176">
-<area shape="rect" id="node10" href="office_employee.html" title="office_employee" alt="" coords="444,1093,579,1176">
-<area shape="rect" id="node11" href="request.html" title="request" alt="" coords="944,813,1097,1088">
-<area shape="rect" id="node12" href="skill_therapist.html" title="skill_therapist" alt="" coords="724,945,844,1076">
-<area shape="rect" id="node13" href="skill.html" title="skill" alt="" coords="451,957,571,1040">
-<area shape="rect" id="node15" href="therapist_vacation.html" title="therapist_vacation" alt="" coords="701,773,867,928">
+<area shape="rect" id="node4" href="therapist.html" title="therapist" alt="" coords="399,556,624,764">
+<area shape="rect" id="node5" href="employee.html" title="employee" alt="" coords="192,825,355,1316">
+<area shape="rect" id="node15" href="region.html" title="region" alt="" coords="213,607,333,713">
+<area shape="rect" id="node6" href="departement.html" title="departement" alt="" coords="17,1137,137,1220">
+<area shape="rect" id="node7" href="employee_state.html" title="employee_state" alt="" coords="11,884,142,967">
+<area shape="rect" id="node8" href="employment_type.html" title="employment_type" alt="" coords="5,984,148,1067">
+<area shape="rect" id="node9" href="employee_vacation.html" title="employee_vacation" alt="" coords="435,1020,588,1103">
+<area shape="rect" id="node10" href="matching.html" title="matching" alt="" coords="718,921,850,1004">
+<area shape="rect" id="node11" href="office_employee.html" title="office_employee" alt="" coords="444,920,579,1003">
+<area shape="rect" id="node12" href="request.html" title="request" alt="" coords="944,728,1097,1003">
+<area shape="rect" id="node13" href="skill_therapist.html" title="skill_therapist" alt="" coords="724,773,844,904">
+<area shape="rect" id="node14" href="skill.html" title="skill" alt="" coords="451,784,571,867">
 <area shape="rect" id="node16" href="therapist_working_zip_code.html" title="therapist_working_zip_code" alt="" coords="680,625,888,756">
 <area shape="rect" id="node17" href="treatment_documentation.html" title="treatment_documentation" alt="" coords="668,177,900,572">
 </map>

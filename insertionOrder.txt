@@ -22,8 +22,8 @@ office_employee
 therapist
 prescription
 matching
+employee_vacation
 person_language
-therapist_vacation
 therapist_working_zip_code
 customer_therapist
 prescription_benefit_assignment

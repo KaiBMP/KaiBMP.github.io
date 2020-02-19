@@ -179,7 +179,7 @@ digraph "largeImpliedRelationshipsDiagram" {
       <TR><TD PORT="salary" COLSPAN="3" ALIGN="LEFT">salary</TD></TR>
       <TR><TD PORT="salary_currency" COLSPAN="3" ALIGN="LEFT">salary_currency</TD></TR>
       <TR><TD PORT="salary_rate" COLSPAN="3" ALIGN="LEFT">salary_rate</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="tables/employee.html"
     tooltip="employee"
@@ -194,6 +194,19 @@ digraph "largeImpliedRelationshipsDiagram" {
     </TABLE>>
     URL="tables/employee_state.html"
     tooltip="employee_state"
+  ];
+  "employee_vacation" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employee_vacation</TD></TR>
+      <TR><TD PORT="employee_vacation_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">employee_vacation_id</TD></TR>
+      <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD></TR>
+      <TR><TD PORT="start" COLSPAN="3" ALIGN="LEFT">start</TD></TR>
+      <TR><TD PORT="end" COLSPAN="3" ALIGN="LEFT">end</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/employee_vacation.html"
+    tooltip="employee_vacation"
   ];
   "employment_type" [
     label=<
@@ -537,24 +550,13 @@ digraph "largeImpliedRelationshipsDiagram" {
       <TR><TD PORT="therapist_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_id</TD></TR>
       <TR><TD PORT="employee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD></TR>
       <TR><TD PORT="region_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">region_id</TD></TR>
+      <TR><TD PORT="capacity" COLSPAN="3" ALIGN="LEFT">capacity</TD></TR>
       <TR><TD PORT="information" COLSPAN="3" ALIGN="LEFT">information</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD PORT="feedback" COLSPAN="3" ALIGN="LEFT">feedback</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="tables/therapist.html"
     tooltip="therapist"
-  ];
-  "therapist_vacation" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist_vacation</TD></TR>
-      <TR><TD PORT="therapist_vacation_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">therapist_vacation_id</TD></TR>
-      <TR><TD PORT="therapist_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">therapist_id</TD></TR>
-      <TR><TD PORT="start" COLSPAN="3" ALIGN="LEFT">start</TD></TR>
-      <TR><TD PORT="end" COLSPAN="3" ALIGN="LEFT">end</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
-    </TABLE>>
-    URL="tables/therapist_vacation.html"
-    tooltip="therapist_vacation"
   ];
   "therapist_working_zip_code" [
     label=<
@@ -614,6 +616,7 @@ digraph "largeImpliedRelationshipsDiagram" {
   "employee":"employee_state_id":w -> "employee_state":"employee_state_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"employment_type_id":w -> "employment_type":"employment_type_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"person_id":w -> "person":"person_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee_vacation":"employee_id":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "full_company":"company_id":w -> "company":"company_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "full_customer":"customer_id":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "full_person":"person_id":w -> "person":"person_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
@@ -636,7 +639,6 @@ digraph "largeImpliedRelationshipsDiagram" {
   "skill_therapist":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist":"employee_id":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist":"region_id":w -> "region":"region_id":e [arrowhead=none dir=back arrowtail=crowodot];
-  "therapist_vacation":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist_working_zip_code":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"customer_id":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "treatment_documentation":"therapist_id":w -> "therapist":"therapist_id":e [arrowhead=none dir=back arrowtail=crowodot];

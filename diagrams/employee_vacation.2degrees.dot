@@ -21,9 +21,9 @@ digraph "twoDegreesRelationshipsDiagram" {
   ];
   "employee":"departement_id":w -> "departement":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"employee_state_id":w -> "employee_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "employee":"employment_type_id":w -> "employment_type":"employment_type_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee":"employment_type_id":w -> "employment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"person_id":w -> "person":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "employee_vacation":"elipses":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee_vacation":"employee_id":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "office_employee":"elipses":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "therapist":"elipses":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "departement" [
@@ -75,21 +75,23 @@ digraph "twoDegreesRelationshipsDiagram" {
   ];
   "employee_vacation" [
     label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+    <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employee_vacation</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD PORT="employee_vacation_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">employee_vacation_id</TD><TD PORT="employee_vacation_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="employee_id" COLSPAN="2" BGCOLOR="#f4f7da" ALIGN="LEFT">employee_id</TD><TD PORT="employee_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
+      <TR><TD PORT="start" COLSPAN="2" ALIGN="LEFT">start</TD><TD PORT="start.type" ALIGN="LEFT">date[10]</TD></TR>
+      <TR><TD PORT="end" COLSPAN="2" ALIGN="LEFT">end</TD><TD PORT="end.type" ALIGN="LEFT">date[10]</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>
     </TABLE>>
     URL="employee_vacation.html"
     tooltip="employee_vacation"
   ];
   "employment_type" [
     label=<
-    <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employment_type</TD></TR>
-      <TR><TD PORT="employment_type_id" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">employment_type_id</TD><TD PORT="employment_type_id.type" ALIGN="LEFT">int unsigned[10]</TD></TR>
-      <TR><TD PORT="name" COLSPAN="2" ALIGN="LEFT">name</TD><TD PORT="name.type" ALIGN="LEFT">varchar[255]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="employment_type.html"
     tooltip="employment_type"

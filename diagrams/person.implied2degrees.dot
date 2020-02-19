@@ -40,6 +40,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
   "employee":"employee_state_id":w -> "employee_state":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"employment_type_id":w -> "employment_type":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "employee":"person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "employee_vacation":"elipses":w -> "employee":"employee_id":e [arrowhead=none dir=back arrowtail=crowodot];
   "full_company":"elipses":w -> "company":"company_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "full_customer":"elipses":w -> "customer":"customer_id":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "full_person":"person_id":w -> "person":"person_id.type":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
@@ -186,7 +187,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
       <TR><TD PORT="salary" COLSPAN="3" ALIGN="LEFT">salary</TD></TR>
       <TR><TD PORT="salary_currency" COLSPAN="3" ALIGN="LEFT">salary_currency</TD></TR>
       <TR><TD PORT="salary_rate" COLSPAN="3" ALIGN="LEFT">salary_rate</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="employee.html"
     tooltip="employee"
@@ -200,6 +201,16 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="employee_state.html"
     tooltip="employee_state"
+  ];
+  "employee_vacation" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">employee_vacation</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="employee_vacation.html"
+    tooltip="employee_vacation"
   ];
   "employment_type" [
     label=<
@@ -370,7 +381,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">therapist</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
     </TABLE>>
     URL="therapist.html"
     tooltip="therapist"

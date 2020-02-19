@@ -5,8 +5,8 @@ request
 prescription_benefit_assignment
 customer_therapist
 therapist_working_zip_code
-therapist_vacation
 person_language
+employee_vacation
 matching
 prescription
 therapist
